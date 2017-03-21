@@ -1,5 +1,6 @@
 import React from 'react';
 import Text from '../component/Text';
+import Title from '../component/Title';
 import Event from '../component/Event';
 
 import color from '../assets/color';
@@ -32,7 +33,7 @@ export default function () {
     <div style={styles.viewport}>
       <Text style={styles.subtitle}>{history.subtitle}</Text>
       {title.map(text => (
-        <Text key={text} style={styles.title}>{text}</Text>
+        <Title key={text} style={styles.title}>{text}</Title>
       ))}
       {event.map(({ content, ...item }) => (
         <Event key={item.name} {...item}>{content}</Event>

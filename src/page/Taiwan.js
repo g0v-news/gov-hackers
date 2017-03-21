@@ -20,14 +20,25 @@ const styles = {
     width: '100%',
     maxWidth: 1024,
     margin: '0 auto',
+    marginTop: 28,
+  },
+  subtitle: {
+    marginTop: 14,
   },
   cover: {
     backgroundColor: '#F5F5FF',
+    marginBottom: 10,
+  },
+  topic: {
+    marginTop: 10,
   },
   slide: {
     flexBasis: '50%',
     maxWidth: 420,
-    paddingBottom: 10,
+    paddingBottom: 1,
+  },
+  reverse: {
+    flexDirection: 'row-reverse',
   },
   windowText: {
     fontSize: 18,
@@ -55,17 +66,18 @@ const slider = {
 export default function () {
   return (
     <div style={styles.viewport}>
-      <div style={styles.row}>
+      <div style={{ ...styles.row, ...styles.reverse }}>
         <div style={{ ...styles.right, ...styles.cover }}>
           <Cover src={cover} alt="黑客進政府實錄" />
         </div>
         <div style={styles.left}>
           {title.map(text => (<Title key={text}>{text}</Title>))}
-          <Text>{subtitle}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
         </div>
       </div>
       <div style={styles.row}>
-        <div style={styles.right} className="slidebox">
+        <div style={styles.left} />
+        <div style={{ ...styles.right, ...styles.topic }} className="slidebox">
           <Slider {...slider}>
             {topic.map(data => (
               <div key={data.name} style={styles.slide}>
@@ -74,14 +86,13 @@ export default function () {
             ))}
           </Slider>
         </div>
-        <div style={styles.left} />
       </div>
+      <Anonymity {...anonymity} />
       <Window>
         {window.map(text => (
           <Text key={text} style={styles.windowText}>{text}</Text>
         ))}
       </Window>
-      <Anonymity {...anonymity} />
     </div>
   );
 }

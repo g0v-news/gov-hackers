@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 const styles = {
   viewport: {
     width: '100%',
-    maxWidth: 640,
     margin: '0 auto',
   },
   image: {

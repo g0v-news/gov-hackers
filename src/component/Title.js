@@ -4,17 +4,22 @@ const styles = {
   viewport: {
     fontSize: 36,
     textAlign: 'left',
-    padding: 10,
+    padding: 5,
     paddingLeft: 20,
   },
 };
 
-function Component({ children }) {
-  return (<div style={styles.viewport}>{children}</div>);
+function Component({ style, children }) {
+  return (<div style={{ ...styles.viewport, ...style }}>{children}</div>);
 }
 
 Component.propTypes = {
+  style: PropTypes.shape(),
   children: PropTypes.string.isRequired,
+};
+
+Component.defaultProps = {
+  style: {},
 };
 
 export default Component;

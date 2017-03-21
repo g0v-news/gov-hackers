@@ -6,6 +6,7 @@ const styles = {
     textAlign: 'justify',
     paddingLeft: 20,
     paddingRight: 20,
+    lineHeight: 1.2,
   },
 };
 

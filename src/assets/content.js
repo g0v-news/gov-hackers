@@ -9,10 +9,10 @@ import japan from './interview/japan.jpg';
 import australia from './interview/australia.jpg';
 import pakistan from './interview/pakistan.jpg';
 import mexico from './interview/mexico.jpg';
-import share1 from './quote_to_share/1.jpg';
-import share2 from './quote_to_share/2.jpg';
-import share3 from './quote_to_share/3.jpg';
-import share4 from './quote_to_share/4.jpg';
+import share1 from './quote_to_share/1.png';
+import share2 from './quote_to_share/2.png';
+import share3 from './quote_to_share/3.png';
+import share4 from './quote_to_share/4.png';
 
 export const enter = {
   subtitle: [

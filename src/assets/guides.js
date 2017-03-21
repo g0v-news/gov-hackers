@@ -1,7 +1,7 @@
 export default {
   row: {
     display: 'flex',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   left: {

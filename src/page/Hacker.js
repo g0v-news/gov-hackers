@@ -6,13 +6,15 @@ import Share from '../component/Share';
 
 import { hacker } from '../assets/content';
 
-const { share } = hacker;
+const { title, subtitle, share } = hacker;
 
 const styles = {
-  slide: {
-    flexBasis: '50%',
-    maxWidth: 420,
-    paddingBottom: 10,
+  viewport: {
+    marginTop: 28,
+  },
+  share: {
+    width: '100%',
+    overflow: 'hidden',
   },
 };
 
@@ -23,25 +25,22 @@ const slider = {
   slidesToShow: 1,
   slidesToScroll: 1,
   className: 'slider',
-  responsive: [
-    { breakpoint: 420, settings: { slidesToShow: 1 } },
-    { breakpoint: 960, settings: { slidesToShow: 2 } },
-    { breakpoint: 100000, settings: 'unslick' },
-  ],
 };
 
 export default function () {
   return (
-    <div>
-      <Title>黑客精神</Title>
-      <Text>只要有心、有想像力，你就是黑客。</Text>
-      <Slider {...slider}>
-        {share.map(data => (
-          <div key={data.image} style={styles.slide}>
-            <Share {...data} />
-          </div>
-        ))}
-      </Slider>
+    <div style={styles.viewport}>
+      {title.map(text => (<Title key={text}>{text}</Title>))}
+      <Text style={styles.subtitle}>{subtitle}</Text>
+      <div style={styles.share}>
+        <Slider {...slider}>
+          {share.map(data => (
+            <div key={data.image}>
+              <Share {...data} />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ExecutionEnvironment from 'exenv';
-import { enter } from '../assets/content';
 import Text from '../component/Text';
+import color from '../assets/color';
+import { enter } from '../assets/content';
 
 import title from '../assets/title.png';
 import error from '../assets/error.jpg';
@@ -53,7 +54,7 @@ const styles = {
   },
   padding: {
     height: 200,
-    backgroundColor: '#F5F5FF',
+    backgroundImage: `linear-gradient(${color.backgroundAssist}, ${color.primaryAssist})`,
   },
 };
 

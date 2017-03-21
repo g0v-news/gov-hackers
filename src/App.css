@@ -42,3 +42,9 @@
   top: 47%;
   height: 10px;
 }
+
+@media screen and (max-device-width: 480px) {
+    .disabled-mobile {
+        display: none;
+    }
+}

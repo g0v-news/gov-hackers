@@ -7,7 +7,10 @@ const styles = {
     flexDirection: 'row',
     paddingLeft: 20,
     paddingRight: 20,
+    margin: '0 auto',
     marginTop: 18,
+    width: '100%',
+    maxWidth: 640,
   },
   date: {
     width: 100,
