@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+@keyframes loading {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.slick-slider {
+  margin-top: 0;
+}
+
+.slick-list {
+  overflow: visible;
+}
+
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: #0000FF;
+}
+
+.slidebox {
+  overflow: hidden;
+}
+
+.slidebox > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.slidebox > div.slider {
+  display: block;
+  flex-flow: initial initial;
+  justify-content: initial;
+  margin-right: 40px;
+}
+
+.civildot {
+  position: absolute;
+  top: 47%;
+  height: 10px;
+}
