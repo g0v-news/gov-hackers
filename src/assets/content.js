@@ -156,7 +156,7 @@ export const civilservant = {
 };
 
 export const solution = {
-  title: ['②個資深黑客', '⑤國經驗', '⑩個讓黑客與政府', '開心共事的秘訣'],
+  title: ['②個資深黑客', '⑤國經驗', '⑩個讓黑客與政府', '開心共事的祕訣'],
   subtitle: '公部門快做筆記！',
   topic: [{
     title: '如何打造友善環境？',
