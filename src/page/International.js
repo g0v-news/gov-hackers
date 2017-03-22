@@ -57,6 +57,11 @@ const styles = {
     fontSize: 18,
     maxWidth: 288,
   },
+  map: {
+    maxWidth: 320,
+    display: 'block',
+    margin: '0 auto',
+  }
 };
 
 const slider = {
@@ -108,7 +113,7 @@ export default class extends PureComponent {
             <div style={styles.left}>
               <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
               {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
-              <Image src={map} alt="世界黑客地圖" onClick={this.onMapClick} />
+              <img style={styles.map} src={map} alt="世界黑客地圖" onClick={this.onMapClick} />
             </div>
             <div style={styles.right} className="slidebox">
               <Slider {...slider}>

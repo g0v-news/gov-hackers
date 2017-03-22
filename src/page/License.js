@@ -1,5 +1,6 @@
 import React from 'react';
 import Text from '../component/Text';
+import BodyText from '../component/BodyText';
 import { license } from '../assets/content';
 import logo from '../assets/logo.png';
 import external from '../assets/external_link.png';
@@ -26,10 +27,8 @@ const styles = {
   },
   license: {
     fontSize: 16,
-    textAlign: 'left',
+    lineHeight: 1.375,
     color: color.textAssist,
-    paddingLeft: 20,
-    paddingRight: 20,
   },
   group: {
     color: color.textAssist,
@@ -48,14 +47,15 @@ const styles = {
   },
   imageName: {
     width: 120,
-    paddingTop: 5,
+    padding: 0,
   },
   imageLicense: {
-    paddingTop: 5,
+    padding: 0,
   },
   imageLink: {
     width: 50,
-    paddingTop: 5,
+    padding: 0,
+    textAlign: 'right',
   },
   team: {
     fontSize: 18,
@@ -65,6 +65,7 @@ const styles = {
     marginRight: 20,
     maxWidth: 375,
     color: color.primary,
+    borderCollapse: 'collapse',
   },
   teamWork: {
     textAlign: 'left',
@@ -105,7 +106,7 @@ export default function () {
       <div style={styles.subtitle}>{license.subtitle}</div>
       <div style={styles.title}>{license.title}</div>
       <Text style={styles.group}>授權條款</Text>
-      <div style={styles.license}>{license.license}.</div>
+      <BodyText style={styles.license}>{license.license}</BodyText>
       <Text style={styles.group}>圖像授權</Text>
       <table style={styles.image}>
         <tbody>

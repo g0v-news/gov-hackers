@@ -8,7 +8,7 @@ const styles = {
     paddingLeft: 20,
     paddingRight: 20,
     margin: '0 auto',
-    marginTop: 18,
+    marginTop: 8,
     width: '100%',
     maxWidth: 320,
   },
