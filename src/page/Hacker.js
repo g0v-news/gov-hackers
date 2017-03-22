@@ -57,6 +57,7 @@ export default class extends PureComponent {
   render() {
     return (
       <div style={styles.viewport}>
+        <a name="hacker" />
         {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
         <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
         <div style={styles.share} className="slidelink">

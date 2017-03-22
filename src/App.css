@@ -291,3 +291,23 @@
     font-size: 26px;
   }
 }
+
+.headerlink {
+  font-size: 18px;
+  max-width: 120px;
+}
+
+@media screen and (max-device-width: 640px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+  .headerlogo {
+    display: none;
+  }
+  .headerlink {
+    font-size: 14px;
+    max-width: 50px;
+  }
+}

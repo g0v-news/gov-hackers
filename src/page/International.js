@@ -107,6 +107,7 @@ export default class extends PureComponent {
   render() {
     return (
       <div style={styles.viewport}>
+        <a name="international" />
         <div style={styles.container}>
           <Image src={cover} alt={title.join('')} onClick={this.onCoverClick} />
           <div style={styles.row}>

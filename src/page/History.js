@@ -52,6 +52,7 @@ export default class extends PureComponent {
   render() {
     return (
       <div style={styles.viewport}>
+        <a name="history" />
         <Text style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</Text>
         {title.map(text => (
           <Title key={text} style={styles.title} onClick={this.onTitleClick}>{text}</Title>

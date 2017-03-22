@@ -87,6 +87,7 @@ export default class extends PureComponent {
   render() {
     return (
       <div style={styles.viewport}>
+        <a name="taiwan" />
         <div style={{ ...styles.row, ...styles.reverse }}>
           <div style={{ ...styles.right, ...styles.cover }}>
             <Cover src={cover} alt="黑客進政府實錄" onClick={this.onCoverClick} />

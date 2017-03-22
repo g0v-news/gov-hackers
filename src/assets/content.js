@@ -15,6 +15,29 @@ import share3 from './quote_to_share/3.png';
 import share4 from './quote_to_share/4.png';
 import editorial from './editorial.png';
 
+export const header = {
+  tags: [{
+    title: '黑客進政府',
+    name: 'taiwan',
+  }, {
+    title: '各國開外掛',
+    name: 'international',
+  }, {
+    title: '問公僕訪唐鳳',
+    name: 'civilservant',
+  }, {
+    title: '社群講秘訣',
+    name: 'solution',
+  }, {
+    title: 'Go Hacking',
+    name: 'hacker',
+  }],
+  share: {
+    twitter: 'http://twitter.com/share?url=http://gov-hackers.g0v.news/&hashtags=g0v,g0vnews,taiwan,opengov',
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/',
+  },
+};
+
 export const enter = {
   subtitle: [
     '「我們在數位時代裡生活、做生意，但政府最後一次大型組織再造，卻是黑白電視時代的事，」美國前總統歐巴馬說。',

@@ -10,7 +10,6 @@ import hackerMonitor from '../assets/hacker_monitor.png';
 import hackerTable from '../assets/hacker_table.png';
 import hackerSilhouette from '../assets/hacker_silhouette.png';
 import error from '../assets/error.jpg';
-import fonts from '../assets/fonts.js';
 
 const { subtitle } = enter;
 
@@ -85,7 +84,6 @@ const styles = {
     maxWidth: 286,
     margin: '0 auto',
     textAlign: 'left',
-    fontFamily: fonts.serif,
   },
   enter: {
     position: 'absolute',
