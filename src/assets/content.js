@@ -146,7 +146,7 @@ export const civilservant = {
   avatar: au,
   link: {
     quote: ['要公務員搶回主動權', '她計畫這麼做'],
-    link: '',
+    link: 'https://g0v.news/%E8%A6%81%E5%85%AC%E5%8B%99%E5%93%A1%E6%90%B6%E5%9B%9E%E4%B8%BB%E5%8B%95%E6%AC%8A-%E6%94%BF%E5%A7%94%E5%94%90%E9%B3%B3%E8%A8%88%E7%95%AB%E9%80%99%E9%BA%BC%E5%81%9A-8877e96dab54#.23rk7eukd',
   },
   anonymity: {
     name: 'civilservant',
