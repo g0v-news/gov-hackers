@@ -1,4 +1,5 @@
 import React, { PropTypes, PureComponent } from 'react';
+import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
 
@@ -33,15 +34,31 @@ const styles = {
   },
 };
 
-export default class extends PureComponent{
+export default class extends PureComponent {
 
   static propTypes = {
     image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     link: PropTypes.string,
   };
 
   static defaultProps ={
     link: '',
+  }
+
+  onClick = () => {
+    const { name } = this.props;
+
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: `hacker_share${name}`,
+    });
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: `hacker_share${name}`,
+    });
   }
 
   render() {
