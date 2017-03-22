@@ -5,11 +5,19 @@ import color from '../assets/color';
 import { enter } from '../assets/content';
 
 import title from '../assets/title.png';
+import hackerMonitor from '../assets/hacker_monitor.png';
+import hackerTable from '../assets/hacker_table.png';
+import hackerSilhouette from '../assets/hacker_silhouette.png';
 import error from '../assets/error.jpg';
 
 const { subtitle } = enter;
 
 const styles = {
+  box: {
+    width: '100%',
+    overflow: 'hidden',
+    position: 'relative',
+  },
   error: {
     position: 'absolute',
     left: 0,
@@ -33,8 +41,31 @@ const styles = {
     position: 'relative',
   },
   title: {
-    paddingTop: 40,
-    paddingBottom: 40,
+    width: '100%',
+    marginTop: 40,
+    marginBottom: 40,
+  },
+  hackerMonitor: {
+    position: 'absolute',
+    left: '50%',
+    top: 994,
+    marginLeft: -113,
+    width: 226,
+  },
+  hackerTable: {
+    position: 'absolute',
+    left: '50%',
+    top: 1170,
+    marginLeft: -240,
+    width: 480,
+  },
+  hackerSilhouette: {
+    position: 'absolute',
+    left: '50%',
+    top: 1170,
+    marginLeft: -128,
+    width: 255,
+    opacity: 0,
   },
   text: {
     color: '#FFFFFF',
@@ -77,33 +108,54 @@ export default class extends Component {
   }
 
   onScroll = (e) => {
-    this.setState({ offset: e.target.body.scrollTop });
+    const { scrollTop } = e.target.body;
+    if (scrollTop < 1600) {
+      this.setState({ offset: scrollTop });
+    }
   }
 
   render() {
     const { offset } = this.state;
 
-    const top = offset > 800 ? 800 : offset;
+    const silhouetteValue = ((offset - 400) / 800) > 1 ? 1 : ((offset - 400) / 800);
+    const silhouette = {
+      opacity: offset < 400 ? 0 : silhouetteValue,
+      top: offset < 400 ? 1270 : 1270 - (100 * silhouetteValue),
+    };
+
+    const errorValue = (offset / 800) > 1 ? 1 : (offset / 800);
 
     return (
-      <div style={{ ...styles.viewport, paddingTop: top }}>
-        <div style={styles.background}>
-          <div style={styles.enter}>
-            <div style={styles.header}>
-              <div style={styles.title}>
-                <img src={title} alt="黑客公務員的血汗之路" />
+      <div style={styles.viewport}>
+        <div style={styles.box}>
+          <div style={{ paddingTop: 800 * errorValue }}>
+            <div style={styles.background}>
+              <div style={styles.enter}>
+                <div style={styles.header}>
+                  <img style={styles.title} src={title} alt="黑客公務員的血汗之路" />
+                  <Text>;</Text>
+                  {subtitle.map(text => (<Text key={text} style={styles.text}>{text}</Text>))}
+                </div>
               </div>
-              <Text>;</Text>
-              {subtitle.map(text => (<Text key={text} style={styles.text}>{text}</Text>))}
             </div>
+            <div style={styles.padding} />
           </div>
+          <img style={styles.hackerMonitor} src={hackerMonitor} alt="hacker monitor" />
+          <img style={styles.hackerTable} src={hackerTable} alt="hacker table" />
+          <img
+            style={{ ...styles.hackerSilhouette, ...silhouette }}
+            src={hackerSilhouette}
+            alt="hacker silhouette"
+          />
         </div>
-        <div style={styles.padding} />
-        <div style={{ ...styles.error, ...{ top: (top / 800) * 1000 } }}>
+        <div style={{ ...styles.error, ...{ top: 1000 * errorValue } }}>
           <div
             style={{
               ...styles.errorImage,
-              ...{ maxWidth: 2400 - ((top / 800) * 2400), maxHeight: 1350 - ((top / 800) * 1350) },
+              ...{
+                maxWidth: 216 + ((1 - errorValue) * 2592),
+                maxHeight: 121 + ((1 - errorValue) * 1452),
+              },
             }}
           />
         </div>
