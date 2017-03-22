@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import Quote from './Quote';
 import color from '../assets/color';
 import issueSolution from '../assets/issue_solution.png';
@@ -27,7 +27,6 @@ const styles = {
   solution: {
     position: 'relative',
     height: '40%',
-    fontSize: 18,
     marginTop: 40,
     marginLeft: 15,
     marginRight: 15,
@@ -35,10 +34,6 @@ const styles = {
     padding: 10,
     textAlign: 'left',
     boxSizing: 'border-box',
-  },
-  title: {
-    fontSize: 28,
-    textAlign: 'left',
   },
   quote: {
     position: 'absolute',
@@ -73,38 +68,41 @@ const styles = {
   },
 };
 
-function Component({ right, quote, team, experience, solution }) {
-  return (
-    <div style={styles.viewport} >
-      <div style={styles.box}>
-        <div style={styles.issue}>
-          <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
-            {quote}
-          </Quote>
-          <div style={{ ...styles.work, ...(right && styles.workRight) }}>
-            <div>{team}</div>
-            <div>{experience}</div>
+export default class extends PureComponent {
+
+  static propTypes = {
+    right: PropTypes.bool,
+    quote: PropTypes.string.isRequired,
+    team: PropTypes.string.isRequired,
+    experience: PropTypes.string.isRequired,
+    solution: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    right: false,
+  };
+
+  render() {
+    const { right, quote, team, experience, solution } = this.props;
+
+    return (
+      <div style={styles.viewport} >
+        <div style={styles.box}>
+          <div style={styles.issue}>
+            <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }} className="issue">
+              {quote}
+            </Quote>
+            <div style={{ ...styles.work, ...(right && styles.workRight) }}>
+              <div>{team}</div>
+              <div>{experience}</div>
+            </div>
+          </div>
+          <div style={styles.solution} className="issue">
+            {solution}
+            <img style={styles.solutionTip} src={issueSolution} alt="" />
           </div>
         </div>
-        <div style={styles.solution}>
-          {solution}
-          <img style={styles.solutionTip} src={issueSolution} alt="" />
-        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-Component.propTypes = {
-  right: PropTypes.bool,
-  quote: PropTypes.string.isRequired,
-  team: PropTypes.string.isRequired,
-  experience: PropTypes.string.isRequired,
-  solution: PropTypes.string.isRequired,
-};
-
-Component.defaultProps = {
-  right: false,
-};
-
-export default Component;

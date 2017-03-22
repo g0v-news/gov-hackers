@@ -37,12 +37,6 @@ export default class extends PureComponent {
     label: 'history_title',
   });
 
-  onTitleClick = () => Analytics.event({
-    category: 'component',
-    action: 'click',
-    label: 'history_title',
-  });
-
   onSubtitleClick = () => Analytics.event({
     category: 'component',
     action: 'click',

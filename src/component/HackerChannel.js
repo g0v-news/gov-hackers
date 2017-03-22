@@ -11,6 +11,10 @@ const styles = {
     maxWidth: 375,
     margin: '0 auto',
     marginTop: 20,
+    display: 'block',
+    color: '#000',
+    textDecoration: 'none',
+    textAlign: 'left',
   },
   label: {
     top: 'initial',
@@ -66,13 +70,13 @@ export default class extends PureComponent {
     const { quote, tip, link } = this.props;
 
     return (
-      <div style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
+      <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         {quote}
         <Label right top style={styles.label} textStyle={styles.labelText}>
           {tip}
         </Label>
         <More style={styles.more} svgStyle={styles.moreSvg} />
-      </div>
+      </a>
     );
   }
 }

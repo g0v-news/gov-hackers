@@ -56,7 +56,7 @@ export const taiwan = {
     nickname: 'kiang',
     name: '江明宗',
     avatar: kiang,
-    link: '',
+    link: 'https://g0v.news/%E9%BB%91%E5%AE%A2%E5%85%AC%E5%8B%99%E5%93%A1-%E4%B8%AD-%E7%95%B6%E9%BB%91%E5%AE%A2%E6%9D%BE%E5%8F%AA%E7%95%99%E4%B8%8B%E4%B8%80%E6%97%A5%E6%BF%80%E6%83%85-ce93ad56a584#.z12u4s51j',
   }, {
     title: ['當民意退潮', '改革還能繼續？'],
     quote: '人都是被戳、會痛，才會變。',
@@ -66,7 +66,7 @@ export const taiwan = {
     name: '彭盛韶',
     avatar: saul,
     right: true,
-    link: '',
+    link: 'https://g0v.news/%E9%BB%91%E5%AE%A2%E5%85%AC%E5%8B%99%E5%93%A1-%E4%B8%AD-%E7%95%B6%E9%BB%91%E5%AE%A2%E6%9D%BE%E5%8F%AA%E7%95%99%E4%B8%8B%E4%B8%80%E6%97%A5%E6%BF%80%E6%83%85-ce93ad56a584#.z12u4s51j',
   }, {
     title: ['「沒有人」，', '當公僕的公僕'],
     quote: '我是做好（未來）窮困潦倒的準備，才有可能做這件事。',
@@ -76,12 +76,12 @@ export const taiwan = {
     name: '王景弘',
     avatar: tonyq,
     right: true,
-    link: '',
+    link: 'https://g0v.news/%E9%BB%91%E5%AE%A2%E5%85%AC%E5%8B%99%E5%93%A1-%E4%B8%8B-%E6%B2%92%E6%9C%89%E4%BA%BA-%E7%95%B6%E5%85%AC%E5%83%95%E7%9A%84%E5%85%AC%E5%83%95-44754421b3b2#.6u3oa38nw',
   }],
   anonymity: {
     name: 'taiwan',
     quote: ['對於開放政府實踐現況，', '⑫位公務員的第一手觀察'],
-    link: '',
+    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B0-%E5%B0%8D%E6%96%BC%E9%96%8B%E6%94%BE%E6%94%BF%E5%BA%9C%E5%AF%A6%E8%B8%90%E7%8F%BE%E6%B3%81%E7%9A%84%E7%AC%AC%E4%B8%80%E6%89%8B%E8%A7%80%E5%AF%9F-dc93e7ab19cf#.pzxq5po9m',
   },
   window: ['沒有「名份」的黑客、急需甜頭的公務體系，還有逐漸風平浪靜的民意⋯⋯', 'Hacking，要如何繼續？'],
 };
@@ -93,22 +93,22 @@ export const international = {
     title: ['福島核災','讓政府打開大門','迎進黑客'],
     region: '日本',
     cover: japan,
-    link: '',
+    link: 'https://g0v.news/%E5%B0%88%E8%A8%AA-%E4%B8%80%E5%A0%B4%E6%A0%B8%E7%81%BD-%E8%AE%93%E9%BB%91%E5%AE%A2%E6%95%B2%E9%80%B2%E6%97%A5%E6%9C%AC%E6%94%BF%E5%BA%9C%E5%B0%81%E9%96%89%E5%A4%A7%E9%96%80-d7b557af4fc1#.bv8tw52h5',
   }, {
     title: ['讓公務員和','黑客一起新生訓練'],
     region: '澳洲',
     cover: australia,
-    link: '',
+    link: 'https://g0v.news/%E5%B0%88%E8%A8%AA-%E5%BE%9E%E4%B8%80%E5%80%8B%E7%B2%89%E7%B5%B2%E9%A0%81-%E8%AE%8A%E6%BE%B3%E6%B4%B2%E6%94%BF%E5%BA%9C%E6%9C%80%E6%9C%89%E5%8A%9B-%E5%A4%96%E6%8E%9B-c2d7976a81c0#.jsp7ytmf5',
   }, {
     title: ['如何開出讓','黑客搶破頭的','職缺？'],
     region: '巴基斯坦',
     cover: pakistan,
-    link: '',
+    link: 'https://g0v.news/%E5%B0%88%E8%A8%AA-%E5%B7%B4%E5%9F%BA%E6%96%AF%E5%9D%A6%E6%94%BF%E5%BA%9C-%E5%A6%82%E4%BD%95%E9%96%8B%E5%87%BA%E8%AE%93%E9%BB%91%E5%AE%A2%E6%90%B6%E7%A0%B4%E9%A0%AD%E7%9A%84%E8%81%B7%E7%BC%BA-d259e73362dc#.udzcxcbnn',
   }, {
     title: ['⑳人實驗室','給②千萬市民的','數位都更'],
     region: '墨西哥市',
     cover: mexico,
-    link: '',
+    link: 'https://g0v.news/%E5%B0%88%E8%A8%AA-%E5%A2%A8%E8%A5%BF%E5%93%A5-20-%E4%BA%BA%E5%89%B5%E6%96%B0%E5%AF%A6%E9%A9%97%E5%AE%A4-%E7%B5%A6-2100-%E8%90%AC%E4%BA%BA%E7%9A%84%E6%95%B8%E4%BD%8D%E9%83%BD%E6%9B%B4-61d14f8e8893#.kbxcn4k3n',
   }],
   content: [
     '在日本，直到一場核災，政府才開始接受公民社會的協力。在澳洲，政府不知道資料有什麼價值，於是向公民科技社群求救。貪腐嚴重的巴基斯坦，和世界前十大城墨西哥市，急需大破大立，也都拉著民間人才一起衝。',
@@ -117,7 +117,7 @@ export const international = {
   anonymity: {
     name: 'international',
     quote: ['台灣也需要fellowship嗎？', '聽聽第一線公務員怎麼說'],
-    link: '',
+    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B1-%E5%8F%B0%E7%81%A3%E4%B9%9F%E9%9C%80%E8%A6%81-fellowship-%E5%97%8E-%E8%81%BD%E8%81%BD%E7%AC%AC%E4%B8%80%E7%B7%9A%E5%85%AC%E5%8B%99%E5%93%A1%E6%80%8E%E9%BA%BC%E8%AA%AA-9f7673354c77#.hgnlabtx1',
   },
 };
 
@@ -151,7 +151,7 @@ export const civilservant = {
   anonymity: {
     name: 'civilservant',
     quote: ['對於公務體系的升級更新，', '這裡有公務員的真實心聲'],
-    link: '',
+    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B0-%E5%B0%8D%E6%96%BC%E9%96%8B%E6%94%BE%E6%94%BF%E5%BA%9C%E5%AF%A6%E8%B8%90%E7%8F%BE%E6%B3%81%E7%9A%84%E7%AC%AC%E4%B8%80%E6%89%8B%E8%A7%80%E5%AF%9F-dc93e7ab19cf#.pzxq5po9m',
   },
 };
 
@@ -165,7 +165,7 @@ export const solution = {
     name: '高嘉良',
     team: 'g0v共同發起人',
     avatar: cl,
-    link: '',
+    link: 'https://g0v.news/2-%E5%80%8B%E8%B3%87%E6%B7%B1%E9%BB%91%E5%AE%A2-5-%E5%9C%8B%E7%B6%93%E9%A9%97-10-%E5%80%8B%E8%AE%93%E9%BB%91%E5%AE%A2%E8%88%87%E6%94%BF%E5%BA%9C%E9%96%8B%E5%BF%83%E5%85%B1%E4%BA%8B%E7%9A%84%E7%A5%95%E8%A8%A3-786d1d7779fe#.4yq0wysd5',
   }, {
     title: '如何鼓勵黑客貢獻？',
     quote: '持續把貢獻者找來挖坑現場。',
@@ -174,7 +174,7 @@ export const solution = {
     team: 'g0v資深貢獻者',
     avatar: yutin,
     right: true,
-    link: '',
+    link: 'https://g0v.news/2-%E5%80%8B%E8%B3%87%E6%B7%B1%E9%BB%91%E5%AE%A2-5-%E5%9C%8B%E7%B6%93%E9%A9%97-10-%E5%80%8B%E8%AE%93%E9%BB%91%E5%AE%A2%E8%88%87%E6%94%BF%E5%BA%9C%E9%96%8B%E5%BF%83%E5%85%B1%E4%BA%8B%E7%9A%84%E7%A5%95%E8%A8%A3-786d1d7779fe#.4yq0wysd5',
   }],
   editorial: {
     image: editorial,
@@ -189,18 +189,18 @@ export const hacker = {
     name: 'join_slack',
     quote: '想知道黑客們都在聊些什麼嗎？',
     tip: '加入g0v Slack聊天室',
-    link: '',
+    link: 'http://join.g0v.today/',
   }, {
     name: 'ocf_email',
     quote: '想獲得最新的報導及活動訊息嗎？',
     tip: '訂閱OCF電子報',
-    link: '',
+    link: 'http://ocf.tw/subscribe/',
   }],
   share: [
-    { image: share1, link: '' },
-    { image: share2, link: '' },
-    { image: share3, link: '' },
-    { image: share4, link: '' },
+    { name: 'share1', image: share1, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share2', image: share2, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share3', image: share3, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share4', image: share4, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
   ],
 };
 
