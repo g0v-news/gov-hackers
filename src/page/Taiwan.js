@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import Title from '../component/Title';
-import Text from '../component/Text';
 import BodyText from '../component/BodyText';
 import TaiwanPeople from '../component/TaiwanPeople';
 import Anonymity from '../component/Anonymity';

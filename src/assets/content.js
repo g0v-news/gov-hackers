@@ -197,10 +197,10 @@ export const hacker = {
     link: 'http://ocf.tw/subscribe/',
   }],
   share: [
-    { name: 'share1', image: share1, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
-    { name: 'share2', image: share2, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
-    { name: 'share3', image: share3, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
-    { name: 'share4', image: share4, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share1', image: share1, link: 'https://www.facebook.com/dialog/share?app_id=284936411936225&href=http://gov-hackers.g0v.news/&picture=http://gov-hackers.g0v.news/share/1.png' },
+    { name: 'share2', image: share2, link: 'https://www.facebook.com/dialog/share?app_id=284936411936225&href=http://gov-hackers.g0v.news/&picture=http://gov-hackers.g0v.news/share/2.png' },
+    { name: 'share3', image: share3, link: 'https://www.facebook.com/dialog/share?app_id=284936411936225&href=http://gov-hackers.g0v.news/&picture=http://gov-hackers.g0v.news/share/3.png' },
+    { name: 'share4', image: share4, link: 'https://www.facebook.com/dialog/share?app_id=284936411936225&href=http://gov-hackers.g0v.news/&picture=http://gov-hackers.g0v.news/share/4.png' },
   ],
 };
 
