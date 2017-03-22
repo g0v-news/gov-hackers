@@ -189,18 +189,18 @@ export const hacker = {
     name: 'join_slack',
     quote: '想知道黑客們都在聊些什麼嗎？',
     tip: '加入g0v Slack聊天室',
-    link: '',
+    link: 'http://join.g0v.today/',
   }, {
     name: 'ocf_email',
     quote: '想獲得最新的報導及活動訊息嗎？',
     tip: '訂閱OCF電子報',
-    link: '',
+    link: 'http://ocf.tw/subscribe/',
   }],
   share: [
-    { name: 'share1', image: share1, link: '' },
-    { name: 'share2', image: share2, link: '' },
-    { name: 'share3', image: share3, link: '' },
-    { name: 'share4', image: share4, link: '' },
+    { name: 'share1', image: share1, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share2', image: share2, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share3', image: share3, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
+    { name: 'share4', image: share4, link: 'https://www.facebook.com/sharer/sharer.php?u=http://gov-hackers.g0v.news/' },
   ],
 };
 

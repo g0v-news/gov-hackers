@@ -14,6 +14,7 @@ const styles = {
     display: 'block',
     color: '#000',
     textDecoration: 'none',
+    textAlign: 'left',
   },
   label: {
     top: 'initial',
