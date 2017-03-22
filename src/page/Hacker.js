@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Title from '../component/Title';
 import Text from '../component/Text';
 import Share from '../component/Share';
 import HackerChannel from '../component/HackerChannel';
+import Analytics from '../Analytics';
 
 import { hacker } from '../assets/content';
 
@@ -39,21 +40,36 @@ const slider = {
   ],
 };
 
-export default function () {
-  return (
-    <div style={styles.viewport}>
-      {title.map(text => (<Title key={text}>{text}</Title>))}
-      <Text style={styles.subtitle}>{subtitle}</Text>
-      <div style={styles.share} className="slidelink">
-        <Slider {...slider}>
-          {share.map(data => (
-            <div key={data.image} style={styles.slide}>
-              <Share {...data} />
-            </div>
-          ))}
-        </Slider>
+export default class extends PureComponent {
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'hacker_titler',
+  });
+
+  onSubTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'hacker_subtitle',
+  });
+
+  render() {
+    return (
+      <div style={styles.viewport}>
+        {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+        <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
+        <div style={styles.share} className="slidelink">
+          <Slider {...slider}>
+            {share.map(data => (
+              <div key={data.image} style={styles.slide}>
+                <Share {...data} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+        {topic.map(data => (<HackerChannel {...data} />))}
       </div>
-      {topic.map(data => (<HackerChannel {...data} />))}
-    </div>
-  );
+    );
+  }
 }

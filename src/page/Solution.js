@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import Analytics from '../Analytics';
 import Text from '../component/Text';
 import Title from '../component/Title';
 import SolutionPeople from '../component/SolutionPeople';
@@ -45,34 +46,69 @@ const styles = {
   },
 };
 
-export default function () {
-  return (
-    <div style={styles.viewport}>
-      <div style={{ ...styles.row, ...styles.reverse }}>
-        <div style={{ ...styles.right, ...styles.coverWrap }}>
-          <Cover src={cover} style={styles.cover} alt={title.join('')} />
+export default class extends PureComponent {
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'solution_titler',
+  });
+
+  onSubTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'solution_subtitle',
+  });
+
+  onCoverClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'solution_cover',
+  });
+
+  onEditorialClick = () => {
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: 'solution_editorial',
+    });
+
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: 'solution_editorial',
+    });
+  }
+
+  render() {
+    return (
+      <div style={styles.viewport}>
+        <div style={{ ...styles.row, ...styles.reverse }}>
+          <div style={{ ...styles.right, ...styles.coverWrap }}>
+            <Cover src={cover} style={styles.cover} alt={title.join('')} onClick={this.onCoverClick} />
+          </div>
+          <div style={styles.left}>
+            <Text style={styles.subtitle} onClick={this.onCoverClick}>{subtitle}</Text>
+            {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+          </div>
         </div>
-        <div style={styles.left}>
-          <Text style={styles.subtitle}>{subtitle}</Text>
-          {title.map(text => (<Title key={text}>{text}</Title>))}
-        </div>
-      </div>
-      <div style={styles.row}>
-        <div style={styles.left} />
-        <div style={{ ...styles.right, ...styles.topicWrap }}>
-          {topic.map(item => (
+        <div style={styles.row}>
+          <div style={styles.left} />
+          <div style={{ ...styles.right, ...styles.topicWrap }}>
+            {topic.map(item => (
+              <div style={styles.topic}>
+                <SolutionPeople key={item.name} {...item} />
+              </div>
+            ))}
+            <a style={styles.topic} herf={editorial.link} target="gov-news" onClick={this.onEditorialClick}>
+              <img style={styles.topicImage} src={editorial.image} alt="編輯室觀點" />
+            </a>
             <div style={styles.topic}>
-              <SolutionPeople key={item.name} {...item} />
+              <img style={styles.topicImage} src={hackppl} alt="hackppl" />
             </div>
-          ))}
-          <div style={styles.topic}>
-            <img style={styles.topicImage} src={editorial.image} alt="編輯室觀點" />
-          </div>
-          <div style={styles.topic}>
-            <img style={styles.topicImage} src={hackppl} alt="hackppl" />
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }

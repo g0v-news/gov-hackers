@@ -13,6 +13,7 @@ const styles = {
     boxSizing: 'border-box',
     display: 'block',
     color: '#000',
+    textDecoration: 'none',
   },
   box: {
     position: 'absolute',

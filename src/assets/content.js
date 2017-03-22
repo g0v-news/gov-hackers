@@ -197,10 +197,10 @@ export const hacker = {
     link: '',
   }],
   share: [
-    { image: share1, link: '' },
-    { image: share2, link: '' },
-    { image: share3, link: '' },
-    { image: share4, link: '' },
+    { name: 'share1', image: share1, link: '' },
+    { name: 'share2', image: share2, link: '' },
+    { name: 'share3', image: share3, link: '' },
+    { name: 'share4', image: share4, link: '' },
   ],
 };
 

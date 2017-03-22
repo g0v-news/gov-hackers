@@ -89,6 +89,7 @@ const styles = {
     color: color.primary,
     borderBottom: `1px ${color.primary} solid`,
     paddingBottom: 2,
+    textDecoration: 'none',
   },
   logo: {
     width: 140,

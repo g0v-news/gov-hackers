@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
+import Analytics from '../Analytics';
 import Title from '../component/Title';
 import Text from '../component/Text';
 import Image from '../component/Image';
@@ -49,6 +50,9 @@ const styles = {
     boxSizing: 'border-box',
     border: `1px ${color.border} solid`,
     marginTop: 10,
+    display: 'block',
+    color: '#000',
+    textDecoration: 'none',
   },
   linkTitle: {
     fontSize: 28,
@@ -76,41 +80,69 @@ const slider = {
   dotsClass: 'slick-dots civildot',
 };
 
-export default function () {
-  return (
-    <div style={styles.viewport}>
-      <div style={styles.cover}>
-        <div>
-          <Image src={office} alt={title.join('')} />
-        </div>
-        <div className="disabled-mobile">
-          <Image src={officeDigital} alt={title.join('')} />
-        </div>
-      </div>
-      <div style={{ ...styles.row, ...styles.content }}>
-        <div style={styles.left}>
-          <Text style={styles.subtitle}>{subtitle}</Text>
-          {title.map(text => (<Title key={text}>{text}</Title>))}
-        </div>
-        <div style={styles.right}>
-          <div style={styles.issue}>
-            <Slider {...slider}>
-              {issue.map(data => (
-                <div key={data.quote}>
-                  <Issue {...data} />
-                </div>
-              ))}
-            </Slider>
+export default class extends PureComponent {
+
+  onTitileClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'civilservant_title',
+  });
+
+  onSubTitileClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'civilservant_subtitle',
+  });
+
+  onLinkClick = () => {
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: 'civilservant_topic',
+    });
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: 'civilservant_topic',
+    });
+  }
+
+  render() {
+    return (
+      <div style={styles.viewport}>
+        <div style={styles.cover}>
+          <div>
+            <Image src={office} alt={title.join('')} />
           </div>
-          <Image src={civilservant.avatar} alt="au" />
-          <div style={styles.link}>
-            <Label top left>專訪</Label>
-            <div style={styles.linkTitle}>{link.quote}</div>
-            <More style={styles.more} />
+          <div className="disabled-mobile">
+            <Image src={officeDigital} alt={title.join('')} />
           </div>
         </div>
+        <div style={{ ...styles.row, ...styles.content }}>
+          <div style={styles.left}>
+            <Text style={styles.subtitle} onClick={this.onSubTitileClick}>{subtitle}</Text>
+            {title.map(text => (<Title key={text} onClick={this.onTitileClick}>{text}</Title>))}
+          </div>
+          <div style={styles.right}>
+            <div style={styles.issue}>
+              <Slider {...slider}>
+                {issue.map(data => (
+                  <div key={data.quote}>
+                    <Issue {...data} />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+            <Image src={civilservant.avatar} alt="au" />
+            <a style={styles.link} heef={link.link} target="gov-news" onClick={this.onLinkClick}>
+              <Label top left>專訪</Label>
+              <div style={styles.linkTitle}>{link.quote}</div>
+              <More style={styles.more} />
+            </a>
+          </div>
+        </div>
+        <Anonymity {...anonymity} />
       </div>
-      <Anonymity {...anonymity} />
-    </div>
-  );
+    );
+  }
 }

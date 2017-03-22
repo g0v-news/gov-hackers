@@ -8,6 +8,9 @@ const styles = {
     padding: 4,
     paddingBottom: 26,
     boxSizing: 'border-box',
+    display: 'block',
+    color: '#000',
+    textDecoration: 'none',
   },
   label: {
     top: 'initial',
