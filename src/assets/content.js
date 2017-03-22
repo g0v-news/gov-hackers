@@ -13,6 +13,7 @@ import share1 from './quote_to_share/1.png';
 import share2 from './quote_to_share/2.png';
 import share3 from './quote_to_share/3.png';
 import share4 from './quote_to_share/4.png';
+import editorial from './editorial.png';
 
 export const enter = {
   subtitle: [
@@ -158,6 +159,7 @@ export const solution = {
     avatar: yutin,
     right: true,
   }],
+  editorial,
 };
 
 export const hacker = {

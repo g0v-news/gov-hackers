@@ -6,8 +6,9 @@ import Cover from '../component/Cover';
 import { solution } from '../assets/content';
 import guides from '../assets/guides';
 import cover from '../assets/solution_cover.jpg';
+import hackppl from '../assets/hackppl.png';
 
-const { title, subtitle, topic } = solution;
+const { title, subtitle, editorial, topic } = solution;
 
 const styles = {
   ...guides,
@@ -26,13 +27,21 @@ const styles = {
   subtitle: {
     fontSize: 24,
   },
+  reverse: {
+    flexDirection: 'row-reverse',
+  },
+  topicWrap: {
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'space-between',
+  },
   topic: {
     position: 'relative',
     flex: '1 1 330px',
-    marginBottom: 1,
+    marginTop: 5,
   },
-  reverse: {
-    flexDirection: 'row-reverse',
+  topicImage: {
+    width: '100%',
   },
 };
 
@@ -50,13 +59,17 @@ export default function () {
       </div>
       <div style={styles.row}>
         <div style={styles.left} />
-        <div style={styles.right} className="slidebox">
-          <div>
-            {topic.map(item => (
-              <div style={styles.topic}>
-                <SolutionPeople key={item.name} {...item} />
-              </div>
-            ))}
+        <div style={{ ...styles.right, ...styles.topicWrap }}>
+          {topic.map(item => (
+            <div style={styles.topic}>
+              <SolutionPeople key={item.name} {...item} />
+            </div>
+          ))}
+          <div style={styles.topic}>
+            <img style={styles.topicImage} src={editorial} alt="編輯室觀點" />
+          </div>
+          <div style={styles.topic}>
+            <img style={styles.topicImage} src={hackppl} alt="hackppl" />
           </div>
         </div>
       </div>
