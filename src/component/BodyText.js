@@ -6,7 +6,7 @@ const styles = {
     textAlign: 'left',
     lineHeight: 1.6667,
     maxWidth: 288,
-    margin: '0 auto',
+    margin: '0 auto 30px',
   },
 };
 

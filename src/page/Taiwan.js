@@ -46,8 +46,8 @@ const styles = {
   reverse: {
     flexDirection: 'row-reverse',
   },
-  windowTextBottom: {
-    fontWeight: 'bold',
+  windowText: {
+    width: 198,
   },
 };
 
@@ -112,7 +112,7 @@ export default class extends PureComponent {
         <Anonymity {...anonymity} />
         <Window>
           {window.map(text => (
-            <BodyText key={text}>{text}</BodyText>
+            <BodyText style={styles.windowText} key={text}>{text}</BodyText>
           ))}
         </Window>
       </div>
