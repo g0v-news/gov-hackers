@@ -4,6 +4,7 @@ import BodyText from '../component/BodyText';
 import { license } from '../assets/content';
 import logo from '../assets/logo.png';
 import external from '../assets/external_link.png';
+import github from '../assets/github.png';
 import color from '../assets/color';
 
 const { image, interview, publication, author } = license;
@@ -97,6 +98,12 @@ const styles = {
     marginTop: 80,
     marginBottom: 40,
   },
+  github: {
+    width: 32,
+    height: 32,
+    margin: '0 auto',
+    marginTop: 28,
+  },
 };
 
 export default function () {
@@ -148,6 +155,9 @@ export default function () {
           ))}
         </tbody>
       </table>
+      <a href="https://github.com/g0v-news/gov-hackers" target="github">
+        <img style={styles.github} src={github} alt="github" />
+      </a>
       <img style={styles.logo} src={logo} alt="g0v.news" />
     </div>
   );
