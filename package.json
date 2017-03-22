@@ -5,6 +5,7 @@
   "engines": {
     "node": "6.9.5"
   },
+  "homepage": "https://gov-hackers.g0v.news/",
   "dependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.18.0",
@@ -14,17 +15,19 @@
     "eslint-plugin-react": "^6.10.0",
     "exenv": "^1.2.1",
     "express": "^4.15.2",
+    "gh-pages": "^0.12.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-scripts": "0.9.3",
     "react-scroll": "^1.4.7",
-    "react-slick": "^0.14.7",
-    "react-scripts": "0.9.3"
+    "react-slick": "^0.14.7"
   },
   "scripts": {
     "develop": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start": "react-scripts build; node server.js"
+    "start": "react-scripts build; node server.js",
+    "deploy": "react-scripts build; gh-pages -d build"
   }
 }
