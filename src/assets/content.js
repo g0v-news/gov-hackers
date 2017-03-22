@@ -47,7 +47,7 @@ export const taiwan = {
     nickname: 'peggy',
     name: '羅佩琪',
     avatar: peggy,
-    link: '',
+    link: 'https://g0v.news/%E9%BB%91%E5%AE%A2%E5%85%AC%E5%8B%99%E5%93%A1-%E4%B8%8A-%E4%B8%80%E5%80%8B%E7%B4%84%E8%81%98%E4%BA%BA%E5%93%A1-%E5%8A%9B%E6%8E%A8%E6%96%B0%E7%B5%84%E7%B9%94%E6%96%87%E5%8C%96-4260e2addd5a',
   }, {
     title: ['當黑客松', '只剩下一日激情'],
     quote: '（政府）一直辦黑客松，是因為我們走不到下一步。',
@@ -178,7 +178,7 @@ export const solution = {
   }],
   editorial: {
     image: editorial,
-    link: '',
+    link: 'https://g0v.news/%E7%B7%A8%E8%BC%AF%E7%BE%A4%E8%A7%80%E9%BB%9E-%E9%96%8B%E6%94%BE%E6%94%BF%E5%BA%9C%E7%9A%84%E6%A0%B8%E5%BF%83-%E7%95%B6%E4%B8%80%E5%80%8B-%E6%B2%92%E6%9C%89%E4%BA%BA-d5f2bbbae884#.hxb5iiang',
   },
 };
 
