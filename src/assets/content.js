@@ -195,6 +195,11 @@ export const hacker = {
     quote: '想獲得最新的報導及活動訊息嗎？',
     tip: '訂閱OCF電子報',
     link: 'http://ocf.tw/subscribe/',
+  }, {
+    name: 'ocf_donate',
+    quote: 'g0v.news是開化文化基金會國際交流專案之一',
+    tip: '捐款支持',
+    link: 'https://ocf.neticrm.tw/civicrm/contribute/transact?reset=1&id=11&_ga=1.54528875.130262601.1484722201',
   }],
   share: [
     { name: 'share1', image: share1, link: 'https://www.facebook.com/dialog/share?app_id=284936411936225&href=http://gov-hackers.g0v.news/&picture=http://gov-hackers.g0v.news/share/1.png' },
@@ -226,7 +231,7 @@ export const license = {
   ],
   interview: [{ name: '台灣公務革新力量聯盟', link: 'https://www.facebook.com/thinking4public/' }],
   publication: [
-    { name: '商業週刊', link: 'http://www.businessweekly.com.tw/' },
+    { name: '商業周刊', link: 'http://www.businessweekly.com.tw/' },
     { name: '報導者', link: 'https://www.twreporter.org/' },
   ],
   author: [
