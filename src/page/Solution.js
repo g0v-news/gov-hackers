@@ -12,6 +12,9 @@ const { title, subtitle, topic } = solution;
 const styles = {
   ...guides,
   viewport: {
+    width: '100%',
+    maxWidth: 1024,
+    margin: '0 auto',
     marginTop: 28,
   },
   cover: {

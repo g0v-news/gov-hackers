@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const styles = {
   viewport: {
     position: 'relative',
-    width: '100%',
+    padding: 4,
     boxSizing: 'border-box',
   },
 };
@@ -11,7 +11,9 @@ const styles = {
 function Component({ image }) {
   return (
     <div style={styles.viewport}>
-      <img src={image} alt="" />
+      <div>
+        <img src={image} alt="" />
+      </div>
     </div>
   );
 }
