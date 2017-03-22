@@ -68,13 +68,13 @@ const styles = {
   },
   teamWork: {
     textAlign: 'left',
-    paddingTop: 10,
+    padding: '4px 8px',
   },
   teamNickname: {
-    paddingTop: 10,
+    padding: '4px 8px',
   },
   teamName: {
-    paddingTop: 10,
+    padding: '4px 8px',
   },
   externalLink: {
     display: 'flex',
