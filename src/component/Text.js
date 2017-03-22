@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const styles = {
   viewport: {
     fontSize: 22,
-    textAlign: 'justify',
+    textAlign: 'left',
     paddingLeft: 20,
     paddingRight: 20,
     lineHeight: 1.2,

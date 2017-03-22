@@ -8,7 +8,7 @@ const styles = {
     backgroundSize: '22px 24px',
     backgroundImage: `url(${quote})`,
     backgroundRepeat: 'no-repeat',
-    textAlign: 'justify',
+    textAlign: 'left',
     color: '#444444',
     fontSize: 18,
     lineHeight: 1.2,
