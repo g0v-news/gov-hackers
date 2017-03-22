@@ -21,7 +21,8 @@ const styles = {
     right: 1,
     border: `1px ${color.border}  solid`,
     boxSizing: 'border-box',
-    padding: 7,
+    padding: 10,
+    paddingRight: 60,
   },
   cover: {
     position: 'absolute',
@@ -31,10 +32,7 @@ const styles = {
     width: '100%',
   },
   title: {
-    fontSize: 30,
     textAlign: 'left',
-    padding: 20,
-    paddingRight: 40,
     width: '100%',
   },
   image: {
@@ -86,7 +84,7 @@ export default class extends PureComponent {
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
-          <div style={styles.title}>{title.join('')}</div>
+          <div style={styles.title} className="interview">{title.join('')}</div>
           <div style={styles.cover}>
             <img style={styles.image} src={cover} alt={region} />
           </div>

@@ -27,7 +27,6 @@ const styles = {
   solution: {
     position: 'relative',
     height: '40%',
-    fontSize: 18,
     marginTop: 40,
     marginLeft: 15,
     marginRight: 15,
@@ -35,10 +34,6 @@ const styles = {
     padding: 10,
     textAlign: 'left',
     boxSizing: 'border-box',
-  },
-  title: {
-    fontSize: 28,
-    textAlign: 'left',
   },
   quote: {
     position: 'absolute',
@@ -94,7 +89,7 @@ export default class extends PureComponent {
       <div style={styles.viewport} >
         <div style={styles.box}>
           <div style={styles.issue}>
-            <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
+            <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }} className="issue">
               {quote}
             </Quote>
             <div style={{ ...styles.work, ...(right && styles.workRight) }}>
@@ -102,7 +97,7 @@ export default class extends PureComponent {
               <div>{experience}</div>
             </div>
           </div>
-          <div style={styles.solution}>
+          <div style={styles.solution} className="issue">
             {solution}
             <img style={styles.solutionTip} src={issueSolution} alt="" />
           </div>
