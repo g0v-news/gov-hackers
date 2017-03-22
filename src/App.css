@@ -167,3 +167,97 @@
         display: none;
     }
 }
+
+
+.mouse {
+    height: 50px;
+    width: 35px;
+    border-radius: 16px;
+    border: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.25);
+    box-sizing: border-box;
+}
+.mouse:after {
+    content: '';
+    display: block;
+    height: 8px;
+    width: 2px;
+    margin: 10px auto;
+    background: #fff;
+    position: relative;
+    -webkit-animation: mouse 1.2s ease infinite;
+    animation: mouse 1.2s ease infinite
+}
+.arrow-scroll {
+    width: 35px;
+    margin-top: 10px
+}
+.arrow-scroll>span {
+    font-family: Arial, sans-serif;
+    display: block;
+    width: 9px;
+    height: 9px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin: 5px auto 3px;
+    -webkit-animation: arrowscroll 1s infinite;
+    animation: arrowscroll 1s infinite;
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s
+}
+.arrow-scroll>span:first-child {
+    -webkit-animation-delay: .1s;
+    animation-delay: .1s
+}
+.arrow-scroll>span:last-child {
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s
+}
+@-webkit-keyframes mouse {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(8px);
+        transform: translateY(8px)
+    }
+}
+@keyframes mouse {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translateY(8px);
+        transform: translateY(8px)
+    }
+}
+@-webkit-keyframes arrowscroll {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: .5
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes arrowscroll {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: .5
+    }
+    to {
+        opacity: 1
+    }
+}

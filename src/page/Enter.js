@@ -45,6 +45,13 @@ const styles = {
     marginTop: 40,
     marginBottom: 40,
   },
+  enterTip: {
+    position: 'absolute',
+    left: '50%',
+    bottom: 30,
+    marginLeft: -17.5,
+    width: 35,
+  },
   hackerMonitor: {
     position: 'absolute',
     left: '50%',
@@ -63,7 +70,7 @@ const styles = {
     position: 'absolute',
     left: '50%',
     top: 1170,
-    marginLeft: -128,
+    marginLeft: -127.5,
     width: 255,
     opacity: 0,
   },
@@ -125,6 +132,8 @@ export default class extends Component {
 
     const errorValue = (offset / 800) > 1 ? 1 : (offset / 800);
 
+    const enterTip = { opacity: offset > 100 ? 0 : 1 - (offset / 100) };
+
     return (
       <div style={styles.viewport}>
         <div style={styles.box}>
@@ -158,6 +167,14 @@ export default class extends Component {
               },
             }}
           />
+        </div>
+        <div style={{ ...styles.enterTip, ...enterTip }}>
+          <div className="mouse" />
+          <div className="arrow-scroll">
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
       </div>
     );
