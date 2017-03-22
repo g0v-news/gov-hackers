@@ -47,6 +47,7 @@ export const taiwan = {
     nickname: 'peggy',
     name: '羅佩琪',
     avatar: peggy,
+    link: '',
   }, {
     title: ['當黑客松', '只剩下一日激情'],
     quote: '一直辦黑客松，是因為我們走不到下一步。',
@@ -55,6 +56,7 @@ export const taiwan = {
     nickname: 'kiang',
     name: '江明宗',
     avatar: kiang,
+    link: '',
   }, {
     title: ['當民意退潮', '改革還能繼續？'],
     quote: '人都是被戳、會痛，才會變。',
@@ -64,6 +66,7 @@ export const taiwan = {
     name: '彭盛韶',
     avatar: saul,
     right: true,
+    link: '',
   }, {
     title: ['「沒有人」，', '當公僕的公僕'],
     quote: '我是做好（未來）窮困潦倒的準備，才有可能做這件事。',
@@ -73,6 +76,7 @@ export const taiwan = {
     name: '王景弘',
     avatar: tonyq,
     right: true,
+    link: '',
   }],
   anonymity: {
     quote: ['對於開放政府實踐現況，', '⑫位公務員的第一手觀察'],
@@ -88,18 +92,22 @@ export const international = {
     title: ['福島核災讓政府打開大門迎進黑客'],
     region: '日本',
     cover: japan,
+    link: '',
   }, {
     title: ['讓公務員和黑客一起新生訓練'],
     region: '澳洲',
     cover: australia,
+    link: '',
   }, {
     title: ['如何開出讓黑客搶破頭的職缺？'],
     region: '巴基斯坦',
     cover: pakistan,
+    link: '',
   }, {
     title: ['⑳人實驗室給②千萬市民的數位都更'],
     region: '墨西哥市',
     cover: mexico,
+    link: '',
   }],
   content: [
     '在日本，直到一場核災，政府才接受社群的協力。在澳洲，政府不知道資料有什麼價值，於是打電話向社群求救。貪腐嚴重的巴基斯坦、世界第十大城墨西哥市，急需大破大立，也都拉著民間人才一起衝。',
@@ -119,20 +127,24 @@ export const civilservant = {
     team: '稅務單位',
     experience: '總年資10年',
     solution: '引進自動化工具，沒有別的辦法。',
+    link: '',
   }, {
     quote: '毫無疑問組織文化是政府數位化的最大阻力。',
     team: '中央規劃單位',
     experience: '總年資4.5年',
     solution: '除了（公務員）組織起來之外，難道有別的辦法嗎？',
+    link: '',
   }, {
     quote: '中高階公務員都不願意多做事，開放政府很明顯會增加工作量，多數會極力抗拒。',
     team: '衛福部',
     experience: '總年資1年',
     solution: '我覺得很多（情況）是沒有政治意志，沒有政治意志就沒有錢，即使有能力看到需求，也做不到。',
+    link: '',
   }],
   avatar: au,
   link: {
     quote: ['要公務員搶回主動權', '她計畫這麼做'],
+    link: '',
   },
   anonymity: {
     quote: ['對於公務體系的升級更新，', '這裡有公務員的真實心聲'],
@@ -150,6 +162,7 @@ export const solution = {
     name: '高嘉良',
     team: 'g0v共同發起人',
     avatar: cl,
+    link: '',
   }, {
     title: '如何鼓勵黑客貢獻？',
     quote: '持續把貢獻者找來挖坑現場。',
@@ -158,8 +171,12 @@ export const solution = {
     team: 'g0v資深貢獻者',
     avatar: yutin,
     right: true,
+    link: '',
   }],
-  editorial,
+  editorial: {
+    image: editorial,
+    link: '',
+  },
 };
 
 export const hacker = {

@@ -66,7 +66,7 @@ export default function () {
             </div>
           ))}
           <div style={styles.topic}>
-            <img style={styles.topicImage} src={editorial} alt="編輯室觀點" />
+            <img style={styles.topicImage} src={editorial.image} alt="編輯室觀點" />
           </div>
           <div style={styles.topic}>
             <img style={styles.topicImage} src={hackppl} alt="hackppl" />

@@ -7,6 +7,7 @@ import Civilservant from './page/Civilservant';
 import Solution from './page/Solution';
 import Hacker from './page/Hacker';
 import License from './page/License';
+import './Analytics';
 import './App.css';
 
 class App extends Component {

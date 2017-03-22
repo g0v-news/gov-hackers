@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Text from '../component/Text';
 import Title from '../component/Title';
 import Event from '../component/Event';
+import Analytics from '../Analytics';
 
 import color from '../assets/color';
 import guides from '../assets/guides';
@@ -28,16 +29,43 @@ const styles = {
   },
 };
 
-export default function () {
-  return (
-    <div style={styles.viewport}>
-      <Text style={styles.subtitle}>{history.subtitle}</Text>
-      {title.map(text => (
-        <Title key={text} style={styles.title}>{text}</Title>
-      ))}
-      {event.map(({ content, ...item }) => (
-        <Event key={item.name} {...item}>{content}</Event>
-      ))}
-    </div>
-  );
+export default class extends PureComponent {
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'history_title',
+  });
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'history_title',
+  });
+
+  onSubtitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'history_subtitle',
+  });
+
+  onEventClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'history_event',
+  });
+
+  render() {
+    return (
+      <div style={styles.viewport}>
+        <Text style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</Text>
+        {title.map(text => (
+          <Title key={text} style={styles.title} onClick={this.onTitleClick}>{text}</Title>
+        ))}
+        {event.map(({ content, ...item }) => (
+          <Event key={item.name} onClick={this.onEventClick} {...item}>{content}</Event>
+        ))}
+      </div>
+    );
+  }
 }

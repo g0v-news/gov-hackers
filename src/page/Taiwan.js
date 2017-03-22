@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
+import Analytics from '../Analytics';
 import Title from '../component/Title';
 import Text from '../component/Text';
 import TaiwanPeople from '../component/TaiwanPeople';
@@ -63,36 +64,57 @@ const slider = {
   ],
 };
 
-export default function () {
-  return (
-    <div style={styles.viewport}>
-      <div style={{ ...styles.row, ...styles.reverse }}>
-        <div style={{ ...styles.right, ...styles.cover }}>
-          <Cover src={cover} alt="黑客進政府實錄" />
+export default class extends PureComponent {
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'taiwan_title',
+  });
+
+  onSubTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'taiwan_subtitle',
+  });
+
+  onCoverClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'taiwan_cover',
+  });
+
+  render() {
+    return (
+      <div style={styles.viewport}>
+        <div style={{ ...styles.row, ...styles.reverse }}>
+          <div style={{ ...styles.right, ...styles.cover }}>
+            <Cover src={cover} alt="黑客進政府實錄" onClick={this.onCoverClick} />
+          </div>
+          <div style={styles.left}>
+            {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+            <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
+          </div>
         </div>
-        <div style={styles.left}>
-          {title.map(text => (<Title key={text}>{text}</Title>))}
-          <Text style={styles.subtitle}>{subtitle}</Text>
+        <div style={styles.row}>
+          <div style={styles.left} />
+          <div style={{ ...styles.right, ...styles.topic }} className="slidebox">
+            <Slider {...slider}>
+              {topic.map(data => (
+                <div key={data.name} style={styles.slide}>
+                  <TaiwanPeople {...data} />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
+        <Anonymity {...anonymity} />
+        <Window>
+          {window.map(text => (
+            <Text key={text} style={styles.windowText}>{text}</Text>
+          ))}
+        </Window>
       </div>
-      <div style={styles.row}>
-        <div style={styles.left} />
-        <div style={{ ...styles.right, ...styles.topic }} className="slidebox">
-          <Slider {...slider}>
-            {topic.map(data => (
-              <div key={data.name} style={styles.slide}>
-                <TaiwanPeople {...data} />
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </div>
-      <Anonymity {...anonymity} />
-      <Window>
-        {window.map(text => (
-          <Text key={text} style={styles.windowText}>{text}</Text>
-        ))}
-      </Window>
-    </div>
-  );
+    );
+  }
 }

@@ -3,6 +3,7 @@ import ExecutionEnvironment from 'exenv';
 import Text from '../component/Text';
 import color from '../assets/color';
 import { enter } from '../assets/content';
+import Analytics from '../Analytics';
 
 import title from '../assets/title.png';
 import hackerMonitor from '../assets/hacker_monitor.png';
@@ -121,6 +122,24 @@ export default class extends Component {
     }
   }
 
+  onWarningClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'enter_warning',
+  });
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'enter_title',
+  });
+
+  onSubtitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'enter_subtitle',
+  });
+
   render() {
     const { offset } = this.state;
 
@@ -141,9 +160,13 @@ export default class extends Component {
             <div style={styles.background}>
               <div style={styles.enter}>
                 <div style={styles.header}>
-                  <img style={styles.title} src={title} alt="黑客公務員的血汗之路" />
+                  <img style={styles.title} src={title} alt="黑客公務員的血汗之路" onClick={this.onTitleClick} />
                   <Text>;</Text>
-                  {subtitle.map(text => (<Text key={text} style={styles.text}>{text}</Text>))}
+                  {subtitle.map(text => (
+                    <Text key={text} style={styles.text} onClick={this.onSubtitleClick}>
+                      {text}
+                    </Text>
+                  ))}
                 </div>
               </div>
             </div>
@@ -166,6 +189,7 @@ export default class extends Component {
                 maxHeight: 121 + ((1 - errorValue) * 1452),
               },
             }}
+            onClick={this.onWarningClick}
           />
         </div>
         <div style={{ ...styles.enterTip, ...enterTip }}>
