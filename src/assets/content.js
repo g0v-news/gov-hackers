@@ -167,10 +167,12 @@ export const hacker = {
   subtitle: '不用會寫程式，你也可以成為黑客。',
   topic: [{
     quote: '想知道黑客們都在聊些什麼嗎？',
-    link: '加入 g0v Slack 聊天室',
+    tip: '加入 g0v Slack 聊天室',
+    link: '',
   }, {
     quote: '想獲得最新的報導及活動訊息嗎？',
-    link: '訂閱OCF電子報',
+    tip: '訂閱OCF電子報',
+    link: '',
   }],
   share: [
     { image: share1, link: '' },

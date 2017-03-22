@@ -3,10 +3,11 @@ import Slider from 'react-slick';
 import Title from '../component/Title';
 import Text from '../component/Text';
 import Share from '../component/Share';
+import HackerChannel from '../component/HackerChannel';
 
 import { hacker } from '../assets/content';
 
-const { title, subtitle, share } = hacker;
+const { title, subtitle, share, topic } = hacker;
 
 const styles = {
   viewport: {
@@ -52,6 +53,7 @@ export default function () {
           ))}
         </Slider>
       </div>
+      {topic.map(data => (<HackerChannel {...data} />))}
     </div>
   );
 }

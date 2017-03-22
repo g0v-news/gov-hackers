@@ -5,23 +5,24 @@ import Label from './Label';
 const styles = {
   viewport: {
     position: 'relative',
-    padding: 4,
-    paddingBottom: 26,
-    boxSizing: 'border-box',
+    height: 50,
+    width: '100%',
+    maxWidth: 375,
+    margin: '0 auto',
+    marginTop: 20,
   },
   label: {
     top: 'initial',
-    right: 4,
     bottom: 0,
   },
   labelText: {
-    width: 100,
+    width: 200,
     paddingRight: 23,
     justifyContent: 'flex-end',
   },
   more: {
     position: 'absolute',
-    right: 4,
+    right: 2,
     bottom: 4,
   },
   moreSvg: {
@@ -30,14 +31,12 @@ const styles = {
   },
 };
 
-function Component({ image }) {
+function Component({ quote, tip }) {
   return (
     <div style={styles.viewport}>
-      <div>
-        <img src={image} alt="" />
-      </div>
+      {quote}
       <Label right top style={styles.label} textStyle={styles.labelText}>
-        分享
+        {tip}
       </Label>
       <More style={styles.more} svgStyle={styles.moreSvg} />
     </div>
@@ -45,7 +44,11 @@ function Component({ image }) {
 }
 
 Component.propTypes = {
-  image: PropTypes.string.isRequired,
+  quote: PropTypes.string.isRequired,
+  tip: PropTypes.string.isRequired,
+};
+
+Component.defaultProps = {
 };
 
 export default Component;

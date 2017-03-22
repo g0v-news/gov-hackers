@@ -44,6 +44,7 @@ export default class extends PureComponent {
 
   static propTypes = {
     style: PropTypes.shape(),
+    textStyle: PropTypes.shape(),
     top: PropTypes.bool,
     left: PropTypes.bool,
     right: PropTypes.bool,
@@ -52,6 +53,7 @@ export default class extends PureComponent {
 
   static defaultProps ={
     style: {},
+    textStyle: {},
     top: false,
     left: false,
     right: false,
@@ -98,7 +100,7 @@ export default class extends PureComponent {
   }
 
   render() {
-    const { style, top, left, right, children } = this.props;
+    const { style, textStyle, top, left, right, children } = this.props;
 
     return (
       <div
@@ -111,7 +113,7 @@ export default class extends PureComponent {
         }}
       >
         {right && this.renderLeft()}
-        <div style={styles.text}>
+        <div style={{ ...styles.text, ...textStyle }}>
           {children}
         </div>
         {left && this.renderRight()}
