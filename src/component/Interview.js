@@ -84,7 +84,9 @@ export default class extends PureComponent {
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
-          <div style={styles.title} className="interview">{title.join('')}</div>
+          {title.map(text => (
+            <div style={styles.title} className="interview">{text}</div>
+          ))}
           <div style={styles.cover}>
             <img style={styles.image} src={cover} alt={region} />
           </div>

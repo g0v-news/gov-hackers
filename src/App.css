@@ -273,12 +273,12 @@
 }
 
 .interview {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 @media screen and (min-device-width: 360px) {
   .interview {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
 
