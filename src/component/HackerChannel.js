@@ -24,6 +24,7 @@ const styles = {
     width: 200,
     paddingRight: 23,
     justifyContent: 'flex-end',
+    fontSize: 16,
   },
   more: {
     position: 'absolute',

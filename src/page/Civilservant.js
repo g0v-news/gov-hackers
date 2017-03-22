@@ -143,7 +143,9 @@ export default class extends PureComponent {
             <img style={styles.au} src={civilservant.avatar} alt="au" />
             <a style={styles.link} href={link.link} target="gov-news" onClick={this.onLinkClick}>
               <Label top left>專訪</Label>
-              <div style={styles.linkTitle}>{link.quote}</div>
+              <div style={styles.linkTitle}>{link.quote.map(text => (
+                <div>{text}</div>
+              ))}</div>
               <More style={styles.more} />
             </a>
           </div>

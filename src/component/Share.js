@@ -32,6 +32,9 @@ const styles = {
     width: 18,
     height: 18,
   },
+  image: {
+    display: 'block',
+  }
 };
 
 export default class extends PureComponent {
@@ -67,7 +70,7 @@ export default class extends PureComponent {
     return (
       <div style={styles.viewport}>
         <div>
-          <img src={image} alt="" />
+          <img style={styles.image} src={image} alt="" />
         </div>
         <a href={link} target="gov-news" onClick={this.onClick}>
           <Label right top style={styles.label} textStyle={styles.labelText}>
