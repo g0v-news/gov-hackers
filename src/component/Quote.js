@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import quote from '../assets/quote_mark.png';
+import fonts from '../assets/fonts.js';
 
 const styles = {
   viewport: {
@@ -11,7 +12,8 @@ const styles = {
     textAlign: 'left',
     color: '#444444',
     fontSize: 18,
-    lineHeight: 1.2,
+    lineHeight: 1.2222,
+    fontFamily: fonts.serif,
   },
 };
 

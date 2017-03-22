@@ -13,8 +13,8 @@ const styles = {
     maxWidth: 320,
   },
   date: {
-    width: 100,
-    fontSize: 20,
+    width: 72,
+    fontSize: 18,
     textAlign: 'left',
     color: color.textAssist,
   },

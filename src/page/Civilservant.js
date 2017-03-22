@@ -141,7 +141,7 @@ export default class extends PureComponent {
               </Slider>
             </div>
             <img style={styles.au} src={civilservant.avatar} alt="au" />
-            <a style={styles.link} heef={link.link} target="gov-news" onClick={this.onLinkClick}>
+            <a style={styles.link} href={link.link} target="gov-news" onClick={this.onLinkClick}>
               <Label top left>專訪</Label>
               <div style={styles.linkTitle}>{link.quote}</div>
               <More style={styles.more} />
