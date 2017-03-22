@@ -18,18 +18,18 @@ import editorial from './editorial.png';
 export const enter = {
   subtitle: [
     '「我們在數位時代裡生活、做生意，但政府最後一次大型組織再造，卻是黑白電視時代的事，」美國前總統歐巴馬說。',
-    '數位時代，「更新政府」大家都想做，但公務員們卻說，他們急需幫手。',
+    '在數位時代，「更新政府」大家都想做，但公務員們卻說，他們急需幫手。',
     '黑客，就是在面對無助時，能自己打造工具解決問題的人。當黑客走進政府，他們讓公務員，看見什麼可能？',
   ],
 };
 
 export const history = {
-  title: ['回首黑客們近年來的', '重要出擊'],
+  title: ['回首黑客們近年來的', '關鍵出擊'],
   subtitle: '2014-now',
   event: [
-    { date: '2014/03', name: '太陽花學運', content: '公民黑客運用並開發了各種數位工具參與學運' },
-    { date: '2014/12', name: '柯P宣誓開放政府', content: '柯文哲以「開放政府、全民參與」為政見，當選台北市長' },
-    { date: '2015/01', name: '黑客，幫行政院長上課', content: '選後新內閣的必修課：網路趨勢研習營，講師包括羅佩琪、王景弘、高嘉良等人' },
+    { date: '2014/03', name: '太陽花學運', content: '公民黑客運用並開發各種數位工具參與學運' },
+    { date: '2014/12', name: '柯P宣誓開放政府', content: '柯文哲提出「開放政府」，邀集黑客擔任競選幕僚，後當選台北市長' },
+    { date: '2015/01', name: '黑客幫行政院長上課', content: '選後新內閣的必修課「網路趨勢研習營」，講師包括羅佩琪、王景弘、高嘉良等人' },
     { date: '2015/06', name: '八仙塵爆', content: '點燃台北市與網路社群協作的第一案，24小時內開發傷患搜尋網站' },
     { date: '2016/06', name: '開放台電', content: '70歲台電的黑客松初體驗' },
     { date: '2016/10', name: '唐鳳就任政委', content: '開源社群與g0v長期參與者唐鳳，成為台灣首位數位政委' },
@@ -38,7 +38,7 @@ export const history = {
 
 export const taiwan = {
   title: ['④個黑客', '進政府實錄'],
-  subtitle: '④個個案，從中央部會到地方。當時被風光迎入政府的他們，是公關、救火隊，還是總教練？',
+  subtitle: '從中央部會到地方，當時被風光迎入政府的他們，是公關、救火隊，還是總教練？',
   topic: [{
     title: ['一個約聘人員', '帶進新組織文化'],
     quote: '想做新的事情，結果每個人一開始都問我怎麼做網站？',
@@ -50,9 +50,9 @@ export const taiwan = {
     link: '',
   }, {
     title: ['當黑客松', '只剩下一日激情'],
-    quote: '一直辦黑客松，是因為我們走不到下一步。',
+    quote: '（政府）一直辦黑客松，是因為我們走不到下一步。',
     team: '經濟部',
-    work: '研究員',
+    work: '幕僚',
     nickname: 'kiang',
     name: '江明宗',
     avatar: kiang,
@@ -61,7 +61,7 @@ export const taiwan = {
     title: ['當民意退潮', '改革還能繼續？'],
     quote: '人都是被戳、會痛，才會變。',
     team: '經濟部',
-    work: '研究員',
+    work: '幕僚',
     nickname: '小彭',
     name: '彭盛韶',
     avatar: saul,
@@ -111,8 +111,8 @@ export const international = {
     link: '',
   }],
   content: [
-    '在日本，直到一場核災，政府才接受社群的協力。在澳洲，政府不知道資料有什麼價值，於是打電話向社群求救。貪腐嚴重的巴基斯坦、世界第十大城墨西哥市，急需大破大立，也都拉著民間人才一起衝。',
-    '透過 fellowship 制度，民間社群和政府開始合作，短期內讓公務體系嘗到改變的甜頭、讓民間力量發揮，單點擊破僵化的文化、生態，開始影響整個政府機器。',
+    '在日本，直到一場核災，政府才開始接受公民社會的協力。在澳洲，政府不知道資料有什麼價值，於是向公民科技社群求救。貪腐嚴重的巴基斯坦，和世界前十大城墨西哥市，急需大破大立，也都拉著民間人才一起衝。',
+    '透過fellowship🔎制度，民間社群和政府開始合作，短期內讓公務體系嘗到改變的甜頭、讓民間力量發揮，單點擊破僵化的文化、生態，開始影響整個政府機器。',
   ],
   anonymity: {
     name: 'international',
@@ -188,7 +188,7 @@ export const hacker = {
   topic: [{
     name: 'join_slack',
     quote: '想知道黑客們都在聊些什麼嗎？',
-    tip: '加入 g0v Slack 聊天室',
+    tip: '加入g0v Slack聊天室',
     link: '',
   }, {
     name: 'ocf_email',
@@ -207,7 +207,7 @@ export const hacker = {
 export const license = {
   title: ['《黑客公務員的血汗之路》'],
   subtitle: '#g0vnews, making news of/with the #civictech community.',
-  license: 'This work by g0v.news is licensed under a CC BY-SA 4.0 license.',
+  license: 'This work by g0v.news is licensed under a CC BY-SA 4.0 International license.',
   image: [
     { name: 'peggy', license: 'CC BY 2.0 othree', link: 'https://creativecommons.org/licenses/by/2.0/deed.zh_TW' },
     { name: '小彭', license: 'CC BY 2.0 Saul Peng', link: 'https://creativecommons.org/licenses/by/2.0/deed.zh_TW' },
@@ -239,9 +239,3 @@ export const license = {
     { work: '監製', nickname: '阿端', name: '吳銘軒' },
   ],
 };
-
-
-
-
-
-
