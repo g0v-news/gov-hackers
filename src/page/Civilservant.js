@@ -48,7 +48,7 @@ const styles = {
     width: '100%',
     boxSizing: 'border-box',
     border: `1px ${color.border} solid`,
-    marginTop: 10,
+    marginTop: 0,
   },
   linkTitle: {
     fontSize: 28,
@@ -64,6 +64,13 @@ const styles = {
     margin: '0 auto',
     overflow: 'hidden',
   },
+  au: {
+    maxWidth: 320,
+    display: 'block',
+    margin: 0,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }
 };
 
 const slider = {
@@ -102,7 +109,7 @@ export default function () {
               ))}
             </Slider>
           </div>
-          <Image src={civilservant.avatar} alt="au" />
+          <img style={styles.au} src={civilservant.avatar} alt="au" />
           <div style={styles.link}>
             <Label top left>專訪</Label>
             <div style={styles.linkTitle}>{link.quote}</div>

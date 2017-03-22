@@ -13,7 +13,7 @@ const styles = {
     backgroundPosition: 'center center',
     margin: '0 auto',
     boxSizing: 'border-box',
-    padding: 44,
+    padding: 64,
     paddingTop: 60,
     paddingBottom: 90,
     display: 'flex',

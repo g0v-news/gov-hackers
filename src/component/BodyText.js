@@ -2,21 +2,21 @@ import React, { PropTypes } from 'react';
 
 const styles = {
   viewport: {
-    fontSize: 36,
-    lineHeight: 1.1667,
+    fontSize: 18,
     textAlign: 'left',
+    lineHeight: 1.6667,
     maxWidth: 288,
     margin: '0 auto',
   },
 };
 
-function Component({ style, children }) {
-  return (<div style={{ ...styles.viewport, ...style }}>{children}</div>);
+function Component({ children, style, ...props }) {
+  return (<div style={{ ...styles.viewport, ...style }} {...props}>{children}</div>);
 }
 
 Component.propTypes = {
-  style: PropTypes.shape(),
   children: PropTypes.string.isRequired,
+  style: PropTypes.shape(),
 };
 
 Component.defaultProps = {

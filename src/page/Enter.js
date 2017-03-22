@@ -78,7 +78,12 @@ const styles = {
   text: {
     color: '#FFFFFF',
     backgroundColor: '#131010',
-    paddingBottom: 40,
+    padding: '32px 5px 0',
+    fontSize: 22,
+    lineHeight: 1.4545,
+    maxWidth: 286,
+    margin: '0 auto',
+    textAlign: 'left',
   },
   enter: {
     position: 'absolute',
@@ -163,9 +168,9 @@ export default class extends Component {
                   <img style={styles.title} src={title} alt="黑客公務員的血汗之路" onClick={this.onTitleClick} />
                   <Text>;</Text>
                   {subtitle.map(text => (
-                    <Text key={text} style={styles.text} onClick={this.onSubtitleClick}>
+                    <div key={text} style={styles.text} onClick={this.onSubtitleClick}>
                       {text}
-                    </Text>
+                    </div>
                   ))}
                 </div>
               </div>

@@ -4,11 +4,13 @@ import Analytics from '../Analytics';
 import Title from '../component/Title';
 import Image from '../component/Image';
 import Text from '../component/Text';
+import BodyText from '../component/BodyText';
 import Interview from '../component/Interview';
 import Anonymity from '../component/Anonymity';
 
 import { international } from '../assets/content';
 import guides from '../assets/guides';
+import color from '../assets/color';
 
 import cover from '../assets/international-cover.jpg';
 import map from '../assets/international-map.jpg';
@@ -39,6 +41,8 @@ const styles = {
     backgroundImage: `url(${helloWorld})`,
     backgroundSize: 'contain',
     backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: color.backgroundAssist,
   },
   helloWorldImage: {
     width: '100%',
@@ -46,8 +50,12 @@ const styles = {
     opacity: 0,
   },
   content: {
+    margin: 'auto',
     marginTop: 28,
+    marginBottom: 0,
     lineHeight: 1.3,
+    fontSize: 18,
+    maxWidth: 288,
   },
 };
 
@@ -114,10 +122,10 @@ export default class extends PureComponent {
           </div>
         </div>
         <div style={styles.helloWorld}>
-          <Image style={styles.helloWorldImage} src={helloWorld} alt="print hello world" />
+          <Image style={styles.helloWorldImage} src={helloWorld} alt="print(&quot;Hello world.&quot;);" />
         </div>
         <div style={styles.container}>
-          {content.map(text => (<Text style={styles.content} key={text}>{text}</Text>))}
+          {content.map(text => (<BodyText key={text}>{text}</BodyText>))}
           <Anonymity {...anonymity} />
         </div>
       </div>

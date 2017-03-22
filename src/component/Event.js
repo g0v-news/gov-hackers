@@ -32,6 +32,7 @@ const styles = {
     textAlign: 'left',
     color: color.textAssist,
     marginTop: 3,
+    marginLeft: '3em',
     lineHeight: 1.5,
   },
 };

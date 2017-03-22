@@ -14,7 +14,7 @@ const styles = {
   ...guides,
   viewport: {
     width: '100%',
-    maxWidth: 1024,
+    maxWidth: 320,
     margin: '0 auto',
   },
   title: {

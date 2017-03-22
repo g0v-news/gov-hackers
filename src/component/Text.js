@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 
 const styles = {
   viewport: {
-    fontSize: 22,
+    fontSize: 24,
     textAlign: 'left',
-    paddingLeft: 17,
-    paddingRight: 17,
-    lineHeight: 1.45,
+    lineHeight: 1.3333,
+    maxWidth: 288,
+    margin: '0 auto',
   },
 };
 

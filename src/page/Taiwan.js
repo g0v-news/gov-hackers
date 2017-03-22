@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import Title from '../component/Title';
 import Text from '../component/Text';
+import BodyText from '../component/BodyText';
 import TaiwanPeople from '../component/TaiwanPeople';
 import Anonymity from '../component/Anonymity';
 import Window from '../component/Window';
@@ -24,7 +25,11 @@ const styles = {
     marginTop: 28,
   },
   subtitle: {
-    marginTop: 14,
+    margin: '14px auto 0',
+    fontSize: 18,
+    lineHeight: 1.6667,
+    maxWidth: 288,
+    paddingRight: 36,
   },
   cover: {
     backgroundColor: '#F5F5FF',
@@ -40,10 +45,6 @@ const styles = {
   },
   reverse: {
     flexDirection: 'row-reverse',
-  },
-  windowText: {
-    fontSize: 18,
-    lineHeight: 1.5,
   },
   windowTextBottom: {
     fontWeight: 'bold',
@@ -93,7 +94,7 @@ export default class extends PureComponent {
           </div>
           <div style={styles.left}>
             {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
-            <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
+            <BodyText onClick={this.onSubTitleClick}>{subtitle}</BodyText>
           </div>
         </div>
         <div style={styles.row}>
@@ -111,7 +112,7 @@ export default class extends PureComponent {
         <Anonymity {...anonymity} />
         <Window>
           {window.map(text => (
-            <Text key={text} style={styles.windowText}>{text}</Text>
+            <BodyText key={text}>{text}</BodyText>
           ))}
         </Window>
       </div>

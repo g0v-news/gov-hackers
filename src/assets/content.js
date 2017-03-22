@@ -90,22 +90,22 @@ export const international = {
   title: ['找黑客與政府的', '④種關係'],
   subtitle: '越洋專訪',
   topic: [{
-    title: ['福島核災讓政府打開大門迎進黑客'],
+    title: ['福島核災','讓政府打開大門','迎進黑客'],
     region: '日本',
     cover: japan,
     link: '',
   }, {
-    title: ['讓公務員和黑客一起新生訓練'],
+    title: ['讓公務員和','黑客一起新生訓練'],
     region: '澳洲',
     cover: australia,
     link: '',
   }, {
-    title: ['如何開出讓黑客搶破頭的職缺？'],
+    title: ['如何開出讓','黑客搶破頭的','職缺？'],
     region: '巴基斯坦',
     cover: pakistan,
     link: '',
   }, {
-    title: ['⑳人實驗室給②千萬市民的數位都更'],
+    title: ['⑳人實驗室','給②千萬市民的','數位都更'],
     region: '墨西哥市',
     cover: mexico,
     link: '',
