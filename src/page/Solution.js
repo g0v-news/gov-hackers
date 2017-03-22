@@ -100,7 +100,7 @@ export default class extends PureComponent {
                 <SolutionPeople key={item.name} {...item} />
               </div>
             ))}
-            <a style={styles.topic} herf={editorial.link} target="gov-news" onClick={this.onEditorialClick}>
+            <a style={styles.topic} href={editorial.link} target="gov-news" onClick={this.onEditorialClick}>
               <img style={styles.topicImage} src={editorial.image} alt="編輯室觀點" />
             </a>
             <div style={styles.topic}>
