@@ -117,7 +117,7 @@ export const international = {
   anonymity: {
     name: 'international',
     quote: ['台灣也需要fellowship嗎？', '聽聽第一線公務員怎麼說'],
-    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B1-%E5%8F%B0%E7%81%A3%E4%B9%9F%E9%9C%80%E8%A6%81-fellowship-%E5%97%8E-%E8%81%BD%E8%81%BD%E7%AC%AC%E4%B8%80%E7%B7%9A%E5%85%AC%E5%8B%99%E5%93%A1%E6%80%8E%E9%BA%BC%E8%AA%AA-9f7673354c77#.hgnlabtx1',
+    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B2-%E5%B0%8D%E6%96%BC%E5%85%AC%E5%8B%99%E9%AB%94%E7%B3%BB%E7%9A%84%E9%9D%A9%E6%96%B0%E6%8C%91%E6%88%B0-%E8%81%BD%E8%81%BD%E5%85%AC%E5%8B%99%E5%93%A1%E7%9A%84%E7%9C%9F%E5%AF%A6%E5%BF%83%E8%81%B2-cc068ffa1119#.8dyf8aftq',
   },
 };
 
@@ -151,7 +151,7 @@ export const civilservant = {
   anonymity: {
     name: 'civilservant',
     quote: ['對於公務體系的升級更新，', '這裡有公務員的真實心聲'],
-    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B0-%E5%B0%8D%E6%96%BC%E9%96%8B%E6%94%BE%E6%94%BF%E5%BA%9C%E5%AF%A6%E8%B8%90%E7%8F%BE%E6%B3%81%E7%9A%84%E7%AC%AC%E4%B8%80%E6%89%8B%E8%A7%80%E5%AF%9F-dc93e7ab19cf#.pzxq5po9m',
+    link: 'https://g0v.news/%E5%85%AC%E5%8B%99%E5%93%A1%E5%8C%BF%E5%90%8D%E5%85%B1%E7%AD%86%E2%85%B1-%E5%8F%B0%E7%81%A3%E4%B9%9F%E9%9C%80%E8%A6%81-fellowship-%E5%97%8E-%E8%81%BD%E8%81%BD%E7%AC%AC%E4%B8%80%E7%B7%9A%E5%85%AC%E5%8B%99%E5%93%A1%E6%80%8E%E9%BA%BC%E8%AA%AA-9f7673354c77#.v81o3ww5l',
   },
 };
 
