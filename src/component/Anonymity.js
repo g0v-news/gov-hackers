@@ -10,7 +10,7 @@ const styles = {
     position: 'relative',
     backgroundSize: 'cover',
     border: '1px #BFBFFF solid',
-    height: 116,
+    height: 88,
     width: '100%',
     maxWidth: 375,
     boxSizing: 'border-box',
@@ -21,11 +21,12 @@ const styles = {
     textDecoration: 'none',
   },
   text: {
-    fontSize: 22,
+    fontSize: 16,
+    lineHeight: 1.5,
     textAlign: 'left',
     paddingLeft: 45,
     paddingRight: 40,
-    paddingTop: 10,
+    paddingTop: 0,
     display: 'flex',
   },
   iconWrap: {

@@ -12,7 +12,7 @@ import guides from '../assets/guides';
 
 import cover from '../assets/international-cover.jpg';
 import map from '../assets/international-map.jpg';
-import helloWorld from '../assets/hello_world.jpg';
+import helloWorld from '../assets/hello_world-300.png';
 
 const { title, subtitle, topic, content, anonymity } = international;
 

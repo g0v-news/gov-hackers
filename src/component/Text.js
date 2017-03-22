@@ -4,9 +4,9 @@ const styles = {
   viewport: {
     fontSize: 22,
     textAlign: 'left',
-    paddingLeft: 20,
-    paddingRight: 20,
-    lineHeight: 1.2,
+    paddingLeft: 17,
+    paddingRight: 17,
+    lineHeight: 1.45,
   },
 };
 

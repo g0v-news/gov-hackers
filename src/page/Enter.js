@@ -51,7 +51,7 @@ const styles = {
     left: '50%',
     bottom: 30,
     marginLeft: -17.5,
-    width: 35,
+    width: 30,
   },
   hackerMonitor: {
     position: 'absolute',

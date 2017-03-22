@@ -27,6 +27,7 @@ const styles = {
     color: color.text,
   },
   text: {
+    width: '12em',
     fontSize: 13,
     textAlign: 'left',
     color: color.textAssist,
