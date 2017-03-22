@@ -79,6 +79,7 @@ export const taiwan = {
     link: '',
   }],
   anonymity: {
+    name: 'taiwan',
     quote: ['對於開放政府實踐現況，', '⑫位公務員的第一手觀察'],
     link: '',
   },
@@ -114,6 +115,7 @@ export const international = {
     '透過 fellowship 制度，民間社群和政府開始合作，短期內讓公務體系嘗到改變的甜頭、讓民間力量發揮，單點擊破僵化的文化、生態，開始影響整個政府機器。',
   ],
   anonymity: {
+    name: 'international',
     quote: ['台灣也需要fellowship嗎？', '聽聽第一線公務員怎麼說'],
     link: '',
   },
@@ -147,6 +149,7 @@ export const civilservant = {
     link: '',
   },
   anonymity: {
+    name: 'civilservant',
     quote: ['對於公務體系的升級更新，', '這裡有公務員的真實心聲'],
     link: '',
   },
@@ -183,10 +186,12 @@ export const hacker = {
   title: ['你就是黑客'],
   subtitle: '不用會寫程式，你也可以成為黑客。',
   topic: [{
+    name: 'join_slack',
     quote: '想知道黑客們都在聊些什麼嗎？',
     tip: '加入 g0v Slack 聊天室',
     link: '',
   }, {
+    name: 'ocf_email',
     quote: '想獲得最新的報導及活動訊息嗎？',
     tip: '訂閱OCF電子報',
     link: '',

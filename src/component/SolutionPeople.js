@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
+import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
 import Quote from './Quote';
@@ -10,6 +11,8 @@ const styles = {
     width: '100%',
     paddingBottom: '62.5%',
     boxSizing: 'border-box',
+    display: 'block',
+    color: '#000',
   },
   box: {
     position: 'absolute',
@@ -75,41 +78,62 @@ const styles = {
   },
 };
 
-function Component({ avatar, right, title, quote, name, nickname, team }) {
-  return (
-    <div style={styles.viewport} >
-      <div style={styles.box}>
-        <div style={styles.title}>{title}</div>
-        <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
-          {quote}
-        </Quote>
-        <div style={{ ...styles.avatar, ...(right && styles.avatarRight) }}>
-          <img style={styles.image} src={avatar} alt={name} />
+export default class extends PureComponent {
+
+  static propTypes = {
+    right: PropTypes.bool,
+    avatar: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    quote: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    nickname: PropTypes.string.isRequired,
+    team: PropTypes.string.isRequired,
+    link: PropTypes.string,
+  };
+
+  static defaultProps = {
+    right: false,
+    link: '',
+  };
+
+  onClick = () => {
+    const { nickname } = this.props;
+
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: `solution_people_${nickname}`,
+    });
+
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: `solution_people_${nickname}`,
+    });
+  }
+
+  render() {
+    const { avatar, right, title, quote, name, nickname, team, link } = this.props;
+
+    return (
+      <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
+        <div style={styles.box}>
+          <div style={styles.title}>{title}</div>
+          <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
+            {quote}
+          </Quote>
+          <div style={{ ...styles.avatar, ...(right && styles.avatarRight) }}>
+            <img style={styles.image} src={avatar} alt={name} />
+          </div>
+          <div style={{ ...styles.work, ...(right && styles.workRight) }}>
+            <div>{nickname}</div>
+            <div>{name}</div>
+            <div>{team}</div>
+          </div>
+          <More style={styles.more} />
+          <Label right={!right} left={right}>秘訣</Label>
         </div>
-        <div style={{ ...styles.work, ...(right && styles.workRight) }}>
-          <div>{nickname}</div>
-          <div>{name}</div>
-          <div>{team}</div>
-        </div>
-        <More style={styles.more} />
-        <Label right={!right} left={right}>秘訣</Label>
-      </div>
-    </div>
-  );
+      </a>
+    );
+  }
 }
-
-Component.propTypes = {
-  right: PropTypes.bool,
-  avatar: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  quote: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  nickname: PropTypes.string.isRequired,
-  team: PropTypes.string.isRequired,
-};
-
-Component.defaultProps = {
-  right: false,
-};
-
-export default Component;

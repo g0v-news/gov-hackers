@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
+import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
 
@@ -31,24 +32,47 @@ const styles = {
   },
 };
 
-function Component({ quote, tip }) {
-  return (
-    <div style={styles.viewport}>
-      {quote}
-      <Label right top style={styles.label} textStyle={styles.labelText}>
-        {tip}
-      </Label>
-      <More style={styles.more} svgStyle={styles.moreSvg} />
-    </div>
-  );
+export default class extends PureComponent {
+
+  static propTypes = {
+    quote: PropTypes.string.isRequired,
+    tip: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    name: PropTypes.string,
+  };
+
+  static defaultProps = {
+    link: '',
+    name: '',
+  };
+
+  onClick = () => {
+    const { name } = this.props;
+
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: `hacker_${name}`,
+    });
+
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: `hacker_${name}`,
+    });
+  }
+
+  render() {
+    const { quote, tip, link } = this.props;
+
+    return (
+      <div style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
+        {quote}
+        <Label right top style={styles.label} textStyle={styles.labelText}>
+          {tip}
+        </Label>
+        <More style={styles.more} svgStyle={styles.moreSvg} />
+      </div>
+    );
+  }
 }
-
-Component.propTypes = {
-  quote: PropTypes.string.isRequired,
-  tip: PropTypes.string.isRequired,
-};
-
-Component.defaultProps = {
-};
-
-export default Component;

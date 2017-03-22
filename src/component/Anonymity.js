@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
+import Analytics from '../Analytics';
 import Label from './Label';
 import More from './More';
 
@@ -15,6 +16,9 @@ const styles = {
     boxSizing: 'border-box',
     margin: '0 auto',
     marginTop: 20,
+    display: 'block',
+    color: '#000',
+    textDecoration: 'none',
   },
   text: {
     fontSize: 22,
@@ -41,27 +45,50 @@ const styles = {
   },
 };
 
-function Component({ quote, style }) {
-  return (
-    <div style={{ ...styles.viewport, ...style }}>
-      <Label right>公務員匿名共筆</Label>
-      {quote.map(text => (<div key={text} style={styles.text}>{text}</div>))}
-      <div style={styles.iconWrap}>
-        <img src={hand} style={styles.icon} alt="" />
-      </div>
-      <More style={styles.more} />
-    </div>
-  );
+export default class extends PureComponent {
+
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    quote: PropTypes.arrayOf(PropTypes.string),
+    style: PropTypes.shape(),
+    link: PropTypes.string,
+  };
+
+  static defaultProps = {
+    name: '',
+    quote: [],
+    style: {},
+    link: '',
+  };
+
+  onClick = () => {
+    const { name } = this.props;
+
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: `anonymity_${name}`,
+    });
+
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: `anonymity_${name}`,
+    });
+  }
+
+  render() {
+    const { quote, style, link } = this.props;
+
+    return (
+      <a style={{ ...styles.viewport, ...style }} href={link} target="gov-news" onClick={this.onClick}>
+        <Label right>公務員匿名共筆</Label>
+        {quote.map(text => (<div key={text} style={styles.text}>{text}</div>))}
+        <div style={styles.iconWrap}>
+          <img src={hand} style={styles.icon} alt="" />
+        </div>
+        <More style={styles.more} />
+      </a>
+    );
+  }
 }
-
-Component.propTypes = {
-  quote: PropTypes.arrayOf(PropTypes.string),
-  style: PropTypes.shape(),
-};
-
-Component.defaultProps = {
-  quote: [],
-  style: {},
-};
-
-export default Component;

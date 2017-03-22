@@ -103,7 +103,9 @@ export default class extends PureComponent {
     link: '',
   };
 
-  onClick = (nickname) => {
+  onClick = () => {
+    const { nickname } = this.props;
+
     Analytics.event({
       category: 'component',
       action: 'click',
@@ -121,7 +123,7 @@ export default class extends PureComponent {
     const { avatar, title, quote, team, work, nickname, name, right, link } = this.props;
 
     return (
-      <a style={styles.viewport} href={link} target="gov-news" onClick={() => this.onClick(nickname)}>
+      <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
           <img
             style={{ ...styles.avatar, ...(right && styles.avatarRight) }}

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
+import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
 import color from '../assets/color';
@@ -9,6 +10,8 @@ const styles = {
     width: '100%',
     paddingBottom: '90%',
     boxSizing: 'border-box',
+    display: 'block',
+    color: '#000',
   },
   box: {
     position: 'absolute',
@@ -48,25 +51,49 @@ const styles = {
   },
 };
 
-function Component({ title, cover, region }) {
-  return (
-    <div style={styles.viewport}>
-      <div style={styles.box}>
-        <div style={styles.title}>{title.join('')}</div>
-        <div style={styles.cover}>
-          <img style={styles.image} src={cover} alt={region} />
+export default class extends PureComponent {
+
+  static propTypes = {
+    title: PropTypes.arrayOf(PropTypes.string).isRequired,
+    cover: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
+    link: PropTypes.string,
+  };
+
+  static defaultProps = {
+    link: '',
+  }
+
+  onClick = () => {
+    const { region } = this.props;
+
+    Analytics.event({
+      category: 'component',
+      action: 'click',
+      label: `international_region_${region}`,
+    });
+
+    Analytics.event({
+      category: 'link',
+      action: 'click',
+      label: `international_region_${region}`,
+    });
+  }
+
+  render() {
+    const { title, cover, link, region } = this.props;
+
+    return (
+      <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
+        <div style={styles.box}>
+          <div style={styles.title}>{title.join('')}</div>
+          <div style={styles.cover}>
+            <img style={styles.image} src={cover} alt={region} />
+          </div>
+          <div style={styles.more}><More /></div>
+          <Label right top>專訪</Label>
         </div>
-        <div style={styles.more}><More /></div>
-        <Label right top>專訪</Label>
-      </div>
-    </div>
-  );
+      </a>
+    );
+  }
 }
-
-Component.propTypes = {
-  title: PropTypes.arrayOf(PropTypes.string).isRequired,
-  cover: PropTypes.string.isRequired,
-  region: PropTypes.string.isRequired,
-};
-
-export default Component;

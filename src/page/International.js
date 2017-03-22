@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
+import Analytics from '../Analytics';
 import Title from '../component/Title';
 import Image from '../component/Image';
 import Text from '../component/Text';
@@ -64,35 +65,62 @@ const slider = {
   ],
 };
 
-export default function () {
-  return (
-    <div style={styles.viewport}>
-      <div style={styles.container}>
-        <Image src={cover} alt={title.join('')} />
-        <div style={styles.row}>
-          <div style={styles.left}>
-            <Text style={styles.subtitle}>{subtitle}</Text>
-            {title.map(text => (<Title key={text}>{text}</Title>))}
-            <Image src={map} alt="世界黑客地圖" />
-          </div>
-          <div style={styles.right} className="slidebox">
-            <Slider {...slider}>
-              {topic.map(data => (
-                <div key={data.region} style={styles.slide}>
-                  <Interview {...data} />
-                </div>
-              ))}
-            </Slider>
+export default class extends PureComponent {
+
+  onTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'international_title',
+  });
+
+  onSubTitleClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'international_subtitle',
+  });
+
+  onCoverClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'international_cover',
+  });
+
+  onMapClick = () => Analytics.event({
+    category: 'component',
+    action: 'click',
+    label: 'international_map',
+  });
+
+  render() {
+    return (
+      <div style={styles.viewport}>
+        <div style={styles.container}>
+          <Image src={cover} alt={title.join('')} onClick={this.onCoverClick} />
+          <div style={styles.row}>
+            <div style={styles.left}>
+              <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
+              {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+              <Image src={map} alt="世界黑客地圖" onClick={this.onMapClick} />
+            </div>
+            <div style={styles.right} className="slidebox">
+              <Slider {...slider}>
+                {topic.map(data => (
+                  <div key={data.region} style={styles.slide}>
+                    <Interview {...data} />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
+        <div style={styles.helloWorld}>
+          <Image style={styles.helloWorldImage} src={helloWorld} alt="print hello world" />
+        </div>
+        <div style={styles.container}>
+          {content.map(text => (<Text style={styles.content} key={text}>{text}</Text>))}
+          <Anonymity {...anonymity} />
+        </div>
       </div>
-      <div style={styles.helloWorld}>
-        <Image style={styles.helloWorldImage} src={helloWorld} alt="print hello world" />
-      </div>
-      <div style={styles.container}>
-        {content.map(text => (<Text style={styles.content} key={text}>{text}</Text>))}
-        <Anonymity {...anonymity} />
-      </div>
-    </div>
-  );
+    );
+  }
 }
