@@ -1,6 +1,12 @@
 gov-hackers
 ===========
 
+Run
+---
+
+`yarn install`
+`yarn develop`
+
 Mockup
 ------
 
