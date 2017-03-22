@@ -14,6 +14,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     background: `linear-gradient(${color.primaryAssist}, ${color.label})`,
+    marginTop: 120,
   },
   title: {
     fontSize: 20,
@@ -21,9 +22,7 @@ const styles = {
     marginTop: 80,
   },
   subtitle: {
-    fontSize: 18,
     color: color.textAssist,
-    marginTop: 40,
   },
   license: {
     fontSize: 16,
@@ -103,7 +102,7 @@ const styles = {
 export default function () {
   return (
     <div style={styles.viewport}>
-      <div style={styles.subtitle}>{license.subtitle}</div>
+      <BodyText style={styles.subtitle}>{license.subtitle}</BodyText>
       <div style={styles.title}>{license.title}</div>
       <Text style={styles.group}>授權條款</Text>
       <BodyText style={styles.license}>{license.license}</BodyText>

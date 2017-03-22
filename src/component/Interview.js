@@ -37,6 +37,7 @@ const styles = {
   },
   image: {
     border: 0,
+    display: 'block',
   },
   more: {
     position: 'absolute',
