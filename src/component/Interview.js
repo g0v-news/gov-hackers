@@ -3,12 +3,14 @@ import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
 import color from '../assets/color';
+import ArticleTitleText from './ArticleTitleText';
+
 
 const styles = {
   viewport: {
     position: 'relative',
     width: '100%',
-    paddingBottom: '90%',
+    paddingBottom: '100%',
     boxSizing: 'border-box',
     display: 'block',
     color: '#000',
@@ -22,7 +24,6 @@ const styles = {
     border: `1px ${color.border}  solid`,
     boxSizing: 'border-box',
     padding: 10,
-    paddingRight: 60,
   },
   cover: {
     position: 'absolute',
@@ -86,7 +87,7 @@ export default class extends PureComponent {
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
           {title.map(text => (
-            <div style={styles.title} className="interview">{text}</div>
+            <ArticleTitleText className="interview">{text}</ArticleTitleText>
           ))}
           <div style={styles.cover}>
             <img style={styles.image} src={cover} alt={region} />

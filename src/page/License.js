@@ -111,7 +111,6 @@ export default function () {
     <div style={styles.viewport}>
       <a name="license" />
       <BodyText style={styles.subtitle}>{license.subtitle}</BodyText>
-      <div style={styles.subtitle}>{license.subtitle}</div>
       <div style={styles.title}>{license.title}</div>
       <Text style={styles.group}>授權條款</Text>
       <BodyText style={styles.license}>{license.license}</BodyText>

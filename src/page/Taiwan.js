@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
-import Title from '../component/Title';
 import BodyText from '../component/BodyText';
+import SectionTitle from '../component/SectionTitle';
+import SectionTitleText from '../component/SectionTitleText';
 import TaiwanPeople from '../component/TaiwanPeople';
 import Anonymity from '../component/Anonymity';
 import Window from '../component/Window';
@@ -93,7 +94,9 @@ export default class extends PureComponent {
             <Cover src={cover} alt="黑客進政府實錄" onClick={this.onCoverClick} />
           </div>
           <div style={styles.left}>
-            {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+            <SectionTitle>
+              {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
+            </SectionTitle>
             <BodyText onClick={this.onSubTitleClick}>{subtitle}</BodyText>
           </div>
         </div>

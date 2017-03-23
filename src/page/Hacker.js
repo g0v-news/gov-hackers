@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
-import Title from '../component/Title';
-import Text from '../component/Text';
+import BodyText from '../component/BodyText';
+import SectionTitle from '../component/SectionTitle';
+import SectionTitleText from '../component/SectionTitleText';
+
 import Share from '../component/Share';
 import HackerChannel from '../component/HackerChannel';
 import Analytics from '../Analytics';
@@ -58,8 +60,10 @@ export default class extends PureComponent {
     return (
       <div style={styles.viewport}>
         <a name="hacker" />
-        {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
-        <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
+        <SectionTitle>
+          {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
+        </SectionTitle>
+        <BodyText onClick={this.onSubTitleClick}>{subtitle}</BodyText>
         <div style={styles.share} className="slidelink">
           <Slider {...slider}>
             {share.map(data => (

@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
-import Title from '../component/Title';
 import Image from '../component/Image';
-import Text from '../component/Text';
 import BodyText from '../component/BodyText';
+import SectionTitle from '../component/SectionTitle';
+import SectionTitleText from '../component/SectionTitleText';
+import SectionSubtitleText from '../component/SectionSubtitleText';
+
 import Interview from '../component/Interview';
 import Anonymity from '../component/Anonymity';
 
@@ -60,7 +62,7 @@ const styles = {
   map: {
     maxWidth: 320,
     display: 'block',
-    margin: '0 auto',
+    margin: '1em auto',
   }
 };
 
@@ -112,8 +114,10 @@ export default class extends PureComponent {
           <Image src={cover} alt={title.join('')} onClick={this.onCoverClick} />
           <div style={styles.row}>
             <div style={styles.left}>
-              <Text style={styles.subtitle} onClick={this.onSubTitleClick}>{subtitle}</Text>
-              {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+              <SectionTitle>
+                <SectionSubtitleText onClick={this.onSubTitleClick}>{subtitle}</SectionSubtitleText>
+                {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
+              </SectionTitle>
               <img style={styles.map} src={map} alt="世界黑客地圖" onClick={this.onMapClick} />
             </div>
             <div style={styles.right} className="slidebox">

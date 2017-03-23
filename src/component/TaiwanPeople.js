@@ -3,6 +3,8 @@ import Analytics from '../Analytics';
 import color from '../assets/color';
 import Quote from './Quote';
 import More from './More';
+import ArticleTitleText from './ArticleTitleText';
+
 
 const styles = {
   viewport: {
@@ -131,7 +133,7 @@ export default class extends PureComponent {
             src={avatar}
             alt={nickname}
           />
-          {title.map(text => (<div key={text} style={styles.title}>{text}</div>))}
+          {title.map(text => (<ArticleTitleText key={text}>{text}</ArticleTitleText>))}
           <div style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
             <Quote>{quote}</Quote>
           </div>
@@ -149,4 +151,3 @@ export default class extends PureComponent {
     );
   }
 }
-

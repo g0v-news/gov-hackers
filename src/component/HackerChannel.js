@@ -2,11 +2,12 @@ import React, { PropTypes, PureComponent } from 'react';
 import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
+import BodyText from './BodyText';
 
 const styles = {
   viewport: {
     position: 'relative',
-    height: 50,
+    height: 58,
     width: '100%',
     maxWidth: 375,
     margin: '0 auto',
@@ -72,7 +73,7 @@ export default class extends PureComponent {
 
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
-        {quote}
+        <BodyText>{quote}</BodyText>
         <Label right top style={styles.label} textStyle={styles.labelText}>
           {tip}
         </Label>

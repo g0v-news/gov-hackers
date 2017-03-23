@@ -37,7 +37,7 @@ const styles = {
     backgroundPosition: 'center center',
   },
   background: {
-    backgroundImage: 'linear-gradient(rgba(4,0,0,0.75) 5%, #040000 100%)',
+    backgroundImage: 'linear-gradient(rgba(4,0,0,0.75) 0%, #040000 100%)',
     height: 1680,
     position: 'relative',
   },

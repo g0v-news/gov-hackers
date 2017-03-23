@@ -1,8 +1,12 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
-import Title from '../component/Title';
-import Text from '../component/Text';
+import ArticleTitleText from '../component/ArticleTitleText';
+import SectionTitle from '../component/SectionTitle';
+import SectionTitleText from '../component/SectionTitleText';
+import SectionSubtitleText from '../component/SectionSubtitleText';
+
+
 import Image from '../component/Image';
 import Label from '../component/Label';
 import More from '../component/More';
@@ -128,8 +132,10 @@ export default class extends PureComponent {
         </div>
         <div style={{ ...styles.row, ...styles.content }}>
           <div style={styles.left}>
-            <Text style={styles.subtitle} onClick={this.onSubTitileClick}>{subtitle}</Text>
-            {title.map(text => (<Title key={text} onClick={this.onTitileClick}>{text}</Title>))}
+            <SectionTitle>
+              <SectionSubtitleText onClick={this.onSubTitleClick}>{subtitle}</SectionSubtitleText>
+              {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
+            </SectionTitle>
           </div>
           <div style={styles.right}>
             <div style={styles.issue}>
@@ -145,7 +151,7 @@ export default class extends PureComponent {
             <a style={styles.link} href={link.link} target="gov-news" onClick={this.onLinkClick}>
               <Label top left>專訪</Label>
               <div style={styles.linkTitle}>{link.quote.map(text => (
-                <div>{text}</div>
+                <ArticleTitleText>{text}</ArticleTitleText>
               ))}</div>
               <More style={styles.more} />
             </a>

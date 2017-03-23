@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import Analytics from '../Analytics';
-import Text from '../component/Text';
-import Title from '../component/Title';
+import SectionTitle from '../component/SectionTitle';
+import SectionTitleText from '../component/SectionTitleText';
+import SectionSubtitleText from '../component/SectionSubtitleText';
+
 import SolutionPeople from '../component/SolutionPeople';
 import Cover from '../component/Cover';
 import { solution } from '../assets/content';
@@ -89,8 +91,10 @@ export default class extends PureComponent {
             <Cover src={cover} style={styles.cover} alt={title.join('')} onClick={this.onCoverClick} />
           </div>
           <div style={styles.left}>
-            <Text style={styles.subtitle} onClick={this.onCoverClick}>{subtitle}</Text>
-            {title.map(text => (<Title key={text} onClick={this.onTitleClick}>{text}</Title>))}
+            <SectionTitle>
+              <SectionSubtitleText onClick={this.onSubTitleClick}>{subtitle}</SectionSubtitleText>
+              {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
+            </SectionTitle>
           </div>
         </div>
         <div style={styles.row}>
