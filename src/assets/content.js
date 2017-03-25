@@ -220,7 +220,7 @@ export const hacker = {
     link: 'http://ocf.tw/subscribe/',
   }, {
     name: 'ocf_donate',
-    quote: 'g0v.news是開放文化基金會國際交流的專案',
+    quote: 'g0v.news是OCF國際交流的專案',
     tip: '捐款支持',
     link: 'https://ocf.neticrm.tw/civicrm/contribute/transact?reset=1&id=11&_ga=1.54528875.130262601.1484722201',
   }],
