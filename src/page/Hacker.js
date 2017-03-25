@@ -22,6 +22,7 @@ const styles = {
   share: {
     width: '100%',
     overflow: 'hidden',
+    marginBottom: 48,
   },
   slide: {
     flex: '1 1 20%',

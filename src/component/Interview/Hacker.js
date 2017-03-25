@@ -130,7 +130,7 @@ export default class extends PureComponent {
             <div>{team}</div>
           </div>
           <More style={styles.more} />
-          <Label right={!right} left={right}>秘訣</Label>
+          <Label right={!right} left={right} bottom>秘訣</Label>
         </div>
       </a>
     );

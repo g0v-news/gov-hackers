@@ -83,7 +83,7 @@ export default class extends PureComponent {
 
     return (
       <a style={{ ...styles.viewport, ...style }} href={link} target="gov-news" onClick={this.onClick}>
-        <Label right>公務員匿名共筆</Label>
+        <Label right bottom>公務員匿名共筆</Label>
         {quote.map(text => (<div key={text} style={styles.text} className="anonymity">{text}</div>))}
         <div style={styles.iconWrap}>
           <img src={hand} style={styles.icon} alt="" />
