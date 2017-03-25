@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
-import BodyText from '../component/BodyText';
+import Text_Body from '../component/Text/Body';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Interview_Taiwan from '../component/Interview/Taiwan';
@@ -97,7 +97,7 @@ export default class extends PureComponent {
             <Title>
               {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
             </Title>
-            <BodyText onClick={this.onSubTitleClick}>{subtitle}</BodyText>
+            <Text_Body onClick={this.onSubTitleClick}>{subtitle}</Text_Body>
           </div>
         </div>
         <div style={styles.row}>
@@ -115,7 +115,7 @@ export default class extends PureComponent {
         <Anonymity {...anonymity} />
         <Window>
           {window.map(text => (
-            <BodyText style={styles.windowText} key={text}>{text}</BodyText>
+            <Text_Body style={styles.windowText} key={text}>{text}</Text_Body>
           ))}
         </Window>
       </div>

@@ -4,7 +4,7 @@ import More from '../More';
 import Label from '../Label';
 import Quote from '../Quote';
 import color from '../../assets/color';
-import Article_TitleLine from '../Article/TitleLine';
+import Text_ArticleTitle from '../Text/ArticleTitle';
 
 
 const styles = {
@@ -117,7 +117,7 @@ export default class extends PureComponent {
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
-          <Article_TitleLine>{title}</Article_TitleLine>
+          <Text_ArticleTitle>{title}</Text_ArticleTitle>
           <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
             {quote}
           </Quote>

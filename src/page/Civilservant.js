@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
-import Article_TitleLine from '../component/Article/TitleLine';
+import Text_ArticleTitle from '../component/Text/ArticleTitle';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
-
 
 import Image from '../component/Image';
 import Label from '../component/Label';
@@ -151,7 +150,7 @@ export default class extends PureComponent {
             <a style={styles.link} href={link.link} target="gov-news" onClick={this.onLinkClick}>
               <Label top left>專訪</Label>
               <div style={styles.linkTitle}>{link.quote.map(text => (
-                <Article_TitleLine>{text}</Article_TitleLine>
+                <Text_ArticleTitle>{text}</Text_ArticleTitle>
               ))}</div>
               <More style={styles.more} />
             </a>

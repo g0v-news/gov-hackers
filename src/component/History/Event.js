@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
+import Text_Note from '../Text/Note';
 import color from '../../assets/color';
 
 const styles = {
   viewport: {
     display: 'flex',
     flexDirection: 'row',
-    paddingLeft: 20,
-    paddingRight: 20,
-    margin: '0 auto',
-    marginTop: 8,
+    margin: '8px auto',
     width: '100%',
     maxWidth: 320,
   },
@@ -16,7 +14,7 @@ const styles = {
     width: 72,
     fontSize: 18,
     textAlign: 'left',
-    color: color.textAssist,
+    color: color.blue50,
   },
   content: {
     flex: 1,
@@ -24,16 +22,11 @@ const styles = {
   name: {
     fontSize: 20,
     textAlign: 'left',
-    color: color.text,
   },
   text: {
     width: '12em',
-    fontSize: 13,
-    textAlign: 'left',
-    color: color.textAssist,
-    marginTop: 3,
-    marginLeft: '3em',
-    lineHeight: 1.5,
+    marginTop: 2,
+    marginLeft: 40,
   },
 };
 
@@ -43,7 +36,7 @@ function Component({ date, name, children }) {
       <div style={styles.date}>{date}</div>
       <div style={styles.content}>
         <div style={styles.name}>{name}</div>
-        <div style={styles.text}>{children}</div>
+        <Text_Note style={styles.text}>{children}</Text_Note>
       </div>
     </div>
   );

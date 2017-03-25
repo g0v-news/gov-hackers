@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import Image from '../component/Image';
-import BodyText from '../component/BodyText';
+import Text_Body from '../component/Text/Body';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
@@ -138,7 +138,7 @@ export default class extends PureComponent {
           <Image style={styles.helloWorldImage} src={helloWorld} alt="print(&quot;Hello world.&quot;);" />
         </div>
         <div style={styles.container}>
-          {content.map(text => (<BodyText key={text}>{text}</BodyText>))}
+          {content.map(text => (<Text_Body key={text}>{text}</Text_Body>))}
           <Anonymity {...anonymity} />
         </div>
       </div>

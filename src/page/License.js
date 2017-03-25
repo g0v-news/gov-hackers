@@ -1,5 +1,5 @@
 import React from 'react';
-import BodyText from '../component/BodyText';
+import Text_Body from '../component/Text/Body';
 import SectionTitle from '../component/Credit/SectionTitle';
 import { license } from '../assets/content';
 import logo from '../assets/logo.png';
@@ -104,10 +104,10 @@ export default function () {
   return (
     <div style={styles.viewport}>
       <a name="license" />
-      <BodyText style={styles.subtitle}>{license.subtitle}</BodyText>
+      <Text_Body style={styles.subtitle}>{license.subtitle}</Text_Body>
       <div style={styles.title}>{license.title}</div>
       <SectionTitle>授權條款</SectionTitle>
-      <BodyText style={styles.license}>{license.license}</BodyText>
+      <Text_Body style={styles.license}>{license.license}</Text_Body>
       <SectionTitle>圖像授權</SectionTitle>
       <table style={styles.image}>
         <tbody>

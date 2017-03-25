@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import BodyText from '../component/BodyText';
+import Text_ArticleTitle from '../component/Text/ArticleTitle';
 import Event from '../component/History/Event';
 import Analytics from '../Analytics';
 
@@ -13,17 +13,19 @@ const styles = {
   ...guides,
   viewport: {
     width: '100%',
-    maxWidth: 320,
+    maxWidth: 288,
     margin: '0 auto',
   },
   title: {
-    fontSize: 28,
+    color: color.blue65,
+    margin: '16px 0',
+  },
+  titleLine: {
+    color: color.blue65,
     textAlign: 'center',
-    color: color.textAssist,
   },
   subtitle: {
     textAlign: 'center',
-    color: color.textAssist,
     marginTop: 0,
     marginBottom: 0,
   },
@@ -53,10 +55,12 @@ export default class extends PureComponent {
     return (
       <div style={styles.viewport}>
         <a name="history" />
-        <BodyText style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</BodyText>
-        {title.map(text => (
-          <div key={text} style={styles.title} onClick={this.onTitleClick}>{text}</div>
-        ))}
+        <div style={styles.title}>
+          <div style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</div>
+          {title.map(text => (
+            <Text_ArticleTitle key={text} style={styles.titleLine} onClick={this.onTitleClick}>{text}</Text_ArticleTitle>
+          ))}
+        </div>
         {event.map(({ content, ...item }) => (
           <Event key={item.name} onClick={this.onEventClick} {...item}>{content}</Event>
         ))}

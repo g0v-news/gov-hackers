@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
-import BodyText from '../component/BodyText';
+import Text_Body from '../component/Text/Body';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 
@@ -63,7 +63,7 @@ export default class extends PureComponent {
         <Title>
           {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
         </Title>
-        <BodyText onClick={this.onSubTitleClick}>{subtitle}</BodyText>
+        <Text_Body onClick={this.onSubTitleClick}>{subtitle}</Text_Body>
         <div style={styles.share} className="slidelink">
           <Slider {...slider}>
             {share.map(data => (

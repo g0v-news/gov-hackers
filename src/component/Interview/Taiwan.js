@@ -3,7 +3,7 @@ import Analytics from '../../Analytics';
 import color from '../../assets/color';
 import Quote from '../Quote';
 import More from '../More';
-import Article_TitleLine from '../Article/TitleLine';
+import Text_ArticleTitle from '../Text/ArticleTitle';
 
 
 const styles = {
@@ -133,7 +133,7 @@ export default class extends PureComponent {
             src={avatar}
             alt={nickname}
           />
-          {title.map(text => (<Article_TitleLine key={text}>{text}</Article_TitleLine>))}
+          {title.map(text => (<Text_ArticleTitle key={text}>{text}</Text_ArticleTitle>))}
           <div style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
             <Quote>{quote}</Quote>
           </div>
