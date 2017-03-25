@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import ExecutionEnvironment from 'exenv';
 import Analytics from '../Analytics';
 import color from '../assets/color';
-import logo from '../assets/header.png';
+import logo from '../assets/logo-small.png';
 import twitter from '../assets/share_sheet/twitter.png';
 import facebook from '../assets/share_sheet/facebook.png';
 
@@ -10,7 +10,7 @@ import { header } from '../assets/content';
 
 import guides from '../assets/guides';
 
-const { tags, share } = header;
+const { title, tags, share } = header;
 
 const styles = {
   viewport: {
@@ -19,19 +19,15 @@ const styles = {
     top: 0,
     left: 0,
     right: 0,
-    background: color.background,
     opacity: 0,
     zIndex: guides.z.nav,
   },
-  box: {
+  links: {
     width: '100%',
-    maxWidth: 1024,
-    height: 60,
     display: 'flex',
     flexDirection: 'row',
     color: color.primary,
     alignItems: 'center',
-    margin: '0 auto',
     flexFlow: 'row no-wrap',
     justifyContent: 'space-between',
   },
@@ -40,29 +36,55 @@ const styles = {
     textDecoration: 'none',
     color: color.primary,
     textAlign: 'left',
-  },
-  shareWrap: {
-    width: (36 * 2) + 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    fontWeight: 'bold',
   },
   share: {
-    width: 36,
+    group: {
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      right: 0,
+      width: (48 * 2),
+    },
+    icon: {
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      width: 24,
+      padding: '0 12px',
+    },
   },
   logo: {
+    group: {
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      left: 0,
+      textAlign: 'left',
+    },
+    image: {
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      height: 36,
+      marginLeft: -14,
+    },
+    type: {
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      fontSize: 22,
+      fontWeight: 'bold',
+      marginLeft: 4,
+    }
   },
-  logoImage: {
-    height: 60,
-    marginLeft: -28,
-  },
+
 };
 
 export default class extends PureComponent {
 
+  maxOffset = -(48 + 36 + 4*2 + 2)
+
   state = {
     opacity: 0,
-    offset: -60,
+    offset: this.maxOffset,
   }
 
   componentDidMount() {
@@ -113,8 +135,8 @@ export default class extends PureComponent {
 
     if (offset > 0) {
       offset = 0;
-    } else if (offset < -60) {
-      offset = -60;
+    } else if (offset < this.maxOffset) {
+      offset = this.maxOffset;
     }
 
     if (stateOffset !== offset) {
@@ -143,32 +165,29 @@ export default class extends PureComponent {
     const { opacity, offset } = this.state;
 
     return (
-      <div style={{ ...styles.viewport, top: offset, opacity }}>
-        <div style={styles.box} className="header">
-          <div style={styles.logo} className="headerlogo">
-            <img style={styles.logoImage} src={logo} alt="g0v.news" />
-          </div>
+      <nav style={{ ...styles.viewport, top: offset, opacity }}>
+        <div style={styles.logo.group}>
+          <img style={styles.logo.image} src={logo} alt="g0v.news" />
+          <div style={styles.logo.type}>{title};</div>
+        </div>
+        <div style={styles.share.group}>
+          <a onClick={this.onShareTwitterClick} href={share.twitter} target="sharelink">
+            <img style={styles.share.icon} src={twitter} alt="share to twitter" />
+          </a>
+          <a onClick={this.onShareFacebookClick} href={share.facebook} target="sharelink">
+            <img style={styles.share.icon} src={facebook} alt="share to facebook" />
+          </a>
+        </div>
+        <div style={styles.links} className="links">
           {tags.map(tag => (
-            <a
-              key={tag.name}
-              href={`#${tag.name}`}
-              style={styles.link}
-              className="headerlink"
-              onClick={() => this.onClick(tag.title)}
-            >
-              {tag.title}
+            <a className={[tag.italic ? 'italic' : '', 'link'].join(' ')} key={tag.name} href={`#${tag.name}`} style={styles.link} onClick={() => this.onClick(tag.title.join(''))}>
+              {tag.title.map(line => (
+                  <div className="line">{line}</div>
+              ))}
             </a>
           ))}
-          <div style={styles.shareWrap}>
-            <a onClick={this.onShareTwitterClick} href={share.twitter} target="sharelink">
-              <img style={styles.share} src={twitter} alt="share to twitter" />
-            </a>
-            <a onClick={this.onShareFacebookClick} href={share.facebook} target="sharelink">
-              <img style={styles.share} src={facebook} alt="share to facebook" />
-            </a>
-          </div>
         </div>
-      </div>
+      </nav>
     );
   }
 }

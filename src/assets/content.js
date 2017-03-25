@@ -5,10 +5,10 @@ import tonyq from './people/tonyq.png';
 import au from './people/au.png';
 import cl from './people/cl.png';
 import yutin from './people/yutin.png';
-import japan from './interview/japan.jpg';
-import australia from './interview/australia.jpg';
-import pakistan from './interview/pakistan.jpg';
-import mexico from './interview/mexico.jpg';
+import japan from './world/japan.jpg';
+import australia from './world/australia.jpg';
+import pakistan from './world/pakistan.jpg';
+import mexico from './world/mexico.jpg';
 import share1 from './quote_to_share/1.png';
 import share2 from './quote_to_share/2.png';
 import share3 from './quote_to_share/3.png';
@@ -16,21 +16,23 @@ import share4 from './quote_to_share/4.png';
 import editorial from './editorial.png';
 
 export const header = {
+  title: '黑客公務員',
   tags: [{
-    title: '黑客進政府',
+    title: ['黑客','進政府'],
     name: 'taiwan',
   }, {
-    title: '各國開外掛',
+    title: ['各國','開外掛'],
     name: 'international',
   }, {
-    title: '問公僕訪唐鳳',
+    title: ['問公僕','訪唐鳳'],
     name: 'civilservant',
   }, {
-    title: '社群講秘訣',
+    title: ['社群','講秘訣'],
     name: 'solution',
   }, {
-    title: 'Go Hacking',
+    title: ['Go','Hacking'],
     name: 'hacker',
+    italic: true,
   }],
   share: {
     twitter: 'http://twitter.com/share?url=http://gov-hackers.g0v.news/&hashtags=g0v,g0vnews,taiwan,opengov',

@@ -286,5 +286,45 @@
 }
 
 
-@media screen and (min-device-width: 480px) {
+nav {
+  height: 48px;
+  background: linear-gradient(to right, rgba(0, 0, 255, 0.50), rgba(0, 0, 255, 0.12)), linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.85));
+}
+nav > .links {
+  margin-top: 48px;
+  padding: 4px;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 255, 0.25), rgba(0, 0, 255, 0.12)), linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.85));
+}
+nav > .links > .link {
+  font-size: 0.833333rem;
+  line-height: 1rem;
+}
+nav > .links > .link > .line {
+  display: block;
+}
+@media screen and (min-device-width: 481px) and (max-device-width: 640px) {
+  nav > .links {
+    max-width: 75%;
+  }
+}
+@media screen and (min-device-width: 641px) {
+  nav > .links {
+    margin-top: 2px;
+    margin-left: 160px;
+    max-width: 68%;
+    background: none;
+  }
+}
+@media screen and (min-device-width: 840px) {
+  nav > .links {
+    margin-top: 10px;
+    max-width: 68%;
+  }
+  nav > .links > .link {
+    font-size: 1rem;
+  }
+  nav > .links > .link > .line {
+    display: inline;
+  }
 }
