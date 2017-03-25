@@ -1,6 +1,6 @@
 import React from 'react';
-import Text from '../component/Text';
 import BodyText from '../component/BodyText';
+import SectionTitle from '../component/Credit/SectionTitle';
 import { license } from '../assets/content';
 import logo from '../assets/logo.png';
 import external from '../assets/external_link.png';
@@ -14,7 +14,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    background: `linear-gradient(${color.primaryAssist}, ${color.label})`,
+    background: `linear-gradient(${color.blue0}, ${color.blue65})`,
     marginTop: 120,
   },
   title: {
@@ -29,12 +29,6 @@ const styles = {
     fontSize: 16,
     lineHeight: 1.375,
     color: color.textAssist,
-  },
-  group: {
-    color: color.textAssist,
-    textAlign: 'center',
-    marginTop: 20,
-    marginBottom: 20,
   },
   image: {
     fontSize: 10,
@@ -112,9 +106,9 @@ export default function () {
       <a name="license" />
       <BodyText style={styles.subtitle}>{license.subtitle}</BodyText>
       <div style={styles.title}>{license.title}</div>
-      <Text style={styles.group}>授權條款</Text>
+      <SectionTitle>授權條款</SectionTitle>
       <BodyText style={styles.license}>{license.license}</BodyText>
-      <Text style={styles.group}>圖像授權</Text>
+      <SectionTitle>圖像授權</SectionTitle>
       <table style={styles.image}>
         <tbody>
           {image.map(item => (
@@ -130,19 +124,19 @@ export default function () {
           ))}
         </tbody>
       </table>
-      <Text style={styles.group}>採訪協力</Text>
+      <SectionTitle>採訪協力</SectionTitle>
       <div style={styles.externalLink}>
         {interview.map(item => (
           <a key={item.name} style={styles.link} href={item.link} target="external">{item.name}</a>
         ))}
       </div>
-      <Text style={styles.group}>合作刊登</Text>
+      <SectionTitle>合作刊登</SectionTitle>
       <div style={styles.externalLink}>
         {publication.map(item => (
           <a key={item.name} style={styles.link} href={item.link} target="external">{item.name}</a>
         ))}
       </div>
-      <Text style={styles.group}>團隊</Text>
+      <SectionTitle>團隊</SectionTitle>
       <table style={styles.team}>
         <tbody>
           {author.map(item => (

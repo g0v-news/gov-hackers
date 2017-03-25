@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ExecutionEnvironment from 'exenv';
-import Text from '../component/Text';
 import color from '../assets/color';
 import { enter } from '../assets/content';
 import Analytics from '../Analytics';
@@ -166,7 +165,6 @@ export default class extends Component {
               <div style={styles.enter}>
                 <div style={styles.header}>
                   <img style={styles.title} src={title} alt="黑客公務員的血汗之路" onClick={this.onTitleClick} />
-                  <Text>;</Text>
                   {subtitle.map(text => (
                     <div key={text} style={styles.text} onClick={this.onSubtitleClick}>
                       {text}
@@ -177,12 +175,12 @@ export default class extends Component {
             </div>
             <div style={styles.padding} />
           </div>
-          <img style={styles.hackerMonitor} src={hackerMonitor} alt="hacker monitor" />
-          <img style={styles.hackerTable} src={hackerTable} alt="hacker table" />
+          <img style={styles.hackerMonitor} src={hackerMonitor} alt="Hacker’s monitor" />
+          <img style={styles.hackerTable} src={hackerTable} alt="Hacker’s table" />
           <img
             style={{ ...styles.hackerSilhouette, ...silhouette }}
             src={hackerSilhouette}
-            alt="hacker silhouette"
+            alt="Hacker’s silhouette"
           />
         </div>
         <div style={{ ...styles.error, ...{ top: 1000 * errorValue } }}>

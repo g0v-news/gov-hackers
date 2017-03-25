@@ -3,11 +3,12 @@ import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import Image from '../component/Image';
 import BodyText from '../component/BodyText';
-import SectionTitle from '../component/SectionTitle';
-import SectionTitleText from '../component/SectionTitleText';
-import SectionSubtitleText from '../component/SectionSubtitleText';
+import Title from '../component/Section/Title';
+import TitleLine from '../component/Section/TitleLine';
+import Subtitle from '../component/Section/Subtitle';
+import Dictionary from '../component/Dictionary';
 
-import Interview from '../component/Interview';
+import Interview_World from '../component/Interview/World';
 import Anonymity from '../component/Anonymity';
 
 import { international } from '../assets/content';
@@ -44,7 +45,6 @@ const styles = {
     backgroundSize: 'contain',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
-    backgroundColor: color.backgroundAssist,
   },
   helloWorldImage: {
     width: '100%',
@@ -106,6 +106,9 @@ export default class extends PureComponent {
     label: 'international_map',
   });
 
+  onShowDictionary = () => {
+  }
+
   render() {
     return (
       <div style={styles.viewport}>
@@ -114,17 +117,17 @@ export default class extends PureComponent {
           <Image src={cover} alt={title.join('')} onClick={this.onCoverClick} />
           <div style={styles.row}>
             <div style={styles.left}>
-              <SectionTitle>
-                <SectionSubtitleText onClick={this.onSubTitleClick}>{subtitle}</SectionSubtitleText>
-                {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
-              </SectionTitle>
-              <img style={styles.map} src={map} alt="世界黑客地圖" onClick={this.onMapClick} />
+              <Title>
+                <Subtitle onClick={this.onSubTitleClick}>{subtitle}</Subtitle>
+                {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
+              </Title>
+              <img style={styles.map} src={map} alt="Map of civic hackers" onClick={this.onMapClick} />
             </div>
             <div style={styles.right} className="slidebox">
               <Slider {...slider}>
                 {topic.map(data => (
                   <div key={data.region} style={styles.slide}>
-                    <Interview {...data} />
+                    <Interview_World {...data} />
                   </div>
                 ))}
               </Slider>

@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
-import Text from '../component/Text';
-import Title from '../component/Title';
-import Event from '../component/Event';
+import BodyText from '../component/BodyText';
+import Event from '../component/History/Event';
 import Analytics from '../Analytics';
 
 import color from '../assets/color';
@@ -23,9 +22,10 @@ const styles = {
     color: color.textAssist,
   },
   subtitle: {
-    fontSize: 18,
     textAlign: 'center',
     color: color.textAssist,
+    marginTop: 0,
+    marginBottom: 0,
   },
 };
 
@@ -53,9 +53,9 @@ export default class extends PureComponent {
     return (
       <div style={styles.viewport}>
         <a name="history" />
-        <Text style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</Text>
+        <BodyText style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</BodyText>
         {title.map(text => (
-          <Title key={text} style={styles.title} onClick={this.onTitleClick}>{text}</Title>
+          <div key={text} style={styles.title} onClick={this.onTitleClick}>{text}</div>
         ))}
         {event.map(({ content, ...item }) => (
           <Event key={item.name} onClick={this.onEventClick} {...item}>{content}</Event>

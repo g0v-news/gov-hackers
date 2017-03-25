@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import BodyText from '../component/BodyText';
-import SectionTitle from '../component/SectionTitle';
-import SectionTitleText from '../component/SectionTitleText';
-import TaiwanPeople from '../component/TaiwanPeople';
+import Title from '../component/Section/Title';
+import TitleLine from '../component/Section/TitleLine';
+import Interview_Taiwan from '../component/Interview/Taiwan';
 import Anonymity from '../component/Anonymity';
 import Window from '../component/Window';
 import Cover from '../component/Cover';
@@ -94,9 +94,9 @@ export default class extends PureComponent {
             <Cover src={cover} alt="黑客進政府實錄" onClick={this.onCoverClick} />
           </div>
           <div style={styles.left}>
-            <SectionTitle>
-              {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
-            </SectionTitle>
+            <Title>
+              {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
+            </Title>
             <BodyText onClick={this.onSubTitleClick}>{subtitle}</BodyText>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default class extends PureComponent {
             <Slider {...slider}>
               {topic.map(data => (
                 <div key={data.name} style={styles.slide}>
-                  <TaiwanPeople {...data} />
+                  <Interview_Taiwan {...data} />
                 </div>
               ))}
             </Slider>

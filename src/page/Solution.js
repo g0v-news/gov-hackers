@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import Analytics from '../Analytics';
-import SectionTitle from '../component/SectionTitle';
-import SectionTitleText from '../component/SectionTitleText';
-import SectionSubtitleText from '../component/SectionSubtitleText';
+import Title from '../component/Section/Title';
+import TitleLine from '../component/Section/TitleLine';
+import Subtitle from '../component/Section/Subtitle';
 
-import SolutionPeople from '../component/SolutionPeople';
+import Interview_Hacker from '../component/Interview/Hacker';
 import Cover from '../component/Cover';
 import { solution } from '../assets/content';
 import guides from '../assets/guides';
@@ -91,10 +91,10 @@ export default class extends PureComponent {
             <Cover src={cover} style={styles.cover} alt={title.join('')} onClick={this.onCoverClick} />
           </div>
           <div style={styles.left}>
-            <SectionTitle>
-              <SectionSubtitleText onClick={this.onSubTitleClick}>{subtitle}</SectionSubtitleText>
-              {title.map(text => (<SectionTitleText key={text} onClick={this.onTitleClick}>{text}</SectionTitleText>))}
-            </SectionTitle>
+            <Title>
+              <Subtitle onClick={this.onSubTitleClick}>{subtitle}</Subtitle>
+              {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
+            </Title>
           </div>
         </div>
         <div style={styles.row}>
@@ -102,7 +102,7 @@ export default class extends PureComponent {
           <div style={{ ...styles.right, ...styles.topicWrap }}>
             {topic.map(item => (
               <div style={styles.topic}>
-                <SolutionPeople key={item.name} {...item} />
+                <Interview_Hacker key={item.name} {...item} />
               </div>
             ))}
             <a style={styles.topic} href={editorial.link} target="gov-news" onClick={this.onEditorialClick}>
