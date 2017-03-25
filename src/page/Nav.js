@@ -23,7 +23,6 @@ const styles = {
     zIndex: guides.z.nav,
   },
   links: {
-    width: '100%',
     display: 'flex',
     flexDirection: 'row',
     color: color.primary,

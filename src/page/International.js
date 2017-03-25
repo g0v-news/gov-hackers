@@ -117,7 +117,7 @@ export default class extends PureComponent {
         <a name="international" />
         <div style={styles.container}>
           <div style={{ ...styles.row, ...styles.reverse }}>
-            <div style={{ ...styles.right, ...styles.cover }} className="disable-when-mobile">
+            <div style={{ ...styles.right, ...styles.cover }}>
               <Cover src={cover} alt={title.join('')} onClick={this.onCoverClick}/>
             </div>
             <div style={styles.left}>
