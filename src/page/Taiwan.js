@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
-import Text_Body from '../component/Text/Body';
+import TextBody from '../component/Text/Body';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
-import Interview_Taiwan from '../component/Interview/Taiwan';
+import InterviewTaiwan from '../component/Interview/Taiwan';
 import Anonymity from '../component/Anonymity';
 import Window from '../component/Window';
 import Cover from '../component/Cover';
@@ -97,7 +97,7 @@ export default class extends PureComponent {
             <Title>
               {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
             </Title>
-            <Text_Body onClick={this.onSubTitleClick}>{subtitle}</Text_Body>
+            <TextBody onClick={this.onSubTitleClick}>{subtitle}</TextBody>
           </div>
         </div>
         <div style={styles.row}>
@@ -106,7 +106,7 @@ export default class extends PureComponent {
             <Slider {...slider}>
               {topic.map(data => (
                 <div key={data.name} style={styles.slide}>
-                  <Interview_Taiwan {...data} />
+                  <InterviewTaiwan {...data} />
                 </div>
               ))}
             </Slider>
@@ -115,7 +115,7 @@ export default class extends PureComponent {
         <Anonymity {...anonymity} />
         <Window>
           {window.map(text => (
-            <Text_Body style={styles.windowText} key={text}>{text}</Text_Body>
+            <TextBody style={styles.windowText} key={text}>{text}</TextBody>
           ))}
         </Window>
       </div>

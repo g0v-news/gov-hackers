@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Text_ArticleTitle from '../component/Text/ArticleTitle';
+import TextArticleTitle from '../component/Text/ArticleTitle';
 import Event from '../component/History/Event';
 import Analytics from '../Analytics';
 
@@ -58,7 +58,7 @@ export default class extends PureComponent {
         <div style={styles.title}>
           <div style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</div>
           {title.map(text => (
-            <Text_ArticleTitle key={text} style={styles.titleLine} onClick={this.onTitleClick}>{text}</Text_ArticleTitle>
+            <TextArticleTitle key={text} style={styles.titleLine} onClick={this.onTitleClick}>{text}</TextArticleTitle>
           ))}
         </div>
         {event.map(({ content, ...item }) => (

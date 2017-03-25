@@ -4,7 +4,7 @@ import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
 
-import Interview_Hacker from '../component/Interview/Hacker';
+import InterviewHacker from '../component/Interview/Hacker';
 import Cover from '../component/Cover';
 import { solution } from '../assets/content';
 import guides from '../assets/guides';
@@ -102,7 +102,7 @@ export default class extends PureComponent {
           <div style={{ ...styles.right, ...styles.topicWrap }}>
             {topic.map(item => (
               <div style={styles.topic}>
-                <Interview_Hacker key={item.name} {...item} />
+                <InterviewHacker key={item.name} {...item} />
               </div>
             ))}
             <a style={styles.topic} href={editorial.link} target="gov-news" onClick={this.onEditorialClick}>

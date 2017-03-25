@@ -2,7 +2,7 @@ import React, { PropTypes, PureComponent } from 'react';
 import Analytics from '../Analytics';
 import More from './More';
 import Label from './Label';
-import Text_Body from './Text/Body';
+import TextBody from './Text/Body';
 
 const styles = {
   viewport: {
@@ -73,7 +73,7 @@ export default class extends PureComponent {
 
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
-        <Text_Body>{quote}</Text_Body>
+        <TextBody>{quote}</TextBody>
         <Label right top style={styles.label} textStyle={styles.labelText}>
           {tip}
         </Label>

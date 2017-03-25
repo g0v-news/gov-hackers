@@ -3,7 +3,7 @@ import Analytics from '../../Analytics';
 import More from '../More';
 import Label from '../Label';
 import color from '../../assets/color';
-import Text_ArticleTitle from '../Text/ArticleTitle';
+import TextArticleTitle from '../Text/ArticleTitle';
 
 const styles = {
   viewport: {
@@ -82,7 +82,7 @@ export default class extends PureComponent {
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
           {title.map(text => (
-            <Text_ArticleTitle>{text}</Text_ArticleTitle>
+            <TextArticleTitle>{text}</TextArticleTitle>
           ))}
           <div style={styles.cover}>
             <img style={styles.image} src={cover} alt={region} />

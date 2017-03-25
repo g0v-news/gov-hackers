@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Text_Note from '../Text/Note';
+import TextNote from '../Text/Note';
 import color from '../../assets/color';
 
 const styles = {
@@ -36,7 +36,7 @@ function Component({ date, name, children }) {
       <div style={styles.date}>{date}</div>
       <div style={styles.content}>
         <div style={styles.name}>{name}</div>
-        <Text_Note style={styles.text}>{children}</Text_Note>
+        <TextNote style={styles.text}>{children}</TextNote>
       </div>
     </div>
   );

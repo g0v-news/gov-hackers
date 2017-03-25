@@ -2,13 +2,13 @@ import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import Image from '../component/Image';
-import Text_Body from '../component/Text/Body';
+import TextBody from '../component/Text/Body';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
 import Dictionary from '../component/Dictionary';
 
-import Interview_World from '../component/Interview/World';
+import InterviewWorld from '../component/Interview/World';
 import Anonymity from '../component/Anonymity';
 
 import { international } from '../assets/content';
@@ -127,7 +127,7 @@ export default class extends PureComponent {
               <Slider {...slider}>
                 {topic.map(data => (
                   <div key={data.region} style={styles.slide}>
-                    <Interview_World {...data} />
+                    <InterviewWorld {...data} />
                   </div>
                 ))}
               </Slider>
@@ -138,7 +138,7 @@ export default class extends PureComponent {
           <Image style={styles.helloWorldImage} src={helloWorld} alt="print(&quot;Hello world.&quot;);" />
         </div>
         <div style={styles.container}>
-          {content.map(text => (<Text_Body key={text}>{text}</Text_Body>))}
+          {content.map(text => (<TextBody key={text}>{text}</TextBody>))}
           <Anonymity {...anonymity} />
         </div>
       </div>
