@@ -69,7 +69,6 @@ const styles = {
       right: 22,
     },
     alt: {
-      left: 'initial',
       top: 12,
       left: 16,
       right: 'initial',

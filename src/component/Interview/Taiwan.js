@@ -1,6 +1,5 @@
 import React, { PropTypes, PureComponent } from 'react';
 import Analytics from '../../Analytics';
-import color from '../../assets/color';
 import TextQuote from '../Text/Quote';
 import TextName from '../Text/Name';
 import TextNote from '../Text/Note';
@@ -88,7 +87,7 @@ export default class extends PureComponent {
     title: PropTypes.arrayOf(PropTypes.string).isRequired,
     avatar: PropTypes.string.isRequired,
     quote: PropTypes.object.isRequired,
-    job: PropTypes.string.isRequired,
+    job: PropTypes.arrayOf(PropTypes.string).isRequired,
     alias: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     link: PropTypes.string,
@@ -133,7 +132,7 @@ export default class extends PureComponent {
           </div>
           <div style={{ ...styles.source.default, ...(alt && styles.source.alt) }}>
             <div style={styles.sourceColumn}>
-              {job.map(text => <TextNote>{text}</TextNote>)}
+              {job.map(text => <TextNote key={text}>{text}</TextNote>)}
             </div>
             <div style={styles.sourceColumn}>
               <TextName>{`“${alias}”`}</TextName>

@@ -83,7 +83,7 @@ export default class extends PureComponent {
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
           {title.map(text => (
-            <TextArticleTitle>{text}</TextArticleTitle>
+            <TextArticleTitle key={text}>{text}</TextArticleTitle>
           ))}
           <div style={styles.cover}>
             <img style={styles.image} src={cover} alt={region} />

@@ -75,7 +75,6 @@ const styles = {
       left: 196,
     },
     alt: {
-      left: 'initial',
       left: 80,
     },
   },
