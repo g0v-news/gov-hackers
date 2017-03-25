@@ -6,7 +6,6 @@ import TextBody from '../component/Text/Body';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
-import Dictionary from '../component/Dictionary';
 
 import InterviewWorld from '../component/Interview/World';
 import Anonymity from '../component/Anonymity';
