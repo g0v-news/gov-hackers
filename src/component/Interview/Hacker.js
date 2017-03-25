@@ -1,10 +1,10 @@
 import React, { PropTypes, PureComponent } from 'react';
-import Analytics from '../Analytics';
-import More from './More';
-import Label from './Label';
-import Quote from './Quote';
-import color from '../assets/color';
-import ArticleTitleText from './ArticleTitleText';
+import Analytics from '../../Analytics';
+import More from '../More';
+import Label from '../Label';
+import Quote from '../Quote';
+import color from '../../assets/color';
+import Article_TitleLine from '../Article/TitleLine';
 
 
 const styles = {
@@ -51,10 +51,6 @@ const styles = {
     position: 'absolute',
     top: 0,
     left: 0,
-  },
-  title: {
-    fontSize: 28,
-    textAlign: 'left',
   },
   quote: {
     position: 'absolute',
@@ -121,7 +117,7 @@ export default class extends PureComponent {
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
-          <ArticleTitleText>{title}</ArticleTitleText>
+          <Article_TitleLine>{title}</Article_TitleLine>
           <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
             {quote}
           </Quote>

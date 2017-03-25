@@ -1,12 +1,15 @@
 import React, { PropTypes } from 'react';
+import color from '../../assets/color';
 
 const styles = {
   viewport: {
-    fontSize: 24,
-    textAlign: 'left',
-    lineHeight: 1.3333,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: color.blue50,
+    textAlign: 'center',
+    lineHeight: 1.6667,
     maxWidth: 288,
-    margin: '0 auto',
+    margin: '1.7778em auto 0.4444em',
   },
 };
 

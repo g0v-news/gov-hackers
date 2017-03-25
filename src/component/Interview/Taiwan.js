@@ -1,9 +1,9 @@
 import React, { PropTypes, PureComponent } from 'react';
-import Analytics from '../Analytics';
-import color from '../assets/color';
-import Quote from './Quote';
-import More from './More';
-import ArticleTitleText from './ArticleTitleText';
+import Analytics from '../../Analytics';
+import color from '../../assets/color';
+import Quote from '../Quote';
+import More from '../More';
+import Article_TitleLine from '../Article/TitleLine';
 
 
 const styles = {
@@ -133,7 +133,7 @@ export default class extends PureComponent {
             src={avatar}
             alt={nickname}
           />
-          {title.map(text => (<ArticleTitleText key={text}>{text}</ArticleTitleText>))}
+          {title.map(text => (<Article_TitleLine key={text}>{text}</Article_TitleLine>))}
           <div style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
             <Quote>{quote}</Quote>
           </div>

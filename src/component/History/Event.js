@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import color from '../assets/color';
+import color from '../../assets/color';
 
 const styles = {
   viewport: {

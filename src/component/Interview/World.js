@@ -1,10 +1,9 @@
 import React, { PropTypes, PureComponent } from 'react';
-import Analytics from '../Analytics';
-import More from './More';
-import Label from './Label';
-import color from '../assets/color';
-import ArticleTitleText from './ArticleTitleText';
-
+import Analytics from '../../Analytics';
+import More from '../More';
+import Label from '../Label';
+import color from '../../assets/color';
+import Article_TitleLine from '../Article/TitleLine';
 
 const styles = {
   viewport: {
@@ -30,10 +29,6 @@ const styles = {
     bottom: 0,
     left: 0,
     right: 0,
-    width: '100%',
-  },
-  title: {
-    textAlign: 'left',
     width: '100%',
   },
   image: {
@@ -87,7 +82,7 @@ export default class extends PureComponent {
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
           {title.map(text => (
-            <ArticleTitleText className="interview">{text}</ArticleTitleText>
+            <Article_TitleLine>{text}</Article_TitleLine>
           ))}
           <div style={styles.cover}>
             <img style={styles.image} src={cover} alt={region} />
