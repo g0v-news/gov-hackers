@@ -7,6 +7,8 @@ import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
 
+import Cover from '../component/Cover';
+
 import InterviewWorld from '../component/Interview/World';
 import Anonymity from '../component/Anonymity';
 
@@ -28,8 +30,8 @@ const styles = {
     maxWidth: 1024,
     margin: '0 auto',
   },
-  subtitle: {
-    fontSize: 24,
+  cover: {
+    marginBottom: 24,
   },
   slide: {
     flexBasis: '50%',
@@ -60,7 +62,10 @@ const styles = {
     maxWidth: 320,
     display: 'block',
     margin: '1em auto',
-  }
+  },
+  reverse: {
+    flexDirection: 'row-reverse',
+  },
 };
 
 const slider = {
@@ -111,8 +116,10 @@ export default class extends PureComponent {
       <section style={styles.viewport}>
         <a name="international" />
         <div style={styles.container}>
-          <Image src={cover} alt={title.join('')} onClick={this.onCoverClick} />
-          <div style={styles.row}>
+          <div style={{ ...styles.row, ...styles.reverse }}>
+            <div style={{ ...styles.right, ...styles.cover }} className="disable-when-mobile">
+              <Cover src={cover} alt={title.join('')} onClick={this.onCoverClick}/>
+            </div>
             <div style={styles.left}>
               <Title>
                 <Subtitle onClick={this.onSubTitleClick}>{subtitle}</Subtitle>
@@ -120,6 +127,9 @@ export default class extends PureComponent {
               </Title>
               <img style={styles.map} src={map} alt="Map of civic hackers" onClick={this.onMapClick} />
             </div>
+          </div>
+          <div style={styles.row}>
+            <div style={styles.left} />
             <div style={styles.right} className="slidebox">
               <Slider {...slider}>
                 {topic.map(data => (

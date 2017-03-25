@@ -23,18 +23,20 @@ const styles = {
       bottom: 0,
     },
   },
+  triangle: {
+  },
   text: {
     fontSize: 16,
     lineHeight: 26,
     color: color.white,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: color.blue50,
     height: 26,
     paddingLeft: 12,
     paddingRight: 12,
     boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 };
 
@@ -62,7 +64,7 @@ export default class extends PureComponent {
     left: () => {
       var points = (this.props.top ? "0 0 18 0 0 26 0 0" : "0 0 18 26 0 26 0 0");
       return (
-        <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.left}>
+        <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.triangle}>
           <g fill={color.blue50} strokeWidth="0">
             <polygon points={points} />
           </g>
@@ -73,7 +75,7 @@ export default class extends PureComponent {
     right: () => {
       var points = (this.props.top ? "0 0 18 0 18 26 0 0" : "18 0 18 26 0 26 18 0");
       return (
-        <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.right}>
+        <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.triangle}>
           <g fill={color.blue50} strokeWidth="0">
             <polygon points={points} />
           </g>

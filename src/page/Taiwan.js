@@ -30,8 +30,7 @@ const styles = {
     paddingRight: 36,
   },
   cover: {
-    backgroundColor: '#F5F5FF',
-    marginBottom: 10,
+    marginBottom: 24,
   },
   topic: {
     marginTop: 10,

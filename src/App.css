@@ -27,6 +27,7 @@
     list-style: none;
 
     text-align: center;
+    z-index: 999;
 }
 .slick-dots li
 {
@@ -165,7 +166,7 @@
 }
 
 @media screen and (max-device-width: 480px) {
-    .disabled-mobile {
+    .disable-when-mobile {
         display: none;
     }
 }
@@ -264,36 +265,6 @@
     }
 }
 
-.anonymity {
-  font-size: 16px;
-}
-
-@media screen and (min-device-width: 480px) {
-  .anonymity {
-    font-size: 20px;
-  }
-}
-
-.interview {
-  font-size: 20px;
-}
-
-@media screen and (min-device-width: 360px) {
-  .interview {
-    font-size: 26px;
-  }
-}
-
-.issue {
-  font-size: 20px;
-}
-
-@media screen and (min-device-width: 360px) {
-  .issue {
-    font-size: 26px;
-  }
-}
-
 .headerlink {
   font-size: 18px;
   max-width: 120px;
@@ -314,6 +285,6 @@
   }
 }
 
-section {
-  margin: 0 auto 100px;
+
+@media screen and (min-device-width: 480px) {
 }

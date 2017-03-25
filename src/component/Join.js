@@ -7,15 +7,20 @@ import TextBody from './Text/Body';
 const styles = {
   viewport: {
     position: 'relative',
-    height: 58,
     width: '100%',
-    maxWidth: 375,
-    margin: '0 auto',
-    marginTop: 20,
+    maxWidth: 320,
+    height: 56,
+    margin: '1rem auto',
+    overflow: 'hidden',
+  },
+  link: {
+    position: 'absolute',
     display: 'block',
-    color: '#000',
-    textDecoration: 'none',
-    textAlign: 'left',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 999,
   },
   label: {
     top: 'initial',
@@ -24,17 +29,12 @@ const styles = {
   labelText: {
     width: 200,
     paddingRight: 23,
-    justifyContent: 'flex-end',
     fontSize: 16,
   },
   more: {
     position: 'absolute',
     right: 2,
-    bottom: 4,
-  },
-  moreSvg: {
-    width: 18,
-    height: 18,
+    bottom: 3,
   },
 };
 
@@ -72,13 +72,14 @@ export default class extends PureComponent {
     const { quote, tip, link } = this.props;
 
     return (
-      <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
+      <div style={styles.viewport}>
         <TextBody>{quote}</TextBody>
         <Label right top style={styles.label} textStyle={styles.labelText}>
           {tip}
         </Label>
-        <More style={styles.more} svgStyle={styles.moreSvg} />
-      </a>
+        <More style={styles.more} small />
+        <a style={styles.link} href={link} target="gov-news" onClick={this.onClick}>　</a>
+      </div>
     );
   }
 }

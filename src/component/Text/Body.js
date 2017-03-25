@@ -11,7 +11,7 @@ const styles = {
 };
 
 function Component({ children, style, ...props }) {
-  return (<div style={{ ...styles.viewport, ...style }} {...props}>{children}</div>);
+  return (<p style={{ ...styles.viewport, ...style }} {...props}>{children}</p>);
 }
 
 Component.propTypes = {

@@ -18,7 +18,7 @@ const styles = {
     display: 'block',
     color: '#000',
     textDecoration: 'none',
-    paddingTop: 3,
+    paddingTop: '0.333333rem',
   },
   text: {
     lineHeight: 1.4,

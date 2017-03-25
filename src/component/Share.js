@@ -26,11 +26,7 @@ const styles = {
   more: {
     position: 'absolute',
     right: 4,
-    bottom: 4,
-  },
-  moreSvg: {
-    width: 18,
-    height: 18,
+    bottom: 3,
   },
   image: {
     display: 'block',
@@ -76,7 +72,7 @@ export default class extends PureComponent {
           <Label right top style={styles.label} textStyle={styles.labelText}>
             分享
           </Label>
-          <More style={styles.more} svgStyle={styles.moreSvg} />
+          <More style={styles.more} small />
         </a>
       </div>
     );

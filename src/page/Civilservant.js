@@ -28,10 +28,7 @@ const styles = {
     overflow: 'hidden',
   },
   content: {
-    marginTop: 18,
-  },
-  subtitle: {
-    fontSize: 24,
+    marginTop: 12,
   },
   more: {
     position: 'absolute',
@@ -121,7 +118,7 @@ export default class extends PureComponent {
           <div>
             <Image src={office} alt={title.join('')} />
           </div>
-          <div className="disabled-mobile">
+          <div className="disable-when-mobile">
             <Image src={officeDigital} alt={title.join('')} />
           </div>
         </div>

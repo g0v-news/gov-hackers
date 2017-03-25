@@ -25,7 +25,7 @@ const styles = {
     margin: 0,
   },
   subtitle: {
-    margin: '5.555555rem 0',
+    margin: '0 0 5.555555rem',
     color: color.blue65,
     textAlign: 'center',
   },

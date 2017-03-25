@@ -3,20 +3,23 @@ body, html {
   font-family: "Fantasque Sans Mono", "Helvetica Neue", "PingFang TC", "微軟正黑體", sans-serif;
   font-size: 18px;
 }
-
 body {
   margin: 0;
   padding: 0;
 }
-
+section {
+  margin: 0 auto 100px;
+}
 table {
   border: none;
   border-spacing: 0;
   border-collapse: collapse;
 }
-
 img {
   display: block;
+}
+a {
+  text-decoration: none;
 }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */

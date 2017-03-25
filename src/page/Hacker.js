@@ -5,7 +5,7 @@ import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 
 import Share from '../component/Share';
-import HackerChannel from '../component/HackerChannel';
+import Join from '../component/Join';
 import Analytics from '../Analytics';
 
 import { hacker } from '../assets/content';
@@ -20,11 +20,14 @@ const styles = {
   share: {
     width: '100%',
     overflow: 'hidden',
-    marginBottom: 48,
+    marginBottom: 64,
   },
   slide: {
     flex: '1 1 20%',
   },
+  channels: {
+    display: 'block',
+  }
 };
 
 const slider = {
@@ -72,7 +75,9 @@ export default class extends PureComponent {
             ))}
           </Slider>
         </div>
-        {topic.map(data => (<HackerChannel {...data} />))}
+        <div style={styles.channels}>
+        {topic.map(data => (<Join {...data} />))}
+        </div>
       </section>
     );
   }
