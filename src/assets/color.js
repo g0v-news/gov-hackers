@@ -10,4 +10,9 @@ export default {
   background: '#E0E0FF',
   backgroundAssist: '#F5F5FF',
   border: '#BFBFFF',
+  blue0: 'rgba(0, 0, 255, 0)',
+  blue50: 'rgba(0, 0, 255, 0.5)',
+  blue65: 'rgba(0, 0, 255, 0.65)',
+  blue85: 'rgba(0, 0, 255, 0.85)',
+  white: 'white',
 };
