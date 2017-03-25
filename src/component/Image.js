@@ -4,6 +4,7 @@ const styles = {
   viewport: {
     width: '100%',
     maxWidth: 640,
+    margin: '0 auto',
   },
 };
 

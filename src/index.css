@@ -9,6 +9,16 @@ body {
   padding: 0;
 }
 
+table {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+img {
+  display: block;
+}
+
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

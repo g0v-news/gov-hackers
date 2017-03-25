@@ -1,13 +1,16 @@
 import React from 'react';
 import TextBody from '../component/Text/Body';
-import SectionTitle from '../component/Credit/SectionTitle';
+import TextLight from '../component/Text/Light';
+import TextSmall from '../component/Text/Small';
+import TextTiny from '../component/Text/Tiny';
+
 import { license } from '../assets/content';
 import logo from '../assets/logo.png';
 import external from '../assets/external_link.png';
 import github from '../assets/github.png';
 import color from '../assets/color';
 
-const { image, interview, publication, author } = license;
+const { image, partner, publisher, team } = license;
 
 const styles = {
   viewport: {
@@ -15,15 +18,17 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     background: `linear-gradient(${color.blue0}, ${color.blue65})`,
-    marginTop: 120,
+    marginBottom: 0,
   },
   title: {
     fontSize: 20,
     color: color.primary,
-    marginTop: 80,
+    margin: 0,
   },
   subtitle: {
-    color: color.textAssist,
+    margin: '5.555555rem 0',
+    color: color.blue65,
+    textAlign: 'center',
   },
   license: {
     fontSize: 16,
@@ -31,45 +36,29 @@ const styles = {
     color: color.textAssist,
   },
   image: {
-    fontSize: 10,
-    textAlign: 'left',
-    border: 0,
-    marginLeft: 20,
-    marginRight: 20,
-    maxWidth: 375,
-    color: color.textAssist,
-  },
-  imageName: {
-    width: 120,
-    padding: 0,
-  },
-  imageLicense: {
-    padding: 0,
-  },
-  imageLink: {
-    width: 50,
-    padding: 0,
-    textAlign: 'right',
+    table: {
+      maxWidth: 320,
+    },
+    column: {
+      padding: '0 0.444444rem',
+    },
+    column14: {
+      width: 14,
+    }
+
   },
   team: {
-    fontSize: 18,
-    textAlign: 'left',
-    border: 0,
-    marginLeft: 20,
-    marginRight: 20,
-    maxWidth: 375,
-    color: color.primary,
-    borderCollapse: 'collapse',
+    table: {
+      maxWidth: 320,
+      color: color.blue65,
+    },
+    column: {
+      padding: '0 0.444444rem',
+    },
   },
-  teamWork: {
-    textAlign: 'left',
-    padding: '4px 8px',
-  },
-  teamalias: {
-    padding: '4px 8px',
-  },
-  teamName: {
-    padding: '4px 8px',
+
+  noMargin: {
+    margin: 0,
   },
   externalLink: {
     display: 'flex',
@@ -82,76 +71,81 @@ const styles = {
   link: {
     fontSize: 16,
     color: color.primary,
-    borderBottom: `1px ${color.primary} solid`,
+    borderBottom: `2px ${color.primary} solid`,
     paddingBottom: 2,
     textDecoration: 'none',
   },
   logo: {
     width: 140,
     height: 120,
-    marginTop: 80,
-    marginBottom: 40,
+    marginTop: 64,
+    marginBottom: 48,
   },
   github: {
+    margin: '1.7778em 0'
+  },
+  octocat: {
     width: 32,
     height: 32,
-    margin: '0 auto',
-    marginTop: 28,
+    fill: 'white',
+    opacity: 0.65,
   },
 };
 
 export default function () {
   return (
-    <div style={styles.viewport}>
+    <section style={styles.viewport}>
       <a name="license" />
       <TextBody style={styles.subtitle}>{license.subtitle}</TextBody>
       <div style={styles.title}>{license.title}</div>
-      <SectionTitle>授權條款</SectionTitle>
+      <TextLight>授權條款</TextLight>
       <TextBody style={styles.license}>{license.license}</TextBody>
-      <SectionTitle>圖像授權</SectionTitle>
-      <table style={styles.image}>
+      <TextLight>圖像授權</TextLight>
+      <table style={styles.image.table}>
         <tbody>
           {image.map(item => (
             <tr key={item.name}>
-              <td style={styles.imageName}>{item.name}</td>
-              <td style={styles.imageLicense}>{item.license}</td>
-              <td style={styles.imageLink}>
-                <a href={item.link} target="license">
-                  <img width="14" height="14" alt="link" src={external} />
-                </a>
+              <td style={styles.image.column}><TextTiny>{item.name}</TextTiny></td>
+              <td style={styles.image.column}><TextTiny>{item.license}</TextTiny></td>
+              <td style={{ ...styles.image.column, ...styles.image.column14}}>
+                {item.link != null &&
+                  <a href={item.link} target="license"><img width="14" height="14" alt="link" src={external} /></a>
+                }
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <SectionTitle>採訪協力</SectionTitle>
+      <TextLight>採訪協力</TextLight>
       <div style={styles.externalLink}>
-        {interview.map(item => (
+        {partner.map(item => (
           <a key={item.name} style={styles.link} href={item.link} target="external">{item.name}</a>
         ))}
       </div>
-      <SectionTitle>合作刊登</SectionTitle>
+      <TextLight>合作刊登</TextLight>
       <div style={styles.externalLink}>
-        {publication.map(item => (
+        {publisher.map(item => (
           <a key={item.name} style={styles.link} href={item.link} target="external">{item.name}</a>
         ))}
       </div>
-      <SectionTitle>團隊</SectionTitle>
-      <table style={styles.team}>
+      <TextLight>團隊</TextLight>
+      <table style={styles.team.table}>
         <tbody>
-          {author.map(item => (
+          {team.map(item => (
             <tr key={item.name}>
-              <td style={styles.teamWork}>{item.work}</td>
-              <td style={styles.teamalias}>{`“${item.alias}”`}</td>
-              <td style={styles.teamName}>{item.name}</td>
+              <td style={styles.team.column}><TextSmall>{item.work}</TextSmall></td>
+              <td style={styles.team.column}><TextBody style={styles.noMargin}>{`“${item.alias}”`}</TextBody></td>
+              <td style={styles.team.column}><TextBody style={styles.noMargin}>{item.name}</TextBody></td>
             </tr>
           ))}
         </tbody>
       </table>
-      <a href="https://github.com/g0v-news/gov-hackers" target="github">
-        <img style={styles.github} src={github} alt="github" />
-      </a>
+      <div style={styles.github}>
+        <a href="https://github.com/g0v-news/gov-hackers" target="github">
+          <svg aria-hidden="true" style={styles.octocat} class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        </a>
+      </div>
       <img style={styles.logo} src={logo} alt="g0v.news" />
-    </div>
+    </section>
   );
 }

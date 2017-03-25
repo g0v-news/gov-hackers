@@ -4,6 +4,8 @@ import More from '../More';
 import Label from '../Label';
 import TextQuote from '../Text/Quote';
 import TextName from '../Text/Name';
+import TextSmall from '../Text/Small';
+
 import color from '../../assets/color';
 import TextArticleTitle from '../Text/ArticleTitle';
 
@@ -68,10 +70,6 @@ const styles = {
   },
   source: {
     default: {
-      color: color.textAssist,
-      fontSize: 15,
-      textAlign: 'left',
-      lineHeight: 1.3,
       position: 'absolute',
       top: 102,
       left: 196,
@@ -133,7 +131,7 @@ export default class extends PureComponent {
           <div style={{ ...styles.source.default, ...(alt && styles.source.alt) }}>
             <TextName>{`“${alias}”`}</TextName>
             <TextName>{name}</TextName>
-            <div>{team}</div>
+            <TextSmall>{team}</TextSmall>
           </div>
           <More style={styles.more} />
           <Label right={!alt} left={alt} bottom>秘訣</Label>

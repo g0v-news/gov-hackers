@@ -10,6 +10,7 @@ const styles = {
   icon: {
     width: 42,
     height: 42,
+    display: 'inline',
   },
 };
 

@@ -158,7 +158,7 @@ export default class extends Component {
     const enterTip = { opacity: offset > 100 ? 0 : 1 - (offset / 100) };
 
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <div style={styles.box}>
           <div style={{ paddingTop: 800 * errorValue }}>
             <div style={styles.background}>
@@ -203,7 +203,7 @@ export default class extends Component {
             <span />
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
