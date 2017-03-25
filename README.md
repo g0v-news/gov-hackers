@@ -1,11 +1,22 @@
 gov-hackers
 ===========
 
+[《黑客公務員的血汗之路》](http://gov-hackers.g0v.news)
+
+Deploy
+------
+
+```
+yarn deploy
+```
+
 Run
 ---
 
-`yarn install`
-`yarn develop`
+```
+yarn install
+yarn develop
+```
 
 Mockup
 ------
