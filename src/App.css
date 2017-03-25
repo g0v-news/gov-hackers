@@ -111,6 +111,15 @@
   margin-bottom: 30px;
 }
 
+.dots-in-middle .slick-dots {
+  position: absolute;
+  top: 48.5%;
+  height: 10px;
+}
+.dots-in-middle .slick-list {
+  margin-bottom: 10px;
+}
+
 .slick-dots li button:before,
 .slick-dots li.slick-active button:before {
   color: #0000FF;
@@ -154,12 +163,6 @@
 
 .slidelink img {
   width: 100%;
-}
-
-.civildot {
-  position: absolute;
-  top: 47%;
-  height: 10px;
 }
 
 @media screen and (max-device-width: 480px) {

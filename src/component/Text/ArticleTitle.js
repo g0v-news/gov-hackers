@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
+import fonts from '../../assets/fonts.js';
 
 const styles = {
   viewport: {
+    fontFamily: fonts.serif,
     fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'left',

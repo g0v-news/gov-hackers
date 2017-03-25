@@ -147,24 +147,24 @@ export const international = {
 export const civilservant = {
   title: ['公務員遇到的障礙', '政委唐鳳怎麼說？'],
   subtitle: '開放政府之路',
-  issue: [{
-    quote: '有關（開放政府）挑戰跟障礙，更核心一點的問題是整個公部門已經overloading了。',
+  conversation: [{
+    anonymous: '有關（開放政府）挑戰跟障礙，更核心一點的問題是整個公部門已經overloading了。',
+    alias: '捲毛大叔',
     team: '稅務單位',
     experience: '總年資10年',
-    solution: '引進自動化工具，沒有別的辦法。',
-    link: '',
+    minister: '引進自動化工具，沒有別的辦法。',
   }, {
-    quote: '毫無疑問組織文化是政府數位化的最大阻力。',
+    anonymous: '毫無疑問組織文化是政府數位化的最大阻力。',
+    alias: 'Foxly',
     team: '中央規劃單位',
     experience: '總年資4.5年',
-    solution: '除了（公務員）組織起來之外，難道有別的辦法嗎？',
-    link: '',
+    minister: '除了（公務員）組織起來之外，難道有別的辦法嗎？',
   }, {
-    quote: '中高階公務員都不願意多做事，開放政府很明顯會增加工作量，多數會極力抗拒。',
+    anonymous: '中高階公務員都不願意多做事，開放政府很明顯會增加工作量，多數會極力抗拒。',
+    alias: '好想贏韓國',
     team: '衛福部',
     experience: '總年資1年',
-    solution: '我覺得很多（情況）是沒有政治意志，沒有政治意志就沒有錢，即使有能力看到需求，也做不到。',
-    link: '',
+    minister: '我覺得很多（情況）是沒有政治意志，沒有政治意志就沒有錢，即使有能力看到需求，也做不到。',
   }],
   avatar: au,
   link: {

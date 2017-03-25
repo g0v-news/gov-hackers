@@ -1,7 +1,10 @@
 import React, { PropTypes, PureComponent } from 'react';
 import Quote from './Quote';
 import color from '../assets/color';
-import issueSolution from '../assets/issue_solution.png';
+import TextNote from './Text/Note';
+
+import anonymousPerson from '../assets/anonymous_person.png';
+import dialogBoxTip from '../assets/dialog_box_tip.png';
 
 const styles = {
   viewport: {
@@ -18,13 +21,17 @@ const styles = {
     right: 1,
     boxSizing: 'border-box',
   },
-  issue: {
+  anonymous: {
     border: `1px ${color.border} solid`,
     height: '50%',
     boxSizing: 'border-box',
     position: 'relative',
+    backgroundImage: `url(${anonymousPerson})`,
+    backgroundPosition: 'bottom right',
+    backgroundSize: '32px 52px',
+    backgroundRepeat: 'no-repeat',
   },
-  solution: {
+  minister: {
     position: 'relative',
     height: '40%',
     marginTop: 40,
@@ -36,29 +43,25 @@ const styles = {
     boxSizing: 'border-box',
   },
   quote: {
-    position: 'absolute',
-    top: 10,
-    left: 10,
-    right: 40,
+    width: '10em',
   },
   quoteRight: {
     left: 20,
     right: 140,
   },
-  work: {
-    color: color.textAssist,
-    fontSize: 15,
-    textAlign: 'left',
-    lineHeight: 1.3,
+  source: {
     position: 'absolute',
-    bottom: 20,
-    right: 40,
+    bottom: 10,
+    right: 22,
   },
-  workRight: {
+  sourceRight: {
     left: 'initial',
     right: 180,
   },
-  solutionTip: {
+  ministerQuote: {
+    width: '12em',
+  },
+  dialogBoxTip: {
     position: 'absolute',
     bottom: -30,
     left: '40%',
@@ -72,10 +75,10 @@ export default class extends PureComponent {
 
   static propTypes = {
     right: PropTypes.bool,
-    quote: PropTypes.string.isRequired,
+    anonymous: PropTypes.string.isRequired,
     team: PropTypes.string.isRequired,
     experience: PropTypes.string.isRequired,
-    solution: PropTypes.string.isRequired,
+    minister: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -83,23 +86,24 @@ export default class extends PureComponent {
   };
 
   render() {
-    const { right, quote, team, experience, solution } = this.props;
+    const { right, anonymous, alias, team, experience, minister } = this.props;
 
     return (
       <div style={styles.viewport} >
         <div style={styles.box}>
-          <div style={styles.issue}>
-            <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }} className="issue">
-              {quote}
+          <div style={styles.anonymous}>
+            <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
+              {anonymous}
             </Quote>
-            <div style={{ ...styles.work, ...(right && styles.workRight) }}>
-              <div>{team}</div>
-              <div>{experience}</div>
+            <div style={{ ...styles.source, ...(right && styles.sourceRight) }}>
+              <TextNote>{alias}</TextNote>
+              <TextNote>{team}</TextNote>
+              <TextNote>{experience}</TextNote>
             </div>
           </div>
-          <div style={styles.solution} className="issue">
-            {solution}
-            <img style={styles.solutionTip} src={issueSolution} alt="" />
+          <div style={styles.minister}>
+            <Quote mark={false} style={styles.ministerQuote}>{minister}</Quote>
+            <img style={styles.dialogBoxTip} src={dialogBoxTip} alt="Dialog box tip" />
           </div>
         </div>
       </div>

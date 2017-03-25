@@ -12,7 +12,6 @@ import Anonymity from '../component/Anonymity';
 
 import { international } from '../assets/content';
 import guides from '../assets/guides';
-import color from '../assets/color';
 
 import cover from '../assets/international-cover.jpg';
 import map from '../assets/international-map.jpg';

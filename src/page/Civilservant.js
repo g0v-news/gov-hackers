@@ -9,7 +9,7 @@ import Subtitle from '../component/Section/Subtitle';
 import Image from '../component/Image';
 import Label from '../component/Label';
 import More from '../component/More';
-import Issue from '../component/Issue';
+import Conversation from '../component/Conversation';
 import Anonymity from '../component/Anonymity';
 import guides from '../assets/guides';
 import { civilservant } from '../assets/content';
@@ -18,7 +18,7 @@ import color from '../assets/color';
 import office from '../assets/office.jpg';
 import officeDigital from '../assets/office_digital.jpg';
 
-const { title, subtitle, issue, link, anonymity } = civilservant;
+const { title, subtitle, conversation, link, anonymity } = civilservant;
 
 const styles = {
   ...guides,
@@ -65,7 +65,7 @@ const styles = {
     paddingRight: 40,
     paddingBottom: 30,
   },
-  issue: {
+  conversation: {
     width: '100%',
     maxWidth: 375,
     margin: '0 auto',
@@ -77,7 +77,7 @@ const styles = {
     margin: 0,
     marginLeft: 'auto',
     marginRight: 'auto',
-  }
+  },
 };
 
 const slider = {
@@ -86,8 +86,8 @@ const slider = {
   arrows: false,
   slidesToShow: 1,
   slidesToScroll: 1,
-  className: 'slider',
-  dotsClass: 'slick-dots civildot',
+  className: 'slider dots-in-middle',
+  dotsClass: 'slick-dots',
 };
 
 export default class extends PureComponent {
@@ -137,11 +137,11 @@ export default class extends PureComponent {
             </Title>
           </div>
           <div style={styles.right}>
-            <div style={styles.issue}>
+            <div style={styles.conversation}>
               <Slider {...slider}>
-                {issue.map(data => (
+                {conversation.map(data => (
                   <div key={data.quote}>
-                    <Issue {...data} />
+                    <Conversation {...data} />
                   </div>
                 ))}
               </Slider>
