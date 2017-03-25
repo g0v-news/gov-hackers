@@ -25,7 +25,7 @@ function Component({ children, style, small }) {
   return (
     <div style={{ ...styles.viewport, ...style }}>
       <div style={styles.text}>{children}</div>
-      <img src={go} style={{ ...styles.go, ...small ? styles.small : {} }} />
+      <img src={go} style={{ ...styles.go, ...small ? styles.small : {} }} alt="Go!" />
     </div>
   );
 }

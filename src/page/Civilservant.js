@@ -133,7 +133,7 @@ export default class extends PureComponent {
             <div style={styles.conversation}>
               <Slider {...slider}>
                 {conversation.map(data => (
-                  <div key={data.quote}>
+                  <div key={data.anonymous.text}>
                     <Conversation {...data} />
                   </div>
                 ))}
@@ -143,7 +143,7 @@ export default class extends PureComponent {
             <a style={styles.link} href={link.link} target="gov-news" onClick={this.onLinkClick}>
               <Label left top>專訪</Label>
               <div style={styles.linkTitle}>{link.quote.map(text => (
-                <TextArticleTitle>{text}</TextArticleTitle>
+                <TextArticleTitle key={text}>{text}</TextArticleTitle>
               ))}</div>
               <More style={styles.more} />
             </a>

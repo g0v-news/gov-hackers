@@ -88,7 +88,7 @@ export default class extends PureComponent {
         <a name="taiwan" />
         <div style={{ ...styles.row, ...styles.reverse }}>
           <div style={{ ...styles.right, ...styles.cover }}>
-            <Cover src={cover} alt="黑客進政府實錄" onClick={this.onCoverClick} />
+            <Cover src={cover} alt="What happens when a hacker meets the government?" onClick={this.onCoverClick} />
           </div>
           <div style={styles.left}>
             <Title>

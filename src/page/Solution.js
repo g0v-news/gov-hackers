@@ -99,7 +99,7 @@ export default class extends PureComponent {
           <div style={styles.left} />
           <div style={{ ...styles.right, ...styles.topicWrap }}>
             {topic.map(item => (
-              <div style={styles.topic}>
+              <div key={item.name} style={styles.topic}>
                 <InterviewHacker key={item.name} {...item} />
               </div>
             ))}

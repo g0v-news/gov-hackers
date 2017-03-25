@@ -147,6 +147,7 @@ export default class extends PureComponent {
           </div>
           {tags.map(tag => (
             <a
+              key={tag.name}
               href={`#${tag.name}`}
               style={styles.link}
               className="headerlink"

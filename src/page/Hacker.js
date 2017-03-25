@@ -76,7 +76,7 @@ export default class extends PureComponent {
           </Slider>
         </div>
         <div style={styles.channels}>
-        {topic.map(data => (<Join {...data} />))}
+        {topic.map(data => (<Join key={data.name} {...data} />))}
         </div>
       </section>
     );
