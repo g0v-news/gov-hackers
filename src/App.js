@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './page/Header';
+import Nav from './page/Nav';
 import Enter from './page/Enter';
 import History from './page/History';
 import Taiwan from './page/Taiwan';
@@ -23,7 +23,7 @@ class App extends Component {
         <Solution />
         <Hacker />
         <License />
-        <Header />
+        <Nav />
       </div>
     );
   }

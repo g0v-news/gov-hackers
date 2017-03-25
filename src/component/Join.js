@@ -4,6 +4,8 @@ import More from './More';
 import Label from './Label';
 import TextBody from './Text/Body';
 
+import guides from '../assets/guides';
+
 const styles = {
   viewport: {
     position: 'relative',
@@ -20,7 +22,7 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 999,
+    zIndex: guides.z.a,
   },
   label: {
     top: 'initial',

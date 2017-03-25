@@ -12,4 +12,9 @@ export default {
     flex: '2 1 640px',
     maxWidth: '100%',
   },
+  z: {
+    nav: 10000,
+    dots: 1000, // in App.css
+    a: 100,
+  }
 };

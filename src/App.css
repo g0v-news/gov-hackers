@@ -27,7 +27,7 @@
     list-style: none;
 
     text-align: center;
-    z-index: 999;
+    z-index: 1000,
 }
 .slick-dots li
 {

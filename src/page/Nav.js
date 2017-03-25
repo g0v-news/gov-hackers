@@ -8,6 +8,8 @@ import facebook from '../assets/share_sheet/facebook.png';
 
 import { header } from '../assets/content';
 
+import guides from '../assets/guides';
+
 const { tags, share } = header;
 
 const styles = {
@@ -19,6 +21,7 @@ const styles = {
     right: 0,
     background: color.background,
     opacity: 0,
+    zIndex: guides.z.nav,
   },
   box: {
     width: '100%',
