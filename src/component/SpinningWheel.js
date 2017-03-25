@@ -5,7 +5,7 @@ const styles = {
   viewport: {
     width: '100%',
     height: 42,
-    animation: 'loading 1s infinite linear',
+    animation: 'loading 0.5s infinite linear',
   },
   icon: {
     width: 42,
