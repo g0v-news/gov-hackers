@@ -25,8 +25,6 @@ const styles = {
   viewport: {
     width: '100%',
     maxWidth: 1024,
-    margin: '0 auto',
-    marginTop: 28,
     overflow: 'hidden',
   },
   content: {
@@ -60,10 +58,8 @@ const styles = {
   linkTitle: {
     fontSize: 28,
     textAlign: 'left',
-    paddingTop: 40,
-    paddingLeft: 20,
-    paddingRight: 40,
-    paddingBottom: 30,
+    padding: 12,
+    paddingTop: 36,
   },
   conversation: {
     width: '100%',
@@ -119,7 +115,7 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <a name="civilservant" />
         <div style={styles.cover}>
           <div>
@@ -157,7 +153,7 @@ export default class extends PureComponent {
           </div>
         </div>
         <Anonymity {...anonymity} />
-      </div>
+      </section>
     );
   }
 }

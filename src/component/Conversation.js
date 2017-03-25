@@ -1,16 +1,19 @@
 import React, { PropTypes, PureComponent } from 'react';
-import Quote from './Quote';
 import color from '../assets/color';
+
+import TextQuote from './Text/Quote';
+import TextName from './Text/Name';
 import TextNote from './Text/Note';
 
-import anonymousPerson from '../assets/anonymous_person.png';
+import anonPerson from '../assets/anonymous_person.png';
+import anonPersonHorizontal from '../assets/anonymous_person_horizontal.png';
 import dialogBoxTip from '../assets/dialog_box_tip.png';
 
 const styles = {
   viewport: {
     position: 'relative',
     width: '100%',
-    paddingBottom: '112%',
+    paddingBottom: '20rem', //360
     boxSizing: 'border-box',
   },
   box: {
@@ -22,44 +25,55 @@ const styles = {
     boxSizing: 'border-box',
   },
   anonymous: {
-    border: `1px ${color.border} solid`,
-    height: '50%',
-    boxSizing: 'border-box',
-    position: 'relative',
-    backgroundImage: `url(${anonymousPerson})`,
-    backgroundPosition: 'bottom right',
-    backgroundSize: '32px 52px',
-    backgroundRepeat: 'no-repeat',
+    default: {
+      border: `1px ${color.border} solid`,
+      height: '9.333333rem', //168
+      boxSizing: 'border-box',
+      position: 'relative',
+      backgroundImage: `url(${anonPerson})`,
+      backgroundSize: '32px 52px',
+      backgroundPosition: 'bottom right',
+      backgroundRepeat: 'no-repeat',
+    },
+    alt: {
+      backgroundImage: `url(${anonPersonHorizontal})`,
+      backgroundSize: '52px 32px',
+      backgroundPosition: 'top left',
+    }
   },
   minister: {
     position: 'relative',
-    height: '40%',
+    height: '4.777778rem', //86
     marginTop: 40,
     marginLeft: 15,
     marginRight: 15,
     border: `4px ${color.label} solid`,
     padding: 10,
     textAlign: 'left',
-    boxSizing: 'border-box',
+    boxSizing: 'content-box',
   },
   quote: {
-    width: '10em',
-  },
-  quoteRight: {
-    left: 20,
-    right: 140,
+    default: {
+      position: 'absolute',
+      top: 0,
+    },
+    alt: {
+      top: 'initial',
+      bottom: 12,
+    }
   },
   source: {
-    position: 'absolute',
-    bottom: 10,
-    right: 22,
-  },
-  sourceRight: {
-    left: 'initial',
-    right: 180,
-  },
-  ministerQuote: {
-    width: '12em',
+    default: {
+      position: 'absolute',
+      bottom: 10,
+      right: 22,
+    },
+    alt: {
+      left: 'initial',
+      top: 12,
+      left: 16,
+      right: 'initial',
+    },
   },
   dialogBoxTip: {
     position: 'absolute',
@@ -74,11 +88,11 @@ const styles = {
 export default class extends PureComponent {
 
   static propTypes = {
-    right: PropTypes.bool,
-    anonymous: PropTypes.string.isRequired,
+    alt: PropTypes.bool,
+    anonymous: PropTypes.object.isRequired,
     team: PropTypes.string.isRequired,
     experience: PropTypes.string.isRequired,
-    minister: PropTypes.string.isRequired,
+    minister: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
@@ -86,23 +100,23 @@ export default class extends PureComponent {
   };
 
   render() {
-    const { right, anonymous, alias, team, experience, minister } = this.props;
+    const { alt, anonymous, alias, team, experience, minister } = this.props;
 
     return (
       <div style={styles.viewport} >
         <div style={styles.box}>
-          <div style={styles.anonymous}>
-            <Quote style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
-              {anonymous}
-            </Quote>
-            <div style={{ ...styles.source, ...(right && styles.sourceRight) }}>
-              <TextNote>{alias}</TextNote>
+          <div style={{ ...styles.anonymous.default, ...(alt && styles.anonymous.alt) }}>
+            <TextQuote line={anonymous.line} style={{ ...styles.quote.default, ...(alt && styles.quote.alt) }}>
+              {anonymous.text}
+            </TextQuote>
+            <div style={{ ...styles.source.default, ...(alt && styles.source.alt) }}>
+              <TextName>{`“${alias}”`}</TextName>
               <TextNote>{team}</TextNote>
               <TextNote>{experience}</TextNote>
             </div>
           </div>
           <div style={styles.minister}>
-            <Quote mark={false} style={styles.ministerQuote}>{minister}</Quote>
+            <TextQuote line={minister.line} mark={false}>{minister.text}</TextQuote>
             <img style={styles.dialogBoxTip} src={dialogBoxTip} alt="Dialog box tip" />
           </div>
         </div>

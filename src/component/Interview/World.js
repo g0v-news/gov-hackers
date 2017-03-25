@@ -9,7 +9,8 @@ const styles = {
   viewport: {
     position: 'relative',
     width: '100%',
-    paddingBottom: '100%',
+    paddingBottom: '90%',
+    minHeight: 284,
     boxSizing: 'border-box',
     display: 'block',
     color: '#000',

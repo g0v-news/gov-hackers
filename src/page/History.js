@@ -14,7 +14,6 @@ const styles = {
   viewport: {
     width: '100%',
     maxWidth: 288,
-    margin: '0 auto',
   },
   title: {
     color: color.blue65,
@@ -53,7 +52,7 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <a name="history" />
         <div style={styles.title}>
           <div style={styles.subtitle} onClick={this.onSubtitleClick}>{history.subtitle}</div>
@@ -64,7 +63,7 @@ export default class extends PureComponent {
         {event.map(({ content, ...item }) => (
           <Event key={item.name} onClick={this.onEventClick} {...item}>{content}</Event>
         ))}
-      </div>
+      </section>
     );
   }
 }

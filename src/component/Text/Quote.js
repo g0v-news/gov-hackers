@@ -1,6 +1,6 @@
 import React, { PropTypes, PureComponent } from 'react';
-import quote from '../assets/quote_mark.png';
-import fonts from '../assets/fonts.js';
+import mark from '../../assets/quote_mark.png';
+import fonts from '../../assets/fonts.js';
 
 const styles = {
   viewport: {
@@ -9,13 +9,14 @@ const styles = {
     lineHeight: 1.2222,
     textAlign: 'left',
     fontFamily: fonts.serif,
+    boxSizing: 'content-box',
   },
 
   mark: {
     paddingTop: 12,
     paddingLeft: 16,
     backgroundSize: '22px 24px',
-    backgroundImage: `url(${quote})`,
+    backgroundImage: `url(${mark})`,
     backgroundRepeat: 'no-repeat',
   }
 };
@@ -23,40 +24,23 @@ const styles = {
 export default class extends PureComponent {
   static propTypes = {
     style: PropTypes.shape(),
+    line: PropTypes.number,
     mark: PropTypes.bool,
     children: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
     style: {},
+    line: 8,
     mark: true,
   }
 
   render() {
-    const { style, mark, children } = this.props;
+    const { style, line, mark, children } = this.props;
     return (
-      <div style={{ ...styles.viewport, ...(mark && styles.mark), ...style }}>
+      <div style={{ ...styles.viewport, ...({width: line + 'em'}), ...(mark && styles.mark), ...style }}>
         {children}
       </div>
     );
   }
 };
-/*
-function Component({ children, style }) {
-  return (
-    <div style={{ ...styles.viewport, ...style }}>
-      {children}
-    </div>
-  );
-}
-
-Component.propTypes = {
-  style: PropTypes.shape(),
-  children: PropTypes.string.isRequired,
-};
-
-Component.defaultProps = {
-  style: {},
-};
-
-export default Component;*/

@@ -22,7 +22,6 @@ const { title, subtitle, topic, content, anonymity } = international;
 const styles = {
   ...guides,
   viewport: {
-    marginTop: 28,
   },
   container: {
     width: '100%',
@@ -109,7 +108,7 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <a name="international" />
         <div style={styles.container}>
           <Image src={cover} alt={title.join('')} onClick={this.onCoverClick} />
@@ -139,7 +138,7 @@ export default class extends PureComponent {
           {content.map(text => (<TextBody key={text}>{text}</TextBody>))}
           <Anonymity {...anonymity} />
         </div>
-      </div>
+      </section>
     );
   }
 }

@@ -3,23 +3,25 @@ import color from '../assets/color';
 
 const styles = {
   viewport: {
-    position: 'absolute',
-    display: 'flex',
-    flexDirection: 'row',
-    height: 26,
-    boxSizing: 'border-box',
-  },
-  vpLeft: {
-    left: 0,
-  },
-  vpRight: {
-    right: 0,
-  },
-  vpTop: {
-    top: 0,
-  },
-  vpBottom: {
-    bottom: 0,
+    default: {
+      position: 'absolute',
+      display: 'flex',
+      flexDirection: 'row',
+      height: 26,
+      boxSizing: 'border-box',
+    },
+    left: {
+      left: 0,
+    },
+    right: {
+      right: 0,
+    },
+    top: {
+      top: 0,
+    },
+    bottom: {
+      bottom: 0,
+    },
   },
   text: {
     fontSize: 16,
@@ -34,12 +36,6 @@ const styles = {
     paddingRight: 12,
     boxSizing: 'border-box',
   },
-  left: {
-    marginRight: 0,
-  },
-  right: {
-    marginLeft: 0,
-  },
 };
 
 export default class extends PureComponent {
@@ -53,7 +49,7 @@ export default class extends PureComponent {
     children: PropTypes.string.isRequired,
   }
 
-  static defaultProps ={
+  static defaultProps = {
     style: {},
     textStyle: {},
     top: false,
@@ -62,26 +58,28 @@ export default class extends PureComponent {
     right: false,
   }
 
-  renderLeft = () => {
-    var points = (this.props.top ? "0 0 18 0 18 26 0 0" : "18 0 18 0 18 26 0 26");
-    return (
-      <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.left}>
-        <g fill={color.blue50} strokeWidth="0">
-          <polygon points={points} />
-        </g>
-      </svg>
-    );
-  }
+  triangle = {
+    left: () => {
+      var points = (this.props.top ? "0 0 18 0 0 26 0 0" : "0 0 18 26 0 26 0 0");
+      return (
+        <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.left}>
+          <g fill={color.blue50} strokeWidth="0">
+            <polygon points={points} />
+          </g>
+        </svg>
+      );
+    },
 
-  renderRight = () => {
-    var points = (this.props.top ? "0 0 18 0 0 26 0 26" : "0 0 0 0 18 26 0 26");
-    return (
-      <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.right}>
-        <g fill={color.blue50} strokeWidth="0">
-          <polygon points={points} />
-        </g>
-      </svg>
-    );
+    right: () => {
+      var points = (this.props.top ? "0 0 18 0 18 26 0 0" : "18 0 18 26 0 26 18 0");
+      return (
+        <svg width="18px" height="26px" viewBox="0 0 18 26" style={styles.right}>
+          <g fill={color.blue50} strokeWidth="0">
+            <polygon points={points} />
+          </g>
+        </svg>
+      );
+    }
   }
 
   render() {
@@ -90,19 +88,19 @@ export default class extends PureComponent {
     return (
       <div
         style={{
-          ...styles.viewport,
-          ...(left && styles.vpLeft),
-          ...(right && styles.vpRight),
-          ...(top && styles.vpTop),
-          ...(bottom && styles.vpBottom),
+          ...styles.viewport.default,
+          ...(left && styles.viewport.left),
+          ...(right && styles.viewport.right),
+          ...(top && styles.viewport.top),
+          ...(bottom && styles.viewport.bottom),
           ...style,
         }}
       >
-        {right && this.renderLeft()}
+        {right && this.triangle.right()}
         <div style={{ ...styles.text, ...textStyle }}>
           {children}
         </div>
-        {left && this.renderRight()}
+        {left && this.triangle.left()}
       </div>
     );
   }

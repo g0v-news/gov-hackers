@@ -21,8 +21,6 @@ const styles = {
   viewport: {
     width: '100%',
     maxWidth: 1024,
-    margin: '0 auto',
-    marginTop: 28,
   },
   subtitle: {
     margin: '14px auto 0',
@@ -87,7 +85,7 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <a name="taiwan" />
         <div style={{ ...styles.row, ...styles.reverse }}>
           <div style={{ ...styles.right, ...styles.cover }}>
@@ -118,7 +116,7 @@ export default class extends PureComponent {
             <TextBody style={styles.windowText} key={text}>{text}</TextBody>
           ))}
         </Window>
-      </div>
+      </section>
     );
   }
 }

@@ -1,16 +1,19 @@
 import React, { PropTypes, PureComponent } from 'react';
 import Analytics from '../../Analytics';
 import color from '../../assets/color';
-import Quote from '../Quote';
-import More from '../More';
+import TextQuote from '../Text/Quote';
+import TextName from '../Text/Name';
+import TextNote from '../Text/Note';
 import TextArticleTitle from '../Text/ArticleTitle';
+
+import More from '../More';
 
 
 const styles = {
   viewport: {
     position: 'relative',
     width: '100%',
-    paddingBottom: '73.33%',
+    paddingBottom: 240,
     boxSizing: 'border-box',
     display: 'block',
     color: '#000',
@@ -26,31 +29,7 @@ const styles = {
     boxSizing: 'border-box',
     padding: 7,
   },
-  avatar: {
-    position: 'absolute',
-    left: 0,
-    bottom: 0,
-    width: 180,
-    height: 180,
-    border: 0,
-  },
-  avatarRight: {
-    left: 'initial',
-    right: 0,
-  },
-  quote: {
-    position: 'absolute',
-    top: 78,
-    right: 10,
-    left: 120,
-  },
-  quoteRight: {
-    left: 10,
-    right: 120,
-  },
   title: {
-    fontSize: 28,
-    textAlign: 'left',
     marginLeft: 5,
     marginTop: 5,
   },
@@ -59,91 +38,107 @@ const styles = {
     top: 6,
     right: 6,
   },
-  team: {
-    fontSize: 14,
-    color: color.textAssist,
-    position: 'absolute',
-    bottom: 10,
-    right: 80,
-    textAlign: 'left',
-    lineHeight: 1.4,
+  avatar: {
+    default: {
+      position: 'absolute',
+      left: 0,
+      bottom: 0,
+      width: 180,
+      height: 180,
+      border: 0,
+    },
+    alt: {
+      left: 'initial',
+      right: 0,
+    },
   },
-  teamRight: {
-    right: 'initial',
-    left: 80,
+  quote: {
+    default: {
+      position: 'absolute',
+      top: 78,
+      right: 12,
+    },
+    alt: {
+      left: 4,
+      right: 'initial',
+    },
   },
-  name: {
-    fontSize: 16,
-    color: color.textAssist,
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
-    textAlign: 'left',
-    lineHeight: 1.4,
+  source: {
+    default: {
+      position: 'absolute',
+      bottom: 8,
+      right: 12,
+    },
+    alt: {
+      left: 20,
+      right: 'initial',
+    }
   },
-  nameRight: {
-    right: 'initial',
-    left: 10,
+  sourceColumn: {
+    display: 'inline-block',
+    verticalAlign: 'top',
+    marginRight: 8,
   },
 };
 
 export default class extends PureComponent {
 
   static propTypes = {
-    right: PropTypes.bool,
+    alt: PropTypes.bool,
     title: PropTypes.arrayOf(PropTypes.string).isRequired,
     avatar: PropTypes.string.isRequired,
-    quote: PropTypes.string.isRequired,
-    team: PropTypes.string.isRequired,
-    work: PropTypes.string.isRequired,
-    nickname: PropTypes.string.isRequired,
+    quote: PropTypes.object.isRequired,
+    job: PropTypes.string.isRequired,
+    alias: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     link: PropTypes.string,
   };
 
   static defaultProps = {
-    right: false,
+    alt: false,
+    line: 8,
     link: '',
   };
 
   onClick = () => {
-    const { nickname } = this.props;
+    const { alias } = this.props;
 
     Analytics.event({
       category: 'component',
       action: 'click',
-      label: `taiwan_people_${nickname}`,
+      label: `taiwan_people_${alias}`,
     });
 
     Analytics.event({
       category: 'link',
       action: 'click',
-      label: `taiwan_people_${nickname}`,
+      label: `taiwan_people_${alias}`,
     });
   }
 
   render() {
-    const { avatar, title, quote, team, work, nickname, name, right, link } = this.props;
+    const { avatar, title, quote, job, alias, name, alt, link } = this.props;
 
     return (
       <a style={styles.viewport} href={link} target="gov-news" onClick={this.onClick}>
         <div style={styles.box}>
           <img
-            style={{ ...styles.avatar, ...(right && styles.avatarRight) }}
+            style={{ ...styles.avatar.default, ...(alt && styles.avatar.alt) }}
             src={avatar}
-            alt={nickname}
+            alt={alias}
           />
           {title.map(text => (<TextArticleTitle key={text}>{text}</TextArticleTitle>))}
-          <div style={{ ...styles.quote, ...(right && styles.quoteRight) }}>
-            <Quote>{quote}</Quote>
+          <div style={{ ...styles.quote.default, ...(alt && styles.quote.alt) }}>
+            <TextQuote line={quote.line}>{quote.text}</TextQuote>
           </div>
-          <div style={{ ...styles.team, ...(right && styles.teamRight) }}>
-            <div>{team}</div>
-            <div>{work}</div>
-          </div>
-          <div style={{ ...styles.name, ...(right && styles.nameRight) }}>
-            <div>{`“${nickname}”`}</div>
-            <div>{name}</div>
+          <div style={{ ...styles.source.default, ...(alt && styles.source.alt) }}>
+            <div style={styles.sourceColumn}>
+              {job.map(text => <TextNote>{text}</TextNote>)}
+            </div>
+            <div style={styles.sourceColumn}>
+              <TextName>{`“${alias}”`}</TextName>
+              <TextName>{name}</TextName>
+            </div>
           </div>
           <More style={styles.more}>專訪</More>
         </div>

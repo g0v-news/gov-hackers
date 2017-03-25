@@ -1,12 +1,12 @@
 body, html {
   height: 100%;
+  font-family: "Fantasque Sans Mono", "Helvetica Neue", "PingFang TC", "微軟正黑體", sans-serif;
+  font-size: 18px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Fantasque Sans Mono", "Helvetica Neue", "PingFang TC", "微軟正黑體", sans-serif;
-  font-size: 18px;
 }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */

@@ -18,8 +18,6 @@ const styles = {
   viewport: {
     width: '100%',
     maxWidth: 1024,
-    margin: '0 auto',
-    marginTop: 28,
   },
   cover: {
     backgroundSize: '832px 455px',
@@ -84,7 +82,7 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <a name="solution" />
         <div style={{ ...styles.row, ...styles.reverse }}>
           <div style={{ ...styles.right, ...styles.coverWrap }}>
@@ -113,7 +111,7 @@ export default class extends PureComponent {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

@@ -16,8 +16,6 @@ const styles = {
   viewport: {
     width: '100%',
     maxWidth: 1024,
-    margin: '0 auto',
-    marginTop: 28,
   },
   share: {
     width: '100%',
@@ -59,7 +57,7 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={styles.viewport}>
+      <section style={styles.viewport}>
         <a name="hacker" />
         <Title>
           {title.map(text => (<TitleLine key={text} onClick={this.onTitleClick}>{text}</TitleLine>))}
@@ -75,7 +73,7 @@ export default class extends PureComponent {
           </Slider>
         </div>
         {topic.map(data => (<HackerChannel {...data} />))}
-      </div>
+      </section>
     );
   }
 }

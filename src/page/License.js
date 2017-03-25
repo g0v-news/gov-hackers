@@ -65,7 +65,7 @@ const styles = {
     textAlign: 'left',
     padding: '4px 8px',
   },
-  teamNickname: {
+  teamalias: {
     padding: '4px 8px',
   },
   teamName: {
@@ -142,7 +142,7 @@ export default function () {
           {author.map(item => (
             <tr key={item.name}>
               <td style={styles.teamWork}>{item.work}</td>
-              <td style={styles.teamNickname}>{`“${item.nickname}”`}</td>
+              <td style={styles.teamalias}>{`“${item.alias}”`}</td>
               <td style={styles.teamName}>{item.name}</td>
             </tr>
           ))}

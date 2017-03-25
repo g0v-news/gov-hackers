@@ -113,11 +113,10 @@
 
 .dots-in-middle .slick-dots {
   position: absolute;
-  top: 48.5%;
-  height: 10px;
+  top: 172px;
 }
 .dots-in-middle .slick-list {
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .slick-dots li button:before,
@@ -313,4 +312,8 @@
     font-size: 14px;
     max-width: 50px;
   }
+}
+
+section {
+  margin: 0 auto 100px;
 }
