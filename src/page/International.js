@@ -18,8 +18,9 @@ import guides from '../assets/guides';
 import cover from '../assets/international-cover.jpg';
 import map from '../assets/international-map.jpg';
 import helloWorld from '../assets/hello_world-300.png';
+import cancel from '../assets/share_sheet/cancel.png';
 
-const { title, subtitle, topic, content, anonymity } = international;
+const { title, subtitle, topic, content, tip, anonymity } = international;
 
 const styles = {
   ...guides,
@@ -66,6 +67,56 @@ const styles = {
   reverse: {
     flexDirection: 'row-reverse',
   },
+  tip: {
+    cursor: 'pointer',
+  },
+  tipbox: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: 'none',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.65)',
+    zIndex: 999,
+  },
+  showTipbox: {
+    display: 'flex',
+  },
+  tipboxContent: {
+    background: 'linear-gradient(to bottom, rgba(59, 71, 245, 0.25), #3B47F5)',
+    width: '100%',
+    height: '100%',
+    maxWidth: 420,
+    maxHeight: 420,
+    color: '#F0F1FE',
+    padding: 20,
+    boxSizing: 'border-box',
+    paddingTop: 30,
+    position: 'relative',
+  },
+  tipLabel: {
+    textAlign: 'left',
+    fontSize: 22,
+    marginTop: 10,
+  },
+  tipItem: {
+    marginTop: 30,
+  },
+  tipBody: {
+    textAlign: 'left',
+    fontSize: 18,
+    marginTop: 20,
+  },
+  cancel: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    width: 56,
+    height: 56,
+  },
 };
 
 const slider = {
@@ -83,6 +134,10 @@ const slider = {
 };
 
 export default class extends PureComponent {
+
+  state = {
+    isShowTipBox: false,
+  }
 
   onTitleClick = () => Analytics.event({
     category: 'component',
@@ -108,10 +163,13 @@ export default class extends PureComponent {
     label: 'international_map',
   });
 
-  onShowDictionary = () => {
-  }
+  onTip = () => this.setState({ isShowTipBox: true });
+
+  onTipClose = () => this.setState({ isShowTipBox: false });
 
   render() {
+    const { isShowTipBox } = this.state;
+
     return (
       <section style={styles.viewport}>
         <a name="international" />
@@ -145,8 +203,32 @@ export default class extends PureComponent {
           <Image style={styles.helloWorldImage} src={helloWorld} alt="print(&quot;Hello world.&quot;);" />
         </div>
         <div style={styles.container}>
-          {content.map(text => (<TextBody key={text}>{text}</TextBody>))}
+          {content.map(text => (
+            <TextBody key={text}>
+              {text.indexOf('🔎') ?
+                <span>
+                  {text.substr(0, text.indexOf('🔎'))}
+                  <span onClick={this.onTip} style={styles.tip}>🔎</span>
+                  {text.substr(text.indexOf('🔎') + 2)}
+                </span>
+              : text}
+            </TextBody>
+          ))}
           <Anonymity {...anonymity} />
+        </div>
+        <div
+          style={{ ...styles.tipbox, ...(isShowTipBox && styles.showTipbox) }}
+          onClick={this.onTipClose}
+        >
+          <div style={styles.tipboxContent}>
+            {tip.map(({ label, text }) => (
+              <div style={styles.tipItem}>
+                {label.map(item => <div key={item} style={styles.tipLabel}>{item}</div>)}
+                <div key={label.join('')} style={styles.tipBody}>{text}</div>
+              </div>
+            ))}
+            <img style={styles.cancel} src={cancel} alt="cancel" />
+          </div>
         </div>
       </section>
     );
