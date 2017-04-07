@@ -8,6 +8,7 @@ import { license } from '../assets/content';
 import logo from '../assets/logo.png';
 import external from '../assets/external_link.png';
 import color from '../assets/color';
+import fonts from '../assets/fonts';
 
 const { image, partner, publisher, team } = license;
 
@@ -20,6 +21,8 @@ const styles = {
     marginBottom: 0,
   },
   title: {
+    fontFamily: fonts.serif,
+    fontWeight: 700,
     fontSize: 20,
     color: color.primary,
     margin: 0,

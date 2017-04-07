@@ -9,6 +9,7 @@ const styles = {
     lineHeight: 1.2222,
     textAlign: 'left',
     fontFamily: fonts.serif,
+    fontWeight: 500,
     boxSizing: 'content-box',
   },
 

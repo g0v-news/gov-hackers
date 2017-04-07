@@ -114,6 +114,7 @@ const styles = {
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 6,
+    fontFamily: '"source-han-serif-tc", serif',
   },
   tipDescription: {
     textAlign: 'left',

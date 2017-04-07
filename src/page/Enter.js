@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExecutionEnvironment from 'exenv';
 import color from '../assets/color';
+import fonts from '../assets/fonts';
 import { enter } from '../assets/content';
 import Analytics from '../Analytics';
 
@@ -83,6 +84,8 @@ const styles = {
     maxWidth: 286,
     margin: '0 auto',
     textAlign: 'left',
+    fontFamily: fonts.serif,
+    fontWeight: 500,
   },
   enter: {
     position: 'absolute',
