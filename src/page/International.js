@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import Analytics from '../Analytics';
 import Image from '../component/Image';
 import TextBody from '../component/Text/Body';
+import PGroup from '../component/PGroup';
 import Title from '../component/Section/Title';
 import TitleLine from '../component/Section/TitleLine';
 import Subtitle from '../component/Section/Subtitle';
@@ -69,6 +70,9 @@ const styles = {
   },
   tip: {
     cursor: 'pointer',
+    color: 'blue',
+    borderBottom: '2px blue solid',
+    margin: '0 4px',
   },
   tipbox: {
     position: 'fixed',
@@ -79,36 +83,43 @@ const styles = {
     display: 'none',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.65)',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
     zIndex: 999,
   },
   showTipbox: {
     display: 'flex',
   },
   tipboxContent: {
-    background: 'linear-gradient(to bottom, rgba(59, 71, 245, 0.25), #3B47F5)',
+    background: 'linear-gradient(to bottom, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.75)), linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75))',
     width: '100%',
     height: '100%',
-    maxWidth: 420,
-    maxHeight: 420,
-    color: '#F0F1FE',
-    padding: 20,
+    maxWidth: 320,
+    maxHeight: 568,
+    color: 'white',
+    padding: '60px 44px 60px 24px',
     boxSizing: 'border-box',
-    paddingTop: 30,
     position: 'relative',
   },
-  tipLabel: {
-    textAlign: 'left',
-    fontSize: 22,
-    marginTop: 10,
-  },
   tipItem: {
-    marginTop: 30,
+    marginTop: 36,
   },
-  tipBody: {
+  tipWord: {
+    textAlign: 'left',
+    fontSize: 24,
+    marginTop: 6,
+    opacity: 0.65,
+  },
+  tipTranslation: {
+    textAlign: 'left',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 6,
+  },
+  tipDescription: {
     textAlign: 'left',
     fontSize: 18,
-    marginTop: 20,
+    marginTop: 18,
+    lineHeight: 1.444444,
   },
   cancel: {
     position: 'absolute',
@@ -116,6 +127,7 @@ const styles = {
     top: 10,
     width: 56,
     height: 56,
+    cursor: 'pointer',
   },
 };
 
@@ -169,6 +181,7 @@ export default class extends PureComponent {
 
   render() {
     const { isShowTipBox } = this.state;
+    const tipTriggerText = 'fellowship🔎';
 
     return (
       <section style={styles.viewport}>
@@ -203,17 +216,18 @@ export default class extends PureComponent {
           <Image style={styles.helloWorldImage} src={helloWorld} alt="print(&quot;Hello world.&quot;);" />
         </div>
         <div style={styles.container}>
+          <PGroup>
           {content.map(text => (
-            <TextBody key={text}>
-              {text.indexOf('🔎') ?
-                <span>
-                  {text.substr(0, text.indexOf('🔎'))}
-                  <span onClick={this.onTip} style={styles.tip}>🔎</span>
-                  {text.substr(text.indexOf('🔎') + 2)}
-                </span>
-              : text}
-            </TextBody>
+            text.indexOf(tipTriggerText) > -1 ?
+              <TextBody key={text}>
+                <span>{text.substr(0, text.indexOf(tipTriggerText))}</span>
+                <span onClick={this.onTip} style={styles.tip}>{tipTriggerText}</span>
+                <span>{text.substr(text.indexOf(tipTriggerText) + tipTriggerText.length)}</span>
+              </TextBody>
+            :
+              <TextBody key={text}>{text}</TextBody>
           ))}
+          </PGroup>
           <Anonymity {...anonymity} />
         </div>
         <div
@@ -221,10 +235,11 @@ export default class extends PureComponent {
           onClick={this.onTipClose}
         >
           <div style={styles.tipboxContent}>
-            {tip.map(({ label, text }) => (
-              <div style={styles.tipItem}>
-                {label.map(item => <div key={item} style={styles.tipLabel}>{item}</div>)}
-                <div key={label.join('')} style={styles.tipBody}>{text}</div>
+            {tip.map(({ word, translation, description }) => (
+              <div key={[word, translation].join('-')} style={styles.tipItem}>
+                <div style={styles.tipWord}>{word}</div>
+                <div style={styles.tipTranslation}>{translation}</div>
+                <div style={styles.tipDescription}>{description}</div>
               </div>
             ))}
             <img style={styles.cancel} src={cancel} alt="cancel" />

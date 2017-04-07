@@ -136,11 +136,13 @@ export const international = {
     '透過fellowship🔎制度，民間社群和政府開始合作，短期內讓公務體系嘗到改變的甜頭、讓民間力量發揮，單點擊破僵化的文化、生態，開始影響整個政府機器。',
   ],
   tip: [{
-    label: ['fellowship', '政府創新協力計畫'],
-    text: '政府與非營利組織合作，公開邀請黑客與政府、公務員共事、協作，以使用者（公民）為中心，優化公共服務。',
+    word: 'fellowship',
+    translation: '政府創新協力計畫',
+    description: '政府與非營利組織合作，公開邀請黑客與政府、公務員共事、協作，以使用者（公民）為中心，優化公共服務。',
   }, {
-    label: ['fellow', '協力黑客'],
-    text: '以數位工具、創新思維，與公務員協力優化公共服務的行動者。',
+    word: 'fellow',
+    translation: '協力黑客',
+    description: '以數位工具、創新思維，與公務員協力優化公共服務的行動者。',
   }],
   anonymity: {
     name: 'international',

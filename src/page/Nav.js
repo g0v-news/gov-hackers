@@ -181,7 +181,7 @@ export default class extends PureComponent {
           {tags.map(tag => (
             <a className={[tag.italic ? 'italic' : '', 'link'].join(' ')} key={tag.name} href={`#${tag.name}`} style={styles.link} onClick={() => this.onClick(tag.title.join(''))}>
               {tag.title.map(line => (
-                  <div className="line">{line}</div>
+                <div key={line} className="line">{line}</div>
               ))}
             </a>
           ))}
